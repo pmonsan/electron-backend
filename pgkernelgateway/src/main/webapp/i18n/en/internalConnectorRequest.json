@@ -1,0 +1,41 @@
+{
+  "pgkernelgatewayApp": {
+    "internalConnectorRequest": {
+      "home": {
+        "title": "Internal Connector Requests",
+        "createLabel": "Create a new Internal Connector Request",
+        "createOrEditLabel": "Create or edit a Internal Connector Request",
+        "notFound": "No Internal Connector Request found"
+      },
+      "created": "A new Internal Connector Request is created with identifier {{ param }}",
+      "updated": "A Internal Connector Request is updated with identifier {{ param }}",
+      "deleted": "A Internal Connector Request is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Internal Connector Request {{ id }}?"
+      },
+      "detail": {
+        "title": "Internal Connector Request"
+      },
+      "number": "Number",
+      "module": "Module",
+      "connector": "Connector",
+      "connectorType": "Connector Type",
+      "requestData": "Request Data",
+      "registrationDate": "Registration Date",
+      "pgapsTransactionNumber": "Pgaps Transaction Number",
+      "serviceId": "Service Id",
+      "accountNumber": "Account Number",
+      "amount": "Amount",
+      "balance": "Balance",
+      "accountValidation": "Account Validation",
+      "numberOfTransactions": "Number Of Transactions",
+      "lastTransactions": "Last Transactions",
+      "action": "Action",
+      "responseDate": "Response Date",
+      "status": "Status",
+      "reason": "Reason",
+      "partnerTransactionNumber": "Partner Transaction Number",
+      "active": "Active"
+    }
+  }
+}

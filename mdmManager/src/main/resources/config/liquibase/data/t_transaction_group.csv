@@ -1,0 +1,11 @@
+id;code;label;check_subscription;ignore_fees;ignore_limit;ignore_commission;check_otp;active
+1;Groce;Interactions applications invoice;false;true;false;false;true;false
+2;succe;teal Outdoors payment;false;true;true;false;false;true
+3;Mouse;connect;true;true;true;false;true;true
+4;4th g;Principal Savings Account online;false;false;false;true;false;true
+5;Manda;Handcrafted Rubber Gloves;false;true;true;false;false;true
+6;Chair;disintermediate Walks Credit Card Account;false;true;true;true;true;true
+7;Lead ;Configurable;true;true;false;false;false;false
+8;magen;Automotive approach Borders;false;true;false;false;false;true
+9;24/36;Frozen;true;false;true;true;true;true
+10;Rusti;deposit circuit Kids;true;true;false;true;true;false

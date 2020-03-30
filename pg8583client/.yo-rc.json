@@ -1,0 +1,44 @@
+{
+  "generator-jhipster": {
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "enableHibernateCache": true,
+    "enableSwaggerCodegen": true,
+    "enableTranslation": true,
+    "jhiPrefix": "jhi",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "messageBroker": "kafka",
+    "nativeLanguage": "fr",
+    "packageName": "com.electron.mfs.pg.pg8583client",
+    "packageFolder": "com/electron/mfs/pg/pg8583client",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "websocket": false,
+    "baseName": "pg8583client",
+    "applicationType": "microservice",
+    "authenticationType": "uaa",
+    "uaaBaseName": "pgkerneluaa",
+    "cacheProvider": "hazelcast",
+    "buildTool": "maven",
+    "serverPort": "21016",
+    "jhipsterVersion": "6.1.2",
+    "skipUserManagement": true,
+    "clientPackageManager": "npm",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "entities": [
+    "Pg8583Request",
+    "Pg8583Status",
+    "Pg8583Callback"
+  ]
+}

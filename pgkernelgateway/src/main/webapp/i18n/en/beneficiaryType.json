@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "beneficiaryType": {
+      "home": {
+        "title": "Beneficiary Types",
+        "createLabel": "Create a new Beneficiary Type",
+        "createOrEditLabel": "Create or edit a Beneficiary Type",
+        "notFound": "No Beneficiary Type found"
+      },
+      "created": "A new Beneficiary Type is created with identifier {{ param }}",
+      "updated": "A Beneficiary Type is updated with identifier {{ param }}",
+      "deleted": "A Beneficiary Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Beneficiary Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Beneficiary Type"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

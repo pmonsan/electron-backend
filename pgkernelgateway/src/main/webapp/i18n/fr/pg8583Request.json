@@ -1,0 +1,33 @@
+{
+  "pgkernelgatewayApp": {
+    "pg8583Request": {
+      "home": {
+        "title": "Pg8583Requests",
+        "createLabel": "Créer un nouveau Pg 8583 Request",
+        "createOrEditLabel": "Créer ou éditer un Pg 8583 Request",
+        "notFound": "Aucun Pg 8583 Request trouvé"
+      },
+      "created": "Un nouveau Pg 8583 Request a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg 8583 Request avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg 8583 Request avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg 8583 Request {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg 8583 Request"
+      },
+      "number": "Number",
+      "apiKey": "Api Key",
+      "encryptedData": "Encrypted Data",
+      "decryptedData": "Decrypted Data",
+      "registrationDate": "Registration Date",
+      "responseDate": "Response Date",
+      "requestResponse": "Request Response",
+      "status": "Status",
+      "reason": "Reason",
+      "pgapsMessage": "Pgaps Message",
+      "pgapsTransactionNumber": "Pgaps Transaction Number",
+      "active": "Active"
+    }
+  }
+}

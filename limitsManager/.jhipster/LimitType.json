@@ -1,0 +1,66 @@
+{
+    "name": "LimitType",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 5
+        },
+        {
+            "fieldName": "label",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "limitValueType",
+            "fieldType": "LimitValueType",
+            "fieldValues": "STRING,INTEGER,DOUBLE,DATE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "periodicity",
+            "otherEntityRelationshipName": "limitType",
+            "relationshipName": "periodicity",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "limitMeasure",
+            "otherEntityRelationshipName": "limitType",
+            "relationshipName": "limitMeasure",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200330110516",
+    "entityTableName": "t_limit_type",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "pgkernelgateway",
+        "limitsManager"
+    ]
+}

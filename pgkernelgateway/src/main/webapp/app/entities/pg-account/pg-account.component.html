@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.pgAccount.home.title">Pg Accounts</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pg-account" [routerLink]="['/pg-account/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.pgAccount.home.createLabel">
+            Create new Pg Account
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="pgAccounts?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.pgAccount.home.notFound">No pgAccounts found</span>
+    </div>
+    <div class="table-responsive" *ngIf="pgAccounts?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.number">Number</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.openingDate">Opening Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.temporary">Temporary</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.closingDate">Closing Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.imsi">Imsi</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.transactionCode">Transaction Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.validationDate">Validation Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.accountStatusCode">Account Status Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.accountTypeCode">Account Type Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.customerCode">Customer Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.currencyCode">Currency Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.comment">Comment</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgAccount.active">Active</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pgAccount of pgAccounts ;trackBy: trackId">
+                <td><a [routerLink]="['/pg-account', pgAccount.id, 'view' ]">{{pgAccount.id}}</a></td>
+                <td>{{pgAccount.number}}</td>
+                <td>{{pgAccount.openingDate | date:'medium'}}</td>
+                <td>{{pgAccount.temporary}}</td>
+                <td>{{pgAccount.closingDate | date:'medium'}}</td>
+                <td>{{pgAccount.imsi}}</td>
+                <td>{{pgAccount.transactionCode}}</td>
+                <td>{{pgAccount.validationDate | date:'medium'}}</td>
+                <td>{{pgAccount.accountStatusCode}}</td>
+                <td>{{pgAccount.accountTypeCode}}</td>
+                <td>{{pgAccount.customerCode}}</td>
+                <td>{{pgAccount.currencyCode}}</td>
+                <td>{{pgAccount.comment}}</td>
+                <td>{{pgAccount.active}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/pg-account', pgAccount.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/pg-account', pgAccount.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'pg-account', { outlets: { popup: pgAccount.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

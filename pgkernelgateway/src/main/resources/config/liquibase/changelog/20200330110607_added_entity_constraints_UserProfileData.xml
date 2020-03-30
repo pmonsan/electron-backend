@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity UserProfileData.
+    -->
+    <changeSet id="20200330110607-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_profile_id"
+                                 baseTableName="t_user_profile_data"
+                                 constraintName="fk_t_user_profile_data_user_profile_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_user_profile"/>
+
+    </changeSet>
+</databaseChangeLog>

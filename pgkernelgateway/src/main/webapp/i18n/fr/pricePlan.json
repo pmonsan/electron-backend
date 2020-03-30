@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "pricePlan": {
+      "home": {
+        "title": "PricePlans",
+        "createLabel": "Créer un nouveau Price Plan",
+        "createOrEditLabel": "Créer ou éditer un Price Plan",
+        "notFound": "Aucun Price Plan trouvé"
+      },
+      "created": "Un nouveau Price Plan a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Price Plan avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Price Plan avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Price Plan {{ id }} ?"
+      },
+      "detail": {
+        "title": "Price Plan"
+      },
+      "label": "Label",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "active": "Active"
+    }
+  }
+}

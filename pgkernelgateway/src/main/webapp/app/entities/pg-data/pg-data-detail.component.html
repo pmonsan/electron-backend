@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgData">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pgData.detail.title">Pg Data</span> {{pgData.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgData.code">Code</span></dt>
+                <dd>
+                    <span>{{pgData.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgData.longLabel">Long Label</span></dt>
+                <dd>
+                    <span>{{pgData.longLabel}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgData.shortLabel">Short Label</span></dt>
+                <dd>
+                    <span>{{pgData.shortLabel}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgData.comment">Comment</span></dt>
+                <dd>
+                    <span>{{pgData.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgData.active">Active</span></dt>
+                <dd>
+                    <span>{{pgData.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-data', pgData.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

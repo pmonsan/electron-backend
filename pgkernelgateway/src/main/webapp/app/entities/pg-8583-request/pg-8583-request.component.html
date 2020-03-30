@@ -1,0 +1,79 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.pg8583Request.home.title">Pg 8583 Requests</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pg-8583-request" [routerLink]="['/pg-8583-request/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.pg8583Request.home.createLabel">
+            Create new Pg 8583 Request
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="pg8583Requests?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.pg8583Request.home.notFound">No pg8583Requests found</span>
+    </div>
+    <div class="table-responsive" *ngIf="pg8583Requests?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.number">Number</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.apiKey">Api Key</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.encryptedData">Encrypted Data</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.decryptedData">Decrypted Data</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.registrationDate">Registration Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.responseDate">Response Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.requestResponse">Request Response</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.status">Status</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.reason">Reason</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.pgapsMessage">Pgaps Message</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.pgapsTransactionNumber">Pgaps Transaction Number</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pg8583Request.active">Active</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pg8583Request of pg8583Requests ;trackBy: trackId">
+                <td><a [routerLink]="['/pg-8583-request', pg8583Request.id, 'view' ]">{{pg8583Request.id}}</a></td>
+                <td>{{pg8583Request.number}}</td>
+                <td>{{pg8583Request.apiKey}}</td>
+                <td>{{pg8583Request.encryptedData}}</td>
+                <td>{{pg8583Request.decryptedData}}</td>
+                <td>{{pg8583Request.registrationDate | date:'medium'}}</td>
+                <td>{{pg8583Request.responseDate | date:'medium'}}</td>
+                <td>{{pg8583Request.requestResponse}}</td>
+                <td>{{pg8583Request.status}}</td>
+                <td>{{pg8583Request.reason}}</td>
+                <td>{{pg8583Request.pgapsMessage}}</td>
+                <td>{{pg8583Request.pgapsTransactionNumber}}</td>
+                <td>{{pg8583Request.active}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/pg-8583-request', pg8583Request.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/pg-8583-request', pg8583Request.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'pg-8583-request', { outlets: { popup: pg8583Request.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

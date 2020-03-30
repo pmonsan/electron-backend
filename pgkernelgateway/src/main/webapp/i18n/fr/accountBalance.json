@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "accountBalance": {
+      "home": {
+        "title": "AccountBalances",
+        "createLabel": "Créer un nouveau Account Balance",
+        "createOrEditLabel": "Créer ou éditer un Account Balance",
+        "notFound": "Aucun Account Balance trouvé"
+      },
+      "created": "Un nouveau Account Balance a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Account Balance avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Account Balance avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Account Balance {{ id }} ?"
+      },
+      "detail": {
+        "title": "Account Balance"
+      },
+      "situationDate": "Situation Date",
+      "balance": "Balance",
+      "active": "Active",
+      "account": "Account"
+    }
+  }
+}

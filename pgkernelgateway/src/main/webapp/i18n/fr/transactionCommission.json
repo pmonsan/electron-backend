@@ -1,0 +1,33 @@
+{
+  "pgkernelgatewayApp": {
+    "transactionCommission": {
+      "home": {
+        "title": "TransactionCommissions",
+        "createLabel": "Créer un nouveau Transaction Commission",
+        "createOrEditLabel": "Créer ou éditer un Transaction Commission",
+        "notFound": "Aucun Transaction Commission trouvé"
+      },
+      "created": "Un nouveau Transaction Commission a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Transaction Commission avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Transaction Commission avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Transaction Commission {{ id }} ?"
+      },
+      "detail": {
+        "title": "Transaction Commission"
+      },
+      "code": "Code",
+      "label": "Label",
+      "amount": "Amount",
+      "amountInPercent": "Amount In Percent",
+      "dateCreation": "Date Creation",
+      "percent": "Percent",
+      "currencyCode": "Currency Code",
+      "partnerCode": "Partner Code",
+      "serviceCode": "Service Code",
+      "description": "Description",
+      "commission": "Commission",
+      "transaction": "Transaction"
+    }
+  }
+}

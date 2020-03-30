@@ -1,0 +1,50 @@
+{
+    "name": "ServiceIntegration",
+    "fields": [
+        {
+            "fieldName": "customerRef",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 30
+        },
+        {
+            "fieldName": "serviceCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 5
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "partner",
+            "otherEntityRelationshipName": "serviceIntegration",
+            "relationshipName": "partner",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200330110512",
+    "entityTableName": "t_service_integration",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "pgkernelgateway",
+        "subscriptionManager"
+    ]
+}

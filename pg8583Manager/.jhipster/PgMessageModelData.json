@@ -1,0 +1,54 @@
+{
+    "name": "PgMessageModelData",
+    "fields": [
+        {
+            "fieldName": "mandatory",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "hidden",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "pgData",
+            "otherEntityRelationshipName": "pgMessageModelData",
+            "relationshipName": "pgData",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "pgMessageModel",
+            "otherEntityRelationshipName": "pgMessageModelData",
+            "relationshipName": "pgMessageModel",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200330110454",
+    "entityTableName": "t_pg_message_model_data",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "pgkernelgateway",
+        "pg8583Manager"
+    ]
+}

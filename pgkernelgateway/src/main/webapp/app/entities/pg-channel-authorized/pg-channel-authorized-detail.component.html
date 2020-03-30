@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgChannelAuthorized">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pgChannelAuthorized.detail.title">Pg Channel Authorized</span> {{pgChannelAuthorized.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgChannelAuthorized.transactionTypeCode">Transaction Type Code</span></dt>
+                <dd>
+                    <span>{{pgChannelAuthorized.transactionTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgChannelAuthorized.registrationDate">Registration Date</span></dt>
+                <dd>
+                    <span>{{pgChannelAuthorized.registrationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgChannelAuthorized.active">Active</span></dt>
+                <dd>
+                    <span>{{pgChannelAuthorized.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgChannelAuthorized.pgChannel">Pg Channel</span></dt>
+                <dd>
+                    <div *ngIf="pgChannelAuthorized.pgChannelId">
+                        <a [routerLink]="['/pg-channel', pgChannelAuthorized.pgChannelId, 'view']">{{pgChannelAuthorized.pgChannelId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-channel-authorized', pgChannelAuthorized.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

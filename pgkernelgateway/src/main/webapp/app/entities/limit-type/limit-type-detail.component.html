@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="limitType">
+            <h2><span jhiTranslate="pgkernelgatewayApp.limitType.detail.title">Limit Type</span> {{limitType.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.limitType.code">Code</span></dt>
+                <dd>
+                    <span>{{limitType.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.limitType.label">Label</span></dt>
+                <dd>
+                    <span>{{limitType.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.limitType.limitValueType">Limit Value Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'pgkernelgatewayApp.LimitValueType.' + limitType.limitValueType}}">{{limitType.limitValueType}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.limitType.active">Active</span></dt>
+                <dd>
+                    <span>{{limitType.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.limitType.periodicity">Periodicity</span></dt>
+                <dd>
+                    <div *ngIf="limitType.periodicityId">
+                        <a [routerLink]="['/periodicity', limitType.periodicityId, 'view']">{{limitType.periodicityId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.limitType.limitMeasure">Limit Measure</span></dt>
+                <dd>
+                    <div *ngIf="limitType.limitMeasureId">
+                        <a [routerLink]="['/limit-measure', limitType.limitMeasureId, 'view']">{{limitType.limitMeasureId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/limit-type', limitType.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

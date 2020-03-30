@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="price">
+            <h2><span jhiTranslate="pgkernelgatewayApp.price.detail.title">Price</span> {{price.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.code">Code</span></dt>
+                <dd>
+                    <span>{{price.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.label">Label</span></dt>
+                <dd>
+                    <span>{{price.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.amount">Amount</span></dt>
+                <dd>
+                    <span>{{price.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.percent">Percent</span></dt>
+                <dd>
+                    <span>{{price.percent}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.amountInPercent">Amount In Percent</span></dt>
+                <dd>
+                    <span>{{price.amountInPercent}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.amountTransactionMax">Amount Transaction Max</span></dt>
+                <dd>
+                    <span>{{price.amountTransactionMax}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.amountTransactionMin">Amount Transaction Min</span></dt>
+                <dd>
+                    <span>{{price.amountTransactionMin}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{price.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.serviceCode">Service Code</span></dt>
+                <dd>
+                    <span>{{price.serviceCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.description">Description</span></dt>
+                <dd>
+                    <span>{{price.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.modificationDate">Modification Date</span></dt>
+                <dd>
+                    <span>{{price.modificationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.active">Active</span></dt>
+                <dd>
+                    <span>{{price.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.price.pricePlan">Price Plan</span></dt>
+                <dd>
+                    <div *ngIf="price.pricePlanId">
+                        <a [routerLink]="['/price-plan', price.pricePlanId, 'view']">{{price.pricePlanId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/price', price.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

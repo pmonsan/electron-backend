@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="userConnection">
+            <h2><span jhiTranslate="pgkernelgatewayApp.userConnection.detail.title">User Connection</span> {{userConnection.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.userConnection.loginDate">Login Date</span></dt>
+                <dd>
+                    <span>{{userConnection.loginDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.userConnection.logoutDate">Logout Date</span></dt>
+                <dd>
+                    <span>{{userConnection.logoutDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.userConnection.user">User</span></dt>
+                <dd>
+                    <div *ngIf="userConnection.userId">
+                        <a [routerLink]="['/pg-user', userConnection.userId, 'view']">{{userConnection.userId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/user-connection', userConnection.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="detailTransaction">
+            <h2><span jhiTranslate="pgkernelgatewayApp.detailTransaction.detail.title">Detail Transaction</span> {{detailTransaction.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.detailTransaction.pgDataCode">Pg Data Code</span></dt>
+                <dd>
+                    <span>{{detailTransaction.pgDataCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.detailTransaction.dataValue">Data Value</span></dt>
+                <dd>
+                    <span>{{detailTransaction.dataValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.detailTransaction.active">Active</span></dt>
+                <dd>
+                    <span>{{detailTransaction.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.detailTransaction.transaction">Transaction</span></dt>
+                <dd>
+                    <div *ngIf="detailTransaction.transactionId">
+                        <a [routerLink]="['/transaction', detailTransaction.transactionId, 'view']">{{detailTransaction.transactionId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/detail-transaction', detailTransaction.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

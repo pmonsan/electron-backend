@@ -1,0 +1,234 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-beneficiary-heading" jhiTranslate="pgkernelgatewayApp.beneficiary.home.createOrEditLabel">Create or edit a Beneficiary</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.number" for="field_number">Number</label>
+                    <input type="text" class="form-control" name="number" id="field_number"
+                           formControlName="number"/>
+                    <div *ngIf="editForm.get('number').invalid && (editForm.get('number').dirty || editForm.get('number').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('number').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('number').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.isCompany" for="field_isCompany">Is Company</label>
+                    <input type="checkbox" class="form-control" name="isCompany" id="field_isCompany"
+                           formControlName="isCompany"/>
+                    <div *ngIf="editForm.get('isCompany').invalid && (editForm.get('isCompany').dirty || editForm.get('isCompany').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isCompany').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.firstname" for="field_firstname">Firstname</label>
+                    <input type="text" class="form-control" name="firstname" id="field_firstname"
+                           formControlName="firstname"/>
+                    <div *ngIf="editForm.get('firstname').invalid && (editForm.get('firstname').dirty || editForm.get('firstname').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('firstname').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                    <div *ngIf="editForm.get('name').invalid && (editForm.get('name').dirty || editForm.get('name').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.aliasAccount" for="field_aliasAccount">Alias Account</label>
+                    <input type="text" class="form-control" name="aliasAccount" id="field_aliasAccount"
+                           formControlName="aliasAccount"/>
+                    <div *ngIf="editForm.get('aliasAccount').invalid && (editForm.get('aliasAccount').dirty || editForm.get('aliasAccount').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('aliasAccount').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('aliasAccount').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.baccBankCode" for="field_baccBankCode">Bacc Bank Code</label>
+                    <input type="text" class="form-control" name="baccBankCode" id="field_baccBankCode"
+                           formControlName="baccBankCode"/>
+                    <div *ngIf="editForm.get('baccBankCode').invalid && (editForm.get('baccBankCode').dirty || editForm.get('baccBankCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('baccBankCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.baccBranchCode" for="field_baccBranchCode">Bacc Branch Code</label>
+                    <input type="text" class="form-control" name="baccBranchCode" id="field_baccBranchCode"
+                           formControlName="baccBranchCode"/>
+                    <div *ngIf="editForm.get('baccBranchCode').invalid && (editForm.get('baccBranchCode').dirty || editForm.get('baccBranchCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('baccBranchCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.baccAccountNumber" for="field_baccAccountNumber">Bacc Account Number</label>
+                    <input type="text" class="form-control" name="baccAccountNumber" id="field_baccAccountNumber"
+                           formControlName="baccAccountNumber"/>
+                    <div *ngIf="editForm.get('baccAccountNumber').invalid && (editForm.get('baccAccountNumber').dirty || editForm.get('baccAccountNumber').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('baccAccountNumber').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.baccRibKey" for="field_baccRibKey">Bacc Rib Key</label>
+                    <input type="text" class="form-control" name="baccRibKey" id="field_baccRibKey"
+                           formControlName="baccRibKey"/>
+                    <div *ngIf="editForm.get('baccRibKey').invalid && (editForm.get('baccRibKey').dirty || editForm.get('baccRibKey').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('baccRibKey').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.cardCvv2" for="field_cardCvv2">Card Cvv 2</label>
+                    <input type="text" class="form-control" name="cardCvv2" id="field_cardCvv2"
+                           formControlName="cardCvv2"/>
+                    <div *ngIf="editForm.get('cardCvv2').invalid && (editForm.get('cardCvv2').dirty || editForm.get('cardCvv2').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cardCvv2').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.cardPan" for="field_cardPan">Card Pan</label>
+                    <input type="text" class="form-control" name="cardPan" id="field_cardPan"
+                           formControlName="cardPan"/>
+                    <div *ngIf="editForm.get('cardPan').invalid && (editForm.get('cardPan').dirty || editForm.get('cardPan').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cardPan').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.cardValidityDate" for="field_cardValidityDate">Card Validity Date</label>
+                    <input type="text" class="form-control" name="cardValidityDate" id="field_cardValidityDate"
+                           formControlName="cardValidityDate"/>
+                    <div *ngIf="editForm.get('cardValidityDate').invalid && (editForm.get('cardValidityDate').dirty || editForm.get('cardValidityDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cardValidityDate').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 8 }">
+                        This field cannot be longer than 8 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.isDmAccount" for="field_isDmAccount">Is Dm Account</label>
+                    <input type="checkbox" class="form-control" name="isDmAccount" id="field_isDmAccount"
+                           formControlName="isDmAccount"/>
+                    <div *ngIf="editForm.get('isDmAccount').invalid && (editForm.get('isDmAccount').dirty || editForm.get('isDmAccount').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isDmAccount').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.momoAccountNumber" for="field_momoAccountNumber">Momo Account Number</label>
+                    <input type="text" class="form-control" name="momoAccountNumber" id="field_momoAccountNumber"
+                           formControlName="momoAccountNumber"/>
+                    <div *ngIf="editForm.get('momoAccountNumber').invalid && (editForm.get('momoAccountNumber').dirty || editForm.get('momoAccountNumber').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('momoAccountNumber').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.beneficiaryRelationshipCode" for="field_beneficiaryRelationshipCode">Beneficiary Relationship Code</label>
+                    <input type="text" class="form-control" name="beneficiaryRelationshipCode" id="field_beneficiaryRelationshipCode"
+                           formControlName="beneficiaryRelationshipCode"/>
+                    <div *ngIf="editForm.get('beneficiaryRelationshipCode').invalid && (editForm.get('beneficiaryRelationshipCode').dirty || editForm.get('beneficiaryRelationshipCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('beneficiaryRelationshipCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('beneficiaryRelationshipCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.beneficiaryTypeCode" for="field_beneficiaryTypeCode">Beneficiary Type Code</label>
+                    <input type="text" class="form-control" name="beneficiaryTypeCode" id="field_beneficiaryTypeCode"
+                           formControlName="beneficiaryTypeCode"/>
+                    <div *ngIf="editForm.get('beneficiaryTypeCode').invalid && (editForm.get('beneficiaryTypeCode').dirty || editForm.get('beneficiaryTypeCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('beneficiaryTypeCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('beneficiaryTypeCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                    <div *ngIf="editForm.get('active').invalid && (editForm.get('active').dirty || editForm.get('active').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('active').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.beneficiary.customer" for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" formControlName="customerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customerOption.id" *ngFor="let customerOption of customers; trackBy: trackCustomerById">{{customerOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

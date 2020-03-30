@@ -1,0 +1,42 @@
+{
+    "name": "ServiceChannel",
+    "fields": [
+        {
+            "fieldName": "channelCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 5
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "pgService",
+            "otherEntityRelationshipName": "serviceChannel",
+            "relationshipName": "pgService",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200330110525",
+    "entityTableName": "t_service_channel",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "pgkernelgateway",
+        "servicesManager"
+    ]
+}

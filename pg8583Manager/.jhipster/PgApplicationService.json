@@ -1,0 +1,42 @@
+{
+    "name": "PgApplicationService",
+    "fields": [
+        {
+            "fieldName": "serviceCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 5
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "pgApplication",
+            "otherEntityRelationshipName": "pgApplicationService",
+            "relationshipName": "pgApplication",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200330110446",
+    "entityTableName": "t_pg_application_service",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "pgkernelgateway",
+        "pg8583Manager"
+    ]
+}

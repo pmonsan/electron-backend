@@ -1,0 +1,120 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-loan-instalment-heading" jhiTranslate="pgkernelgatewayApp.loanInstalment.home.createOrEditLabel">Create or edit a Loan Instalment</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.loanInstalment.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                    <div *ngIf="editForm.get('code').invalid && (editForm.get('code').dirty || editForm.get('code').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('code').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('code').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.loanInstalment.expectedPaymentDate" for="field_expectedPaymentDate">Expected Payment Date</label>
+                    <div class="d-flex">
+                        <input id="field_expectedPaymentDate" type="datetime-local" class="form-control" name="expectedPaymentDate" formControlName="expectedPaymentDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('expectedPaymentDate').invalid && (editForm.get('expectedPaymentDate').dirty || editForm.get('expectedPaymentDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('expectedPaymentDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('expectedPaymentDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.loanInstalment.realPaymentDate" for="field_realPaymentDate">Real Payment Date</label>
+                    <div class="d-flex">
+                        <input id="field_realPaymentDate" type="datetime-local" class="form-control" name="realPaymentDate" formControlName="realPaymentDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.loanInstalment.amountToPay" for="field_amountToPay">Amount To Pay</label>
+                    <input type="number" class="form-control" name="amountToPay" id="field_amountToPay"
+                           formControlName="amountToPay"/>
+                    <div *ngIf="editForm.get('amountToPay').invalid && (editForm.get('amountToPay').dirty || editForm.get('amountToPay').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('amountToPay').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('amountToPay')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.loanInstalment.penalityFee" for="field_penalityFee">Penality Fee</label>
+                    <input type="number" class="form-control" name="penalityFee" id="field_penalityFee"
+                           formControlName="penalityFee"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.loanInstalment.statusDate" for="field_statusDate">Status Date</label>
+                    <div class="d-flex">
+                        <input id="field_statusDate" type="datetime-local" class="form-control" name="statusDate" formControlName="statusDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.loanInstalment.loanInstalmentStatusCode" for="field_loanInstalmentStatusCode">Loan Instalment Status Code</label>
+                    <input type="text" class="form-control" name="loanInstalmentStatusCode" id="field_loanInstalmentStatusCode"
+                           formControlName="loanInstalmentStatusCode"/>
+                    <div *ngIf="editForm.get('loanInstalmentStatusCode').invalid && (editForm.get('loanInstalmentStatusCode').dirty || editForm.get('loanInstalmentStatusCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('loanInstalmentStatusCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('loanInstalmentStatusCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.loanInstalment.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                    <div *ngIf="editForm.get('active').invalid && (editForm.get('active').dirty || editForm.get('active').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('active').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.loanInstalment.loan" for="field_loan">Loan</label>
+                    <select class="form-control" id="field_loan" name="loan" formControlName="loanId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="transactionOption.id" *ngFor="let transactionOption of transactions; trackBy: trackTransactionById">{{transactionOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

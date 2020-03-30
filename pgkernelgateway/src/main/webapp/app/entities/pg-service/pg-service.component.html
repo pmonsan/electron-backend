@@ -1,0 +1,111 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.pgService.home.title">Pg Services</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pg-service" [routerLink]="['/pg-service/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.pgService.home.createLabel">
+            Create new Pg Service
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="pgServices?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.pgService.home.notFound">No pgServices found</span>
+    </div>
+    <div class="table-responsive" *ngIf="pgServices?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.code">Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.name">Name</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.isNative">Is Native</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.isSourceInternal">Is Source Internal</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.isDestinationInternal">Is Destination Internal</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.needSubscription">Need Subscription</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.currencyCode">Currency Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.useTransactionType">Use Transaction Type</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.checkSubscription">Check Subscription</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.ignoreFees">Ignore Fees</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.ignoreLimit">Ignore Limit</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.ignoreCommission">Ignore Commission</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.checkOtp">Check Otp</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.pgTransactionType1Code">Pg Transaction Type 1 Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.pgTransactionType2Code">Pg Transaction Type 2 Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.partnerOwnerCode">Partner Owner Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.transactionTypeCode">Transaction Type Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.serviceAuthenticationCode">Service Authentication Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.contractPath">Contract Path</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.description">Description</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.logic">Logic</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.active">Active</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.sourceConnector">Source Connector</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.pgService.destinationConnector">Destination Connector</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pgService of pgServices ;trackBy: trackId">
+                <td><a [routerLink]="['/pg-service', pgService.id, 'view' ]">{{pgService.id}}</a></td>
+                <td>{{pgService.code}}</td>
+                <td>{{pgService.name}}</td>
+                <td>{{pgService.isNative}}</td>
+                <td>{{pgService.isSourceInternal}}</td>
+                <td>{{pgService.isDestinationInternal}}</td>
+                <td>{{pgService.needSubscription}}</td>
+                <td>{{pgService.currencyCode}}</td>
+                <td>{{pgService.useTransactionType}}</td>
+                <td>{{pgService.checkSubscription}}</td>
+                <td>{{pgService.ignoreFees}}</td>
+                <td>{{pgService.ignoreLimit}}</td>
+                <td>{{pgService.ignoreCommission}}</td>
+                <td>{{pgService.checkOtp}}</td>
+                <td>{{pgService.pgTransactionType1Code}}</td>
+                <td>{{pgService.pgTransactionType2Code}}</td>
+                <td>{{pgService.partnerOwnerCode}}</td>
+                <td>{{pgService.transactionTypeCode}}</td>
+                <td>{{pgService.serviceAuthenticationCode}}</td>
+                <td>{{pgService.contractPath}}</td>
+                <td>{{pgService.description}}</td>
+                <td>{{pgService.logic}}</td>
+                <td>{{pgService.active}}</td>
+                <td>
+                    <div *ngIf="pgService.sourceConnectorId">
+                        <a [routerLink]="['../connector', pgService.sourceConnectorId , 'view' ]" >{{pgService.sourceConnectorId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="pgService.destinationConnectorId">
+                        <a [routerLink]="['../connector', pgService.destinationConnectorId , 'view' ]" >{{pgService.destinationConnectorId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/pg-service', pgService.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/pg-service', pgService.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'pg-service', { outlets: { popup: pgService.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="personDocument">
+            <h2><span jhiTranslate="pgkernelgatewayApp.personDocument.detail.title">Person Document</span> {{personDocument.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.personDocument.documentNumber">Document Number</span></dt>
+                <dd>
+                    <span>{{personDocument.documentNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.personDocument.expirationDate">Expiration Date</span></dt>
+                <dd>
+                    <span>{{personDocument.expirationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.personDocument.isValid">Is Valid</span></dt>
+                <dd>
+                    <span>{{personDocument.isValid}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.personDocument.documentTypeCode">Document Type Code</span></dt>
+                <dd>
+                    <span>{{personDocument.documentTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.personDocument.active">Active</span></dt>
+                <dd>
+                    <span>{{personDocument.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.personDocument.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="personDocument.customerId">
+                        <a [routerLink]="['/customer', personDocument.customerId, 'view']">{{personDocument.customerId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/person-document', personDocument.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

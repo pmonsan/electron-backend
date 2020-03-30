@@ -1,0 +1,41 @@
+{
+    "name": "DetailContract",
+    "fields": [
+        {
+            "fieldName": "comment",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "contract",
+            "otherEntityRelationshipName": "detailContract",
+            "relationshipName": "contract",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200330110500",
+    "entityTableName": "t_contract_detail",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "pgkernelgateway",
+        "accountManager"
+    ]
+}

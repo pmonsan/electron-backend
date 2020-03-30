@@ -1,0 +1,40 @@
+{
+    "name": "UserProfileData",
+    "fields": [
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "pgDataCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 5
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "userProfile",
+            "otherEntityRelationshipName": "userProfileData",
+            "relationshipName": "userProfile",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200330115036",
+    "entityTableName": "t_user_profile_data",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "iamManager"
+    ]
+}

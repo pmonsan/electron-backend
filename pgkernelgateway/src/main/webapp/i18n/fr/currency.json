@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "currency": {
+      "home": {
+        "title": "Currencies",
+        "createLabel": "Créer un nouveau Currency",
+        "createOrEditLabel": "Créer ou éditer un Currency",
+        "notFound": "Aucun Currency trouvé"
+      },
+      "created": "Un nouveau Currency a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Currency avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Currency avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Currency {{ id }} ?"
+      },
+      "detail": {
+        "title": "Currency"
+      },
+      "code": "Code",
+      "longLabel": "Long Label",
+      "shortLabel": "Short Label",
+      "active": "Active"
+    }
+  }
+}

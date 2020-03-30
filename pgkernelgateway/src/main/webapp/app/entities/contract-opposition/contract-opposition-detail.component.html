@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contractOpposition">
+            <h2><span jhiTranslate="pgkernelgatewayApp.contractOpposition.detail.title">Contract Opposition</span> {{contractOpposition.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.contractOpposition.number">Number</span></dt>
+                <dd>
+                    <span>{{contractOpposition.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.contractOpposition.isCustomerInitiative">Is Customer Initiative</span></dt>
+                <dd>
+                    <span>{{contractOpposition.isCustomerInitiative}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.contractOpposition.oppositionDate">Opposition Date</span></dt>
+                <dd>
+                    <span>{{contractOpposition.oppositionDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.contractOpposition.oppositionReason">Opposition Reason</span></dt>
+                <dd>
+                    <span>{{contractOpposition.oppositionReason}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.contractOpposition.comment">Comment</span></dt>
+                <dd>
+                    <span>{{contractOpposition.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.contractOpposition.active">Active</span></dt>
+                <dd>
+                    <span>{{contractOpposition.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.contractOpposition.contract">Contract</span></dt>
+                <dd>
+                    <div *ngIf="contractOpposition.contractId">
+                        <a [routerLink]="['/contract', contractOpposition.contractId, 'view']">{{contractOpposition.contractId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contract-opposition', contractOpposition.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

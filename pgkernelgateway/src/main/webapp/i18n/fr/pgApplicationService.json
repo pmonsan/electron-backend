@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "pgApplicationService": {
+      "home": {
+        "title": "PgApplicationServices",
+        "createLabel": "Créer un nouveau Pg Application Service",
+        "createOrEditLabel": "Créer ou éditer un Pg Application Service",
+        "notFound": "Aucun Pg Application Service trouvé"
+      },
+      "created": "Un nouveau Pg Application Service a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg Application Service avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg Application Service avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg Application Service {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg Application Service"
+      },
+      "serviceCode": "Service Code",
+      "active": "Active",
+      "pgApplication": "Pg Application"
+    }
+  }
+}

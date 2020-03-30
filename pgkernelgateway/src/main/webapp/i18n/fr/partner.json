@@ -1,0 +1,36 @@
+{
+  "pgkernelgatewayApp": {
+    "partner": {
+      "home": {
+        "title": "Partners",
+        "createLabel": "Créer un nouveau Partner",
+        "createOrEditLabel": "Créer ou éditer un Partner",
+        "notFound": "Aucun Partner trouvé"
+      },
+      "created": "Un nouveau Partner a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Partner avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Partner avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Partner {{ id }} ?"
+      },
+      "detail": {
+        "title": "Partner"
+      },
+      "code": "Code",
+      "name": "Name",
+      "apiKey": "Api Key",
+      "address": "Address",
+      "city": "City",
+      "postalCode": "Postal Code",
+      "countryCode": "Country Code",
+      "rsaPublicKeyPath": "Rsa Public Key Path",
+      "contactFirstname": "Contact Firstname",
+      "contactLastname": "Contact Lastname",
+      "businessEmail": "Business Email",
+      "businessPhone": "Business Phone",
+      "partnerTypeCode": "Partner Type Code",
+      "active": "Active",
+      "partnerSecurity": "Partner Security"
+    }
+  }
+}

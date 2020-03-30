@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgAccount">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pgAccount.detail.title">Pg Account</span> {{pgAccount.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.number">Number</span></dt>
+                <dd>
+                    <span>{{pgAccount.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.openingDate">Opening Date</span></dt>
+                <dd>
+                    <span>{{pgAccount.openingDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.temporary">Temporary</span></dt>
+                <dd>
+                    <span>{{pgAccount.temporary}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.closingDate">Closing Date</span></dt>
+                <dd>
+                    <span>{{pgAccount.closingDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.imsi">Imsi</span></dt>
+                <dd>
+                    <span>{{pgAccount.imsi}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.transactionCode">Transaction Code</span></dt>
+                <dd>
+                    <span>{{pgAccount.transactionCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.validationDate">Validation Date</span></dt>
+                <dd>
+                    <span>{{pgAccount.validationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.accountStatusCode">Account Status Code</span></dt>
+                <dd>
+                    <span>{{pgAccount.accountStatusCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.accountTypeCode">Account Type Code</span></dt>
+                <dd>
+                    <span>{{pgAccount.accountTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.customerCode">Customer Code</span></dt>
+                <dd>
+                    <span>{{pgAccount.customerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{pgAccount.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.comment">Comment</span></dt>
+                <dd>
+                    <span>{{pgAccount.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgAccount.active">Active</span></dt>
+                <dd>
+                    <span>{{pgAccount.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-account', pgAccount.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

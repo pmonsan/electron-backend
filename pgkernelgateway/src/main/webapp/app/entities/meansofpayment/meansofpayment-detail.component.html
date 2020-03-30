@@ -1,0 +1,81 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="meansofpayment">
+            <h2><span jhiTranslate="pgkernelgatewayApp.meansofpayment.detail.title">Meansofpayment</span> {{meansofpayment.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.number">Number</span></dt>
+                <dd>
+                    <span>{{meansofpayment.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.aliasAccount">Alias Account</span></dt>
+                <dd>
+                    <span>{{meansofpayment.aliasAccount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.baccBankCode">Bacc Bank Code</span></dt>
+                <dd>
+                    <span>{{meansofpayment.baccBankCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.baccBranchCode">Bacc Branch Code</span></dt>
+                <dd>
+                    <span>{{meansofpayment.baccBranchCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.baccAccountNumber">Bacc Account Number</span></dt>
+                <dd>
+                    <span>{{meansofpayment.baccAccountNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.baccRibKey">Bacc Rib Key</span></dt>
+                <dd>
+                    <span>{{meansofpayment.baccRibKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.cardCvv2">Card Cvv 2</span></dt>
+                <dd>
+                    <span>{{meansofpayment.cardCvv2}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.cardPan">Card Pan</span></dt>
+                <dd>
+                    <span>{{meansofpayment.cardPan}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.cardValidityDate">Card Validity Date</span></dt>
+                <dd>
+                    <span>{{meansofpayment.cardValidityDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.momoAccount">Momo Account</span></dt>
+                <dd>
+                    <span>{{meansofpayment.momoAccount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.meansofpaymentTypeCode">Meansofpayment Type Code</span></dt>
+                <dd>
+                    <span>{{meansofpayment.meansofpaymentTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.issuerCode">Issuer Code</span></dt>
+                <dd>
+                    <span>{{meansofpayment.issuerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.active">Active</span></dt>
+                <dd>
+                    <span>{{meansofpayment.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.meansofpayment.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="meansofpayment.customerId">
+                        <a [routerLink]="['/customer', meansofpayment.customerId, 'view']">{{meansofpayment.customerId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/meansofpayment', meansofpayment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

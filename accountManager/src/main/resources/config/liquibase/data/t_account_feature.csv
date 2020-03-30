@@ -1,0 +1,11 @@
+id;activation_date;feature_code;active
+1;2020-03-30T09:08:09;Intel;false
+2;2020-03-29T14:22:23;SAS U;true
+3;2020-03-29T11:25:28;navig;false
+4;2020-03-29T23:31:42;mesh ;false
+5;2020-03-30T08:25:10;Bedfo;false
+6;2020-03-29T21:22:23;hack;true
+7;2020-03-30T08:16:04;payme;true
+8;2020-03-30T01:28:59;Glen ;true
+9;2020-03-30T05:43:19;Assis;true
+10;2020-03-29T21:44:39;succe;false

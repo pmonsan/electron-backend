@@ -1,0 +1,26 @@
+{
+  "pgkernelgatewayApp": {
+    "serviceLimit": {
+      "home": {
+        "title": "Service Limits",
+        "createLabel": "Create a new Service Limit",
+        "createOrEditLabel": "Create or edit a Service Limit",
+        "notFound": "No Service Limit found"
+      },
+      "created": "A new Service Limit is created with identifier {{ param }}",
+      "updated": "A Service Limit is updated with identifier {{ param }}",
+      "deleted": "A Service Limit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Limit {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Limit"
+      },
+      "limitTypeCode": "Limit Type Code",
+      "value": "Value",
+      "comment": "Comment",
+      "active": "Active",
+      "pgService": "Pg Service"
+    }
+  }
+}

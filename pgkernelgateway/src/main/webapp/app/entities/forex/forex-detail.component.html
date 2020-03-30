@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="forex">
+            <h2><span jhiTranslate="pgkernelgatewayApp.forex.detail.title">Forex</span> {{forex.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.forex.code">Code</span></dt>
+                <dd>
+                    <span>{{forex.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.forex.rate">Rate</span></dt>
+                <dd>
+                    <span>{{forex.rate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.forex.creationDate">Creation Date</span></dt>
+                <dd>
+                    <span>{{forex.creationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.forex.active">Active</span></dt>
+                <dd>
+                    <span>{{forex.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.forex.fromCurrency">From Currency</span></dt>
+                <dd>
+                    <div *ngIf="forex.fromCurrencyId">
+                        <a [routerLink]="['/currency', forex.fromCurrencyId, 'view']">{{forex.fromCurrencyId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.forex.toCurrency">To Currency</span></dt>
+                <dd>
+                    <div *ngIf="forex.toCurrencyId">
+                        <a [routerLink]="['/currency', forex.toCurrencyId, 'view']">{{forex.toCurrencyId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/forex', forex.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

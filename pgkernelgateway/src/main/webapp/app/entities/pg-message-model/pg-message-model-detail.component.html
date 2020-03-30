@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgMessageModel">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pgMessageModel.detail.title">Pg Message Model</span> {{pgMessageModel.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessageModel.code">Code</span></dt>
+                <dd>
+                    <span>{{pgMessageModel.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessageModel.label">Label</span></dt>
+                <dd>
+                    <span>{{pgMessageModel.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessageModel.comment">Comment</span></dt>
+                <dd>
+                    <span>{{pgMessageModel.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessageModel.active">Active</span></dt>
+                <dd>
+                    <span>{{pgMessageModel.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-message-model', pgMessageModel.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+{
+  "pgkernelgatewayApp": {
+    "pgAccount": {
+      "home": {
+        "title": "PgAccounts",
+        "createLabel": "Créer un nouveau Pg Account",
+        "createOrEditLabel": "Créer ou éditer un Pg Account",
+        "notFound": "Aucun Pg Account trouvé"
+      },
+      "created": "Un nouveau Pg Account a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg Account avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg Account avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg Account {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg Account"
+      },
+      "number": "Number",
+      "openingDate": "Opening Date",
+      "temporary": "Temporary",
+      "closingDate": "Closing Date",
+      "imsi": "Imsi",
+      "transactionCode": "Transaction Code",
+      "validationDate": "Validation Date",
+      "accountStatusCode": "Account Status Code",
+      "accountTypeCode": "Account Type Code",
+      "customerCode": "Customer Code",
+      "currencyCode": "Currency Code",
+      "comment": "Comment",
+      "active": "Active"
+    }
+  }
+}

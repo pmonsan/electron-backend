@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pg8583Callback">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pg8583Callback.detail.title">Pg 8583 Callback</span> {{pg8583Callback.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Callback.partnerCode">Partner Code</span></dt>
+                <dd>
+                    <span>{{pg8583Callback.partnerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Callback.callbackUri">Callback Uri</span></dt>
+                <dd>
+                    <span>{{pg8583Callback.callbackUri}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Callback.httpMethod">Http Method</span></dt>
+                <dd>
+                    <span>{{pg8583Callback.httpMethod}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Callback.managerClass">Manager Class</span></dt>
+                <dd>
+                    <span>{{pg8583Callback.managerClass}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Callback.active">Active</span></dt>
+                <dd>
+                    <span>{{pg8583Callback.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-8583-callback', pg8583Callback.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

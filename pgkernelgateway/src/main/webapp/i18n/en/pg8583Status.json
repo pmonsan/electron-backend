@@ -1,0 +1,23 @@
+{
+  "pgkernelgatewayApp": {
+    "pg8583Status": {
+      "home": {
+        "title": "Pg 8583 Statuses",
+        "createLabel": "Create a new Pg 8583 Status",
+        "createOrEditLabel": "Create or edit a Pg 8583 Status",
+        "notFound": "No Pg 8583 Status found"
+      },
+      "created": "A new Pg 8583 Status is created with identifier {{ param }}",
+      "updated": "A Pg 8583 Status is updated with identifier {{ param }}",
+      "deleted": "A Pg 8583 Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pg 8583 Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Pg 8583 Status"
+      },
+      "status": "Status",
+      "defaultReason": "Default Reason"
+    }
+  }
+}

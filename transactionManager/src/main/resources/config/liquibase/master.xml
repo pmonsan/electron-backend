@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="now()" dbms="mysql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
+    <property name="clobType" value="clob" dbms="h2"/>
+    <property name="clobType" value="clob" dbms="mysql, oracle, mssql, mariadb, postgresql"/>
+    <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114453_added_entity_Transaction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114454_added_entity_DetailTransaction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114455_added_entity_TransactionInfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114456_added_entity_LoanInstalment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114457_added_entity_TransactionPrice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114458_added_entity_TransactionCommission.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114459_added_entity_Operation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114500_added_entity_InternalConnectorRequest.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114501_added_entity_InternalConnectorStatus.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200330114454_added_entity_constraints_DetailTransaction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114455_added_entity_constraints_TransactionInfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114456_added_entity_constraints_LoanInstalment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114457_added_entity_constraints_TransactionPrice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114458_added_entity_constraints_TransactionCommission.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330114459_added_entity_constraints_Operation.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

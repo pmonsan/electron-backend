@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "serviceChannel": {
+      "home": {
+        "title": "Service Channels",
+        "createLabel": "Create a new Service Channel",
+        "createOrEditLabel": "Create or edit a Service Channel",
+        "notFound": "No Service Channel found"
+      },
+      "created": "A new Service Channel is created with identifier {{ param }}",
+      "updated": "A Service Channel is updated with identifier {{ param }}",
+      "deleted": "A Service Channel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Channel {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Channel"
+      },
+      "channelCode": "Channel Code",
+      "active": "Active",
+      "pgService": "Pg Service"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.limitType.home.title">Limit Types</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-limit-type" [routerLink]="['/limit-type/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.limitType.home.createLabel">
+            Create new Limit Type
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="limitTypes?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.limitType.home.notFound">No limitTypes found</span>
+    </div>
+    <div class="table-responsive" *ngIf="limitTypes?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.limitType.code">Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.limitType.label">Label</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.limitType.limitValueType">Limit Value Type</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.limitType.active">Active</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.limitType.periodicity">Periodicity</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.limitType.limitMeasure">Limit Measure</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let limitType of limitTypes ;trackBy: trackId">
+                <td><a [routerLink]="['/limit-type', limitType.id, 'view' ]">{{limitType.id}}</a></td>
+                <td>{{limitType.code}}</td>
+                <td>{{limitType.label}}</td>
+                <td jhiTranslate="{{'pgkernelgatewayApp.LimitValueType.' + limitType.limitValueType}}">{{limitType.limitValueType}}</td>
+                <td>{{limitType.active}}</td>
+                <td>
+                    <div *ngIf="limitType.periodicityId">
+                        <a [routerLink]="['../periodicity', limitType.periodicityId , 'view' ]" >{{limitType.periodicityId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="limitType.limitMeasureId">
+                        <a [routerLink]="['../limit-measure', limitType.limitMeasureId , 'view' ]" >{{limitType.limitMeasureId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/limit-type', limitType.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/limit-type', limitType.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'limit-type', { outlets: { popup: limitType.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

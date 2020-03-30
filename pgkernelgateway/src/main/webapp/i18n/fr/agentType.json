@@ -1,0 +1,23 @@
+{
+  "pgkernelgatewayApp": {
+    "agentType": {
+      "home": {
+        "title": "AgentTypes",
+        "createLabel": "Créer un nouveau Agent Type",
+        "createOrEditLabel": "Créer ou éditer un Agent Type",
+        "notFound": "Aucun Agent Type trouvé"
+      },
+      "created": "Un nouveau Agent Type a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Agent Type avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Agent Type avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Agent Type {{ id }} ?"
+      },
+      "detail": {
+        "title": "Agent Type"
+      },
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

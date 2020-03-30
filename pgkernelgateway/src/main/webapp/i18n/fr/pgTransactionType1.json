@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "pgTransactionType1": {
+      "home": {
+        "title": "PgTransactionType1S",
+        "createLabel": "Créer un nouveau Pg Transaction Type 1",
+        "createOrEditLabel": "Créer ou éditer un Pg Transaction Type 1",
+        "notFound": "Aucun Pg Transaction Type 1 trouvé"
+      },
+      "created": "Un nouveau Pg Transaction Type 1 a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg Transaction Type 1 avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg Transaction Type 1 avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg Transaction Type 1 {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg Transaction Type 1"
+      },
+      "code": "Code",
+      "label": "Label",
+      "description": "Description",
+      "active": "Active"
+    }
+  }
+}

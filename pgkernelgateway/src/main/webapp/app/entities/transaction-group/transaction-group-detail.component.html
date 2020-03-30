@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transactionGroup">
+            <h2><span jhiTranslate="pgkernelgatewayApp.transactionGroup.detail.title">Transaction Group</span> {{transactionGroup.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionGroup.code">Code</span></dt>
+                <dd>
+                    <span>{{transactionGroup.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionGroup.label">Label</span></dt>
+                <dd>
+                    <span>{{transactionGroup.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionGroup.checkSubscription">Check Subscription</span></dt>
+                <dd>
+                    <span>{{transactionGroup.checkSubscription}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionGroup.ignoreFees">Ignore Fees</span></dt>
+                <dd>
+                    <span>{{transactionGroup.ignoreFees}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionGroup.ignoreLimit">Ignore Limit</span></dt>
+                <dd>
+                    <span>{{transactionGroup.ignoreLimit}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionGroup.ignoreCommission">Ignore Commission</span></dt>
+                <dd>
+                    <span>{{transactionGroup.ignoreCommission}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionGroup.checkOtp">Check Otp</span></dt>
+                <dd>
+                    <span>{{transactionGroup.checkOtp}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionGroup.active">Active</span></dt>
+                <dd>
+                    <span>{{transactionGroup.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction-group', transactionGroup.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

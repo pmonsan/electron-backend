@@ -1,0 +1,34 @@
+{
+  "pgkernelgatewayApp": {
+    "price": {
+      "home": {
+        "title": "Prices",
+        "createLabel": "Créer un nouveau Price",
+        "createOrEditLabel": "Créer ou éditer un Price",
+        "notFound": "Aucun Price trouvé"
+      },
+      "created": "Un nouveau Price a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Price avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Price avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Price {{ id }} ?"
+      },
+      "detail": {
+        "title": "Price"
+      },
+      "code": "Code",
+      "label": "Label",
+      "amount": "Amount",
+      "percent": "Percent",
+      "amountInPercent": "Amount In Percent",
+      "amountTransactionMax": "Amount Transaction Max",
+      "amountTransactionMin": "Amount Transaction Min",
+      "currencyCode": "Currency Code",
+      "serviceCode": "Service Code",
+      "description": "Description",
+      "modificationDate": "Modification Date",
+      "active": "Active",
+      "pricePlan": "Price Plan"
+    }
+  }
+}

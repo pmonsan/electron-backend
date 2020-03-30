@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "pgDetailMessage": {
+      "home": {
+        "title": "PgDetailMessages",
+        "createLabel": "Créer un nouveau Pg Detail Message",
+        "createOrEditLabel": "Créer ou éditer un Pg Detail Message",
+        "notFound": "Aucun Pg Detail Message trouvé"
+      },
+      "created": "Un nouveau Pg Detail Message a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg Detail Message avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg Detail Message avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg Detail Message {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg Detail Message"
+      },
+      "dataValue": "Data Value",
+      "active": "Active",
+      "pgData": "Pg Data",
+      "pgMessage": "Pg Message"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="internalConnectorStatus">
+            <h2><span jhiTranslate="pgkernelgatewayApp.internalConnectorStatus.detail.title">Internal Connector Status</span> {{internalConnectorStatus.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorStatus.status">Status</span></dt>
+                <dd>
+                    <span>{{internalConnectorStatus.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorStatus.defaultReason">Default Reason</span></dt>
+                <dd>
+                    <span>{{internalConnectorStatus.defaultReason}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/internal-connector-status', internalConnectorStatus.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

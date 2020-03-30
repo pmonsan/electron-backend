@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity LimitType.
+    -->
+    <changeSet id="20200330110516-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="periodicity_id"
+                                 baseTableName="t_limit_type"
+                                 constraintName="fk_t_limit_type_periodicity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_periodicity"/>
+
+        <addForeignKeyConstraint baseColumnNames="limit_measure_id"
+                                 baseTableName="t_limit_type"
+                                 constraintName="fk_t_limit_type_limit_measure_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_limit_measure"/>
+
+    </changeSet>
+</databaseChangeLog>

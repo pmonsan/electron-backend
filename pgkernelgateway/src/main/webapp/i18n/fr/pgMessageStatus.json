@@ -1,0 +1,23 @@
+{
+  "pgkernelgatewayApp": {
+    "pgMessageStatus": {
+      "home": {
+        "title": "PgMessageStatuses",
+        "createLabel": "Créer un nouveau Pg Message Status",
+        "createOrEditLabel": "Créer ou éditer un Pg Message Status",
+        "notFound": "Aucun Pg Message Status trouvé"
+      },
+      "created": "Un nouveau Pg Message Status a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg Message Status avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg Message Status avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg Message Status {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg Message Status"
+      },
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

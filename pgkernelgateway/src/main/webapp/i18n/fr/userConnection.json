@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "userConnection": {
+      "home": {
+        "title": "UserConnections",
+        "createLabel": "Créer un nouveau User Connection",
+        "createOrEditLabel": "Créer ou éditer un User Connection",
+        "notFound": "Aucun User Connection trouvé"
+      },
+      "created": "Un nouveau User Connection a été créé avec l'identifiant {{ param }}",
+      "updated": "Le User Connection avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le User Connection avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le User Connection {{ id }} ?"
+      },
+      "detail": {
+        "title": "User Connection"
+      },
+      "loginDate": "Login Date",
+      "logoutDate": "Logout Date",
+      "user": "User"
+    }
+  }
+}

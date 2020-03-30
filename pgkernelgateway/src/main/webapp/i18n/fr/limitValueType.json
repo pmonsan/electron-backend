@@ -1,0 +1,11 @@
+{
+  "pgkernelgatewayApp": {
+    "LimitValueType": {
+      "null": "",
+      "STRING": "STRING",
+      "INTEGER": "INTEGER",
+      "DOUBLE": "DOUBLE",
+      "DATE": "DATE"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "pgkernelgatewayApp": {
+    "operation": {
+      "home": {
+        "title": "Operations",
+        "createLabel": "Créer un nouveau Operation",
+        "createOrEditLabel": "Créer ou éditer un Operation",
+        "notFound": "Aucun Operation trouvé"
+      },
+      "created": "Un nouveau Operation a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Operation avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Operation avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Operation {{ id }} ?"
+      },
+      "detail": {
+        "title": "Operation"
+      },
+      "number": "Number",
+      "amount": "Amount",
+      "direction": "Direction",
+      "operationDate": "Operation Date",
+      "accountNumber": "Account Number",
+      "operationStatusCode": "Operation Status Code",
+      "operationTypeCode": "Operation Type Code",
+      "currencyCode": "Currency Code",
+      "userCode": "User Code",
+      "description": "Description",
+      "active": "Active",
+      "transaction": "Transaction"
+    }
+  }
+}

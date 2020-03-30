@@ -1,0 +1,15 @@
+{
+  "pgkernelgatewayApp": {
+    "PropertyType": {
+      "null": "",
+      "STRING": "STRING",
+      "INTEGER": "INTEGER",
+      "DOUBLE": "DOUBLE",
+      "TIME": "TIME",
+      "DATE": "DATE",
+      "DATETIME": "DATETIME",
+      "TIMESTAMP": "TIMESTAMP",
+      "BOOLEAN": "BOOLEAN"
+    }
+  }
+}

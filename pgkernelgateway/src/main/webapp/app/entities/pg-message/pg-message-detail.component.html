@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgMessage">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pgMessage.detail.title">Pg Message</span> {{pgMessage.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessage.code">Code</span></dt>
+                <dd>
+                    <span>{{pgMessage.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessage.label">Label</span></dt>
+                <dd>
+                    <span>{{pgMessage.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessage.messageDate">Message Date</span></dt>
+                <dd>
+                    <span>{{pgMessage.messageDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessage.comment">Comment</span></dt>
+                <dd>
+                    <span>{{pgMessage.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessage.active">Active</span></dt>
+                <dd>
+                    <span>{{pgMessage.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessage.pgMessageModel">Pg Message Model</span></dt>
+                <dd>
+                    <div *ngIf="pgMessage.pgMessageModelId">
+                        <a [routerLink]="['/pg-message-model', pgMessage.pgMessageModelId, 'view']">{{pgMessage.pgMessageModelId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessage.pgMessageStatus">Pg Message Status</span></dt>
+                <dd>
+                    <div *ngIf="pgMessage.pgMessageStatusId">
+                        <a [routerLink]="['/pg-message-status', pgMessage.pgMessageStatusId, 'view']">{{pgMessage.pgMessageStatusId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-message', pgMessage.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

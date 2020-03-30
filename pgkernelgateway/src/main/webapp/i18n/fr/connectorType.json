@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "connectorType": {
+      "home": {
+        "title": "ConnectorTypes",
+        "createLabel": "Créer un nouveau Connector Type",
+        "createOrEditLabel": "Créer ou éditer un Connector Type",
+        "notFound": "Aucun Connector Type trouvé"
+      },
+      "created": "Un nouveau Connector Type a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Connector Type avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Connector Type avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Connector Type {{ id }} ?"
+      },
+      "detail": {
+        "title": "Connector Type"
+      },
+      "label": "Label",
+      "description": "Description",
+      "active": "Active"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="priceCommission">
+            <h2><span jhiTranslate="pgkernelgatewayApp.priceCommission.detail.title">Price Commission</span> {{priceCommission.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.priceCommission.code">Code</span></dt>
+                <dd>
+                    <span>{{priceCommission.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.priceCommission.label">Label</span></dt>
+                <dd>
+                    <span>{{priceCommission.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.priceCommission.amount">Amount</span></dt>
+                <dd>
+                    <span>{{priceCommission.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.priceCommission.amountInPercent">Amount In Percent</span></dt>
+                <dd>
+                    <span>{{priceCommission.amountInPercent}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.priceCommission.dateCreation">Date Creation</span></dt>
+                <dd>
+                    <span>{{priceCommission.dateCreation}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.priceCommission.percent">Percent</span></dt>
+                <dd>
+                    <span>{{priceCommission.percent}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.priceCommission.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{priceCommission.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.priceCommission.partnerCode">Partner Code</span></dt>
+                <dd>
+                    <span>{{priceCommission.partnerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.priceCommission.serviceCode">Service Code</span></dt>
+                <dd>
+                    <span>{{priceCommission.serviceCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.priceCommission.description">Description</span></dt>
+                <dd>
+                    <span>{{priceCommission.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.priceCommission.active">Active</span></dt>
+                <dd>
+                    <span>{{priceCommission.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/price-commission', priceCommission.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

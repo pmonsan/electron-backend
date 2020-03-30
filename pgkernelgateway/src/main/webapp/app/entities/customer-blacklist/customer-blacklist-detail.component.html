@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customerBlacklist">
+            <h2><span jhiTranslate="pgkernelgatewayApp.customerBlacklist.detail.title">Customer Blacklist</span> {{customerBlacklist.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerBlacklist.customerBlacklistStatus">Customer Blacklist Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'pgkernelgatewayApp.CustomerBlacklistStatus.' + customerBlacklist.customerBlacklistStatus}}">{{customerBlacklist.customerBlacklistStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerBlacklist.insertionDate">Insertion Date</span></dt>
+                <dd>
+                    <span>{{customerBlacklist.insertionDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerBlacklist.modificationDate">Modification Date</span></dt>
+                <dd>
+                    <span>{{customerBlacklist.modificationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerBlacklist.comment">Comment</span></dt>
+                <dd>
+                    <span>{{customerBlacklist.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerBlacklist.active">Active</span></dt>
+                <dd>
+                    <span>{{customerBlacklist.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerBlacklist.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="customerBlacklist.customerId">
+                        <a [routerLink]="['/customer', customerBlacklist.customerId, 'view']">{{customerBlacklist.customerId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customer-blacklist', customerBlacklist.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

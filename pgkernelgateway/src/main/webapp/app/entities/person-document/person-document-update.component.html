@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-person-document-heading" jhiTranslate="pgkernelgatewayApp.personDocument.home.createOrEditLabel">Create or edit a Person Document</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.personDocument.documentNumber" for="field_documentNumber">Document Number</label>
+                    <input type="text" class="form-control" name="documentNumber" id="field_documentNumber"
+                           formControlName="documentNumber"/>
+                    <div *ngIf="editForm.get('documentNumber').invalid && (editForm.get('documentNumber').dirty || editForm.get('documentNumber').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('documentNumber').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.personDocument.expirationDate" for="field_expirationDate">Expiration Date</label>
+                    <input type="text" class="form-control" name="expirationDate" id="field_expirationDate"
+                           formControlName="expirationDate"/>
+                    <div *ngIf="editForm.get('expirationDate').invalid && (editForm.get('expirationDate').dirty || editForm.get('expirationDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('expirationDate').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.personDocument.isValid" for="field_isValid">Is Valid</label>
+                    <input type="checkbox" class="form-control" name="isValid" id="field_isValid"
+                           formControlName="isValid"/>
+                    <div *ngIf="editForm.get('isValid').invalid && (editForm.get('isValid').dirty || editForm.get('isValid').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isValid').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.personDocument.documentTypeCode" for="field_documentTypeCode">Document Type Code</label>
+                    <input type="text" class="form-control" name="documentTypeCode" id="field_documentTypeCode"
+                           formControlName="documentTypeCode"/>
+                    <div *ngIf="editForm.get('documentTypeCode').invalid && (editForm.get('documentTypeCode').dirty || editForm.get('documentTypeCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('documentTypeCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('documentTypeCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.personDocument.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                    <div *ngIf="editForm.get('active').invalid && (editForm.get('active').dirty || editForm.get('active').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('active').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.personDocument.customer" for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" formControlName="customerId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customerOption.id" *ngFor="let customerOption of customers; trackBy: trackCustomerById">{{customerOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

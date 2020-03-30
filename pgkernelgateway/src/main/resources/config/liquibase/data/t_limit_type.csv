@@ -1,0 +1,11 @@
+id;code;label;limit_value_type;active
+1;withd;Books;INTEGER;true
+2;copy ;Web metrics;DATE;true
+3;input;Cotton Idaho New Jersey;DOUBLE;true
+4;turqu;Borders SAS Road;INTEGER;true
+5;trans;Handcrafted Metal Chicken Technician;INTEGER;false
+6;invoi;Practical Rubber Chicken Street Directives;DATE;true
+7;Savin;Street Squares Codes specifically reserved for testing purposes;DATE;false
+8;Tenne;Awesome pixel Fantastic;DOUBLE;false
+9;Home ;Savings Account Cambridgeshire;INTEGER;false
+10;back-;Nuevo Sol Personal Loan Account Investment Account;DOUBLE;true

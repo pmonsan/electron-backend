@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.transactionCommission.home.title">Transaction Commissions</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-transaction-commission" [routerLink]="['/transaction-commission/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.transactionCommission.home.createLabel">
+            Create new Transaction Commission
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="transactionCommissions?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.transactionCommission.home.notFound">No transactionCommissions found</span>
+    </div>
+    <div class="table-responsive" *ngIf="transactionCommissions?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.code">Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.label">Label</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.amount">Amount</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.amountInPercent">Amount In Percent</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.dateCreation">Date Creation</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.percent">Percent</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.currencyCode">Currency Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.partnerCode">Partner Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.serviceCode">Service Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.description">Description</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.commission">Commission</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.transactionCommission.transaction">Transaction</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let transactionCommission of transactionCommissions ;trackBy: trackId">
+                <td><a [routerLink]="['/transaction-commission', transactionCommission.id, 'view' ]">{{transactionCommission.id}}</a></td>
+                <td>{{transactionCommission.code}}</td>
+                <td>{{transactionCommission.label}}</td>
+                <td>{{transactionCommission.amount}}</td>
+                <td>{{transactionCommission.amountInPercent}}</td>
+                <td>{{transactionCommission.dateCreation | date:'medium'}}</td>
+                <td>{{transactionCommission.percent}}</td>
+                <td>{{transactionCommission.currencyCode}}</td>
+                <td>{{transactionCommission.partnerCode}}</td>
+                <td>{{transactionCommission.serviceCode}}</td>
+                <td>{{transactionCommission.description}}</td>
+                <td>{{transactionCommission.commission}}</td>
+                <td>
+                    <div *ngIf="transactionCommission.transactionId">
+                        <a [routerLink]="['../transaction', transactionCommission.transactionId , 'view' ]" >{{transactionCommission.transactionId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/transaction-commission', transactionCommission.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/transaction-commission', transactionCommission.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'transaction-commission', { outlets: { popup: transactionCommission.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

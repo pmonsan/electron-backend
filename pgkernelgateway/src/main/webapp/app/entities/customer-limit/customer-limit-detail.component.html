@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customerLimit">
+            <h2><span jhiTranslate="pgkernelgatewayApp.customerLimit.detail.title">Customer Limit</span> {{customerLimit.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerLimit.limitTypeCode">Limit Type Code</span></dt>
+                <dd>
+                    <span>{{customerLimit.limitTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerLimit.accountTypeCode">Account Type Code</span></dt>
+                <dd>
+                    <span>{{customerLimit.accountTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerLimit.customerTypeCode">Customer Type Code</span></dt>
+                <dd>
+                    <span>{{customerLimit.customerTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerLimit.value">Value</span></dt>
+                <dd>
+                    <span>{{customerLimit.value}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerLimit.comment">Comment</span></dt>
+                <dd>
+                    <span>{{customerLimit.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerLimit.active">Active</span></dt>
+                <dd>
+                    <span>{{customerLimit.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerLimit.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="customerLimit.customerId">
+                        <a [routerLink]="['/customer', customerLimit.customerId, 'view']">{{customerLimit.customerId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customer-limit', customerLimit.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

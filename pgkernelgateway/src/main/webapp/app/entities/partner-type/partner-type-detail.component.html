@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="partnerType">
+            <h2><span jhiTranslate="pgkernelgatewayApp.partnerType.detail.title">Partner Type</span> {{partnerType.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.partnerType.code">Code</span></dt>
+                <dd>
+                    <span>{{partnerType.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partnerType.label">Label</span></dt>
+                <dd>
+                    <span>{{partnerType.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partnerType.description">Description</span></dt>
+                <dd>
+                    <span>{{partnerType.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partnerType.active">Active</span></dt>
+                <dd>
+                    <span>{{partnerType.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/partner-type', partnerType.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pg8583Status">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pg8583Status.detail.title">Pg 8583 Status</span> {{pg8583Status.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Status.status">Status</span></dt>
+                <dd>
+                    <span>{{pg8583Status.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Status.defaultReason">Default Reason</span></dt>
+                <dd>
+                    <span>{{pg8583Status.defaultReason}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-8583-status', pg8583Status.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

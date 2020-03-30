@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.loanInstalment.home.title">Loan Instalments</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-loan-instalment" [routerLink]="['/loan-instalment/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.loanInstalment.home.createLabel">
+            Create new Loan Instalment
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="loanInstalments?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.loanInstalment.home.notFound">No loanInstalments found</span>
+    </div>
+    <div class="table-responsive" *ngIf="loanInstalments?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalment.code">Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalment.expectedPaymentDate">Expected Payment Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalment.realPaymentDate">Real Payment Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalment.amountToPay">Amount To Pay</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalment.penalityFee">Penality Fee</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalment.statusDate">Status Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalment.loanInstalmentStatusCode">Loan Instalment Status Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalment.active">Active</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalment.loan">Loan</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let loanInstalment of loanInstalments ;trackBy: trackId">
+                <td><a [routerLink]="['/loan-instalment', loanInstalment.id, 'view' ]">{{loanInstalment.id}}</a></td>
+                <td>{{loanInstalment.code}}</td>
+                <td>{{loanInstalment.expectedPaymentDate | date:'medium'}}</td>
+                <td>{{loanInstalment.realPaymentDate | date:'medium'}}</td>
+                <td>{{loanInstalment.amountToPay}}</td>
+                <td>{{loanInstalment.penalityFee}}</td>
+                <td>{{loanInstalment.statusDate | date:'medium'}}</td>
+                <td>{{loanInstalment.loanInstalmentStatusCode}}</td>
+                <td>{{loanInstalment.active}}</td>
+                <td>
+                    <div *ngIf="loanInstalment.loanId">
+                        <a [routerLink]="['../transaction', loanInstalment.loanId , 'view' ]" >{{loanInstalment.loanId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/loan-instalment', loanInstalment.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/loan-instalment', loanInstalment.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'loan-instalment', { outlets: { popup: loanInstalment.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

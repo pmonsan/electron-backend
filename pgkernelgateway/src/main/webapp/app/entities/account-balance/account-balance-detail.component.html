@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="accountBalance">
+            <h2><span jhiTranslate="pgkernelgatewayApp.accountBalance.detail.title">Account Balance</span> {{accountBalance.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.accountBalance.situationDate">Situation Date</span></dt>
+                <dd>
+                    <span>{{accountBalance.situationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.accountBalance.balance">Balance</span></dt>
+                <dd>
+                    <span>{{accountBalance.balance}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.accountBalance.active">Active</span></dt>
+                <dd>
+                    <span>{{accountBalance.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.accountBalance.account">Account</span></dt>
+                <dd>
+                    <div *ngIf="accountBalance.accountId">
+                        <a [routerLink]="['/pg-account', accountBalance.accountId, 'view']">{{accountBalance.accountId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/account-balance', accountBalance.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

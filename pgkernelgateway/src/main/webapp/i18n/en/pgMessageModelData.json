@@ -1,0 +1,26 @@
+{
+  "pgkernelgatewayApp": {
+    "pgMessageModelData": {
+      "home": {
+        "title": "Pg Message Model Data",
+        "createLabel": "Create a new Pg Message Model Data",
+        "createOrEditLabel": "Create or edit a Pg Message Model Data",
+        "notFound": "No Pg Message Model Data found"
+      },
+      "created": "A new Pg Message Model Data is created with identifier {{ param }}",
+      "updated": "A Pg Message Model Data is updated with identifier {{ param }}",
+      "deleted": "A Pg Message Model Data is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pg Message Model Data {{ id }}?"
+      },
+      "detail": {
+        "title": "Pg Message Model Data"
+      },
+      "mandatory": "Mandatory",
+      "hidden": "Hidden",
+      "active": "Active",
+      "pgData": "Pg Data",
+      "pgMessageModel": "Pg Message Model"
+    }
+  }
+}

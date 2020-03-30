@@ -1,0 +1,11 @@
+id;code;label;expected_end_date;batch_date;active
+1;Lead ;Maryland IB;2020-03-29T15:03:57;2020-03-29T19:28:23;true
+2;Gourd;Incredible Fresh Chair Borders;2020-03-30T01:32:02;2020-03-29T18:19:12;false
+3;Beliz;Incredible Rustic Metal Table;2020-03-30T09:08:47;2020-03-29T23:10:49;true
+4;Progr;Usability Personal Loan Account solid state;2020-03-30T08:28:02;2020-03-29T14:28:56;false
+5;e-bus;Checking Account;2020-03-29T23:00:18;2020-03-29T14:41:04;true
+6;Brand;Liechtenstein parsing;2020-03-30T08:05:23;2020-03-30T04:27:44;false
+7;Idaho;HDD;2020-03-29T21:37:00;2020-03-29T12:45:41;false
+8;Visio;Investment Account copying intermediate;2020-03-30T05:21:03;2020-03-29T17:07:53;true
+9;Incre;Identity bluetooth pixel;2020-03-30T04:30:54;2020-03-29T21:56:57;true
+10;ROI a;Fresh Customizable;2020-03-29T23:05:14;2020-03-30T00:08:39;true

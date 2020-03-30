@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-account-feature-heading" jhiTranslate="pgkernelgatewayApp.accountFeature.home.createOrEditLabel">Create or edit a Account Feature</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.accountFeature.activationDate" for="field_activationDate">Activation Date</label>
+                    <div class="d-flex">
+                        <input id="field_activationDate" type="datetime-local" class="form-control" name="activationDate" formControlName="activationDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('activationDate').invalid && (editForm.get('activationDate').dirty || editForm.get('activationDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('activationDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('activationDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.accountFeature.featureCode" for="field_featureCode">Feature Code</label>
+                    <input type="text" class="form-control" name="featureCode" id="field_featureCode"
+                           formControlName="featureCode"/>
+                    <div *ngIf="editForm.get('featureCode').invalid && (editForm.get('featureCode').dirty || editForm.get('featureCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('featureCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('featureCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.accountFeature.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                    <div *ngIf="editForm.get('active').invalid && (editForm.get('active').dirty || editForm.get('active').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('active').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.accountFeature.account" for="field_account">Account</label>
+                    <select class="form-control" id="field_account" name="account" formControlName="accountId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pgAccountOption.id" *ngFor="let pgAccountOption of pgaccounts; trackBy: trackPgAccountById">{{pgAccountOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="accountFeature">
+            <h2><span jhiTranslate="pgkernelgatewayApp.accountFeature.detail.title">Account Feature</span> {{accountFeature.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.accountFeature.activationDate">Activation Date</span></dt>
+                <dd>
+                    <span>{{accountFeature.activationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.accountFeature.featureCode">Feature Code</span></dt>
+                <dd>
+                    <span>{{accountFeature.featureCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.accountFeature.active">Active</span></dt>
+                <dd>
+                    <span>{{accountFeature.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.accountFeature.account">Account</span></dt>
+                <dd>
+                    <div *ngIf="accountFeature.accountId">
+                        <a [routerLink]="['/pg-account', accountFeature.accountId, 'view']">{{accountFeature.accountId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/account-feature', accountFeature.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

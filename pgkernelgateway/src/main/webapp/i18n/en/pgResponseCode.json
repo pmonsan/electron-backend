@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "pgResponseCode": {
+      "home": {
+        "title": "Pg Response Codes",
+        "createLabel": "Create a new Pg Response Code",
+        "createOrEditLabel": "Create or edit a Pg Response Code",
+        "notFound": "No Pg Response Code found"
+      },
+      "created": "A new Pg Response Code is created with identifier {{ param }}",
+      "updated": "A Pg Response Code is updated with identifier {{ param }}",
+      "deleted": "A Pg Response Code is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pg Response Code {{ id }}?"
+      },
+      "detail": {
+        "title": "Pg Response Code"
+      },
+      "code": "Code",
+      "label": "Label",
+      "description": "Description",
+      "active": "Active"
+    }
+  }
+}

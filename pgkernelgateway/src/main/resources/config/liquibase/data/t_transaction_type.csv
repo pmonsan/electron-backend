@@ -1,0 +1,11 @@
+id;code;label;use_transaction_group;check_subscription;ignore_fees;ignore_limit;ignore_commission;check_otp;pg_message_model_code;transaction_group_code;active
+1;custo;Metal Steel Grocery;false;true;true;false;false;false;parse;Rusti;true
+2;Costa;Uganda value-added Infrastructure;true;false;true;true;false;true;Sleek;Agent;false
+3;compe;withdrawal;false;false;false;true;true;false;Futur;card ;false
+4;relat;Handcrafted Frozen Chips;false;true;true;false;false;false;AGP O;Danis;false
+5;progr;Hawaii Switzerland;false;true;false;true;false;false;Seaml;Froze;true
+6;inter;Plains;false;true;true;true;true;true;depos;Avon;true
+7;Car s;microchip circuit Reactive;false;false;true;true;false;true;Row;Shoes;true
+8;Unbra;Denar withdrawal Practical;true;false;false;false;false;false;best-;Handc;true
+9;New H;Principal;false;false;false;false;true;true;Elect;Nebra;true
+10;Fresh;Saudi Riyal;false;false;false;true;true;false;Knoll;tan L;true

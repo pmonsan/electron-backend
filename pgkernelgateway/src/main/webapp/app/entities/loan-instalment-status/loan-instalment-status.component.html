@@ -1,0 +1,61 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.loanInstalmentStatus.home.title">Loan Instalment Statuses</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-loan-instalment-status" [routerLink]="['/loan-instalment-status/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.loanInstalmentStatus.home.createLabel">
+            Create new Loan Instalment Status
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="loanInstalmentStatuses?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.loanInstalmentStatus.home.notFound">No loanInstalmentStatuses found</span>
+    </div>
+    <div class="table-responsive" *ngIf="loanInstalmentStatuses?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalmentStatus.code">Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalmentStatus.label">Label</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.loanInstalmentStatus.active">Active</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let loanInstalmentStatus of loanInstalmentStatuses ;trackBy: trackId">
+                <td><a [routerLink]="['/loan-instalment-status', loanInstalmentStatus.id, 'view' ]">{{loanInstalmentStatus.id}}</a></td>
+                <td>{{loanInstalmentStatus.code}}</td>
+                <td>{{loanInstalmentStatus.label}}</td>
+                <td>{{loanInstalmentStatus.active}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/loan-instalment-status', loanInstalmentStatus.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/loan-instalment-status', loanInstalmentStatus.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'loan-instalment-status', { outlets: { popup: loanInstalmentStatus.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "pgkernelgatewayApp": {
+    "pgBatch": {
+      "home": {
+        "title": "PgBatches",
+        "createLabel": "Créer un nouveau Pg Batch",
+        "createOrEditLabel": "Créer ou éditer un Pg Batch",
+        "notFound": "Aucun Pg Batch trouvé"
+      },
+      "created": "Un nouveau Pg Batch a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg Batch avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg Batch avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg Batch {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg Batch"
+      },
+      "code": "Code",
+      "label": "Label",
+      "expectedEndDate": "Expected End Date",
+      "batchDate": "Batch Date",
+      "active": "Active"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "pgkernelgatewayApp": {
+    "limitType": {
+      "home": {
+        "title": "Limit Types",
+        "createLabel": "Create a new Limit Type",
+        "createOrEditLabel": "Create or edit a Limit Type",
+        "notFound": "No Limit Type found"
+      },
+      "created": "A new Limit Type is created with identifier {{ param }}",
+      "updated": "A Limit Type is updated with identifier {{ param }}",
+      "deleted": "A Limit Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Limit Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Limit Type"
+      },
+      "code": "Code",
+      "label": "Label",
+      "limitValueType": "Limit Value Type",
+      "active": "Active",
+      "periodicity": "Periodicity",
+      "limitMeasure": "Limit Measure"
+    }
+  }
+}

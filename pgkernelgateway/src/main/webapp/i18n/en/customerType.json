@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "customerType": {
+      "home": {
+        "title": "Customer Types",
+        "createLabel": "Create a new Customer Type",
+        "createOrEditLabel": "Create or edit a Customer Type",
+        "notFound": "No Customer Type found"
+      },
+      "created": "A new Customer Type is created with identifier {{ param }}",
+      "updated": "A Customer Type is updated with identifier {{ param }}",
+      "deleted": "A Customer Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Customer Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer Type"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

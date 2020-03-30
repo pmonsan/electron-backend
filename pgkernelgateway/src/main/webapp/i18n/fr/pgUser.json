@@ -1,0 +1,29 @@
+{
+  "pgkernelgatewayApp": {
+    "pgUser": {
+      "home": {
+        "title": "PgUsers",
+        "createLabel": "Créer un nouveau Pg User",
+        "createOrEditLabel": "Créer ou éditer un Pg User",
+        "notFound": "Aucun Pg User trouvé"
+      },
+      "created": "Un nouveau Pg User a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg User avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg User avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg User {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg User"
+      },
+      "username": "Username",
+      "email": "Email",
+      "firstname": "Firstname",
+      "name": "Name",
+      "msisdn": "Msisdn",
+      "creationDate": "Creation Date",
+      "updateDate": "Update Date",
+      "userProfile": "User Profile"
+    }
+  }
+}

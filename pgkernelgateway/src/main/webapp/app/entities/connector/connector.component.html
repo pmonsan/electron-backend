@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.connector.home.title">Connectors</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-connector" [routerLink]="['/connector/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.connector.home.createLabel">
+            Create new Connector
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="connectors?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.connector.home.notFound">No connectors found</span>
+    </div>
+    <div class="table-responsive" *ngIf="connectors?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.connector.code">Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.connector.label">Label</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.connector.logic">Logic</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.connector.comment">Comment</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.connector.partnerCode">Partner Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.connector.meansofpaymentTypeCode">Meansofpayment Type Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.connector.active">Active</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.connector.connectorType">Connector Type</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.connector.pgModule">Pg Module</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let connector of connectors ;trackBy: trackId">
+                <td><a [routerLink]="['/connector', connector.id, 'view' ]">{{connector.id}}</a></td>
+                <td>{{connector.code}}</td>
+                <td>{{connector.label}}</td>
+                <td>{{connector.logic}}</td>
+                <td>{{connector.comment}}</td>
+                <td>{{connector.partnerCode}}</td>
+                <td>{{connector.meansofpaymentTypeCode}}</td>
+                <td>{{connector.active}}</td>
+                <td>
+                    <div *ngIf="connector.connectorTypeId">
+                        <a [routerLink]="['../connector-type', connector.connectorTypeId , 'view' ]" >{{connector.connectorTypeId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="connector.pgModuleId">
+                        <a [routerLink]="['../pg-module', connector.pgModuleId , 'view' ]" >{{connector.pgModuleId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/connector', connector.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/connector', connector.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'connector', { outlets: { popup: connector.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

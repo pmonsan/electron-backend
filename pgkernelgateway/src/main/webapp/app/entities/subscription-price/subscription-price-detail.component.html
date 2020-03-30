@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="subscriptionPrice">
+            <h2><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.detail.title">Subscription Price</span> {{subscriptionPrice.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.amount">Amount</span></dt>
+                <dd>
+                    <span>{{subscriptionPrice.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.description">Description</span></dt>
+                <dd>
+                    <span>{{subscriptionPrice.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.label">Label</span></dt>
+                <dd>
+                    <span>{{subscriptionPrice.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.modificationDate">Modification Date</span></dt>
+                <dd>
+                    <span>{{subscriptionPrice.modificationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.serviceCode">Service Code</span></dt>
+                <dd>
+                    <span>{{subscriptionPrice.serviceCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.accountTypeCode">Account Type Code</span></dt>
+                <dd>
+                    <span>{{subscriptionPrice.accountTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{subscriptionPrice.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.active">Active</span></dt>
+                <dd>
+                    <span>{{subscriptionPrice.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.pricePlan">Price Plan</span></dt>
+                <dd>
+                    <div *ngIf="subscriptionPrice.pricePlanId">
+                        <a [routerLink]="['/price-plan', subscriptionPrice.pricePlanId, 'view']">{{subscriptionPrice.pricePlanId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/subscription-price', subscriptionPrice.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

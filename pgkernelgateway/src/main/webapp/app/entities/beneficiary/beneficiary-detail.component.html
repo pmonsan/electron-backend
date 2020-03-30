@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="beneficiary">
+            <h2><span jhiTranslate="pgkernelgatewayApp.beneficiary.detail.title">Beneficiary</span> {{beneficiary.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.number">Number</span></dt>
+                <dd>
+                    <span>{{beneficiary.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.isCompany">Is Company</span></dt>
+                <dd>
+                    <span>{{beneficiary.isCompany}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.firstname">Firstname</span></dt>
+                <dd>
+                    <span>{{beneficiary.firstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.name">Name</span></dt>
+                <dd>
+                    <span>{{beneficiary.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.aliasAccount">Alias Account</span></dt>
+                <dd>
+                    <span>{{beneficiary.aliasAccount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.baccBankCode">Bacc Bank Code</span></dt>
+                <dd>
+                    <span>{{beneficiary.baccBankCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.baccBranchCode">Bacc Branch Code</span></dt>
+                <dd>
+                    <span>{{beneficiary.baccBranchCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.baccAccountNumber">Bacc Account Number</span></dt>
+                <dd>
+                    <span>{{beneficiary.baccAccountNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.baccRibKey">Bacc Rib Key</span></dt>
+                <dd>
+                    <span>{{beneficiary.baccRibKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.cardCvv2">Card Cvv 2</span></dt>
+                <dd>
+                    <span>{{beneficiary.cardCvv2}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.cardPan">Card Pan</span></dt>
+                <dd>
+                    <span>{{beneficiary.cardPan}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.cardValidityDate">Card Validity Date</span></dt>
+                <dd>
+                    <span>{{beneficiary.cardValidityDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.isDmAccount">Is Dm Account</span></dt>
+                <dd>
+                    <span>{{beneficiary.isDmAccount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.momoAccountNumber">Momo Account Number</span></dt>
+                <dd>
+                    <span>{{beneficiary.momoAccountNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.beneficiaryRelationshipCode">Beneficiary Relationship Code</span></dt>
+                <dd>
+                    <span>{{beneficiary.beneficiaryRelationshipCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.beneficiaryTypeCode">Beneficiary Type Code</span></dt>
+                <dd>
+                    <span>{{beneficiary.beneficiaryTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.active">Active</span></dt>
+                <dd>
+                    <span>{{beneficiary.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.beneficiary.customer">Customer</span></dt>
+                <dd>
+                    <div *ngIf="beneficiary.customerId">
+                        <a [routerLink]="['/customer', beneficiary.customerId, 'view']">{{beneficiary.customerId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/beneficiary', beneficiary.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

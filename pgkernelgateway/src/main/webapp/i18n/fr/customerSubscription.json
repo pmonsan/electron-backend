@@ -1,0 +1,33 @@
+{
+  "pgkernelgatewayApp": {
+    "customerSubscription": {
+      "home": {
+        "title": "CustomerSubscriptions",
+        "createLabel": "Créer un nouveau Customer Subscription",
+        "createOrEditLabel": "Créer ou éditer un Customer Subscription",
+        "notFound": "Aucun Customer Subscription trouvé"
+      },
+      "created": "Un nouveau Customer Subscription a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Customer Subscription avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Customer Subscription avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Customer Subscription {{ id }} ?"
+      },
+      "detail": {
+        "title": "Customer Subscription"
+      },
+      "number": "Number",
+      "creationDate": "Creation Date",
+      "isMerchantSubscription": "Is Merchant Subscription",
+      "modificationDate": "Modification Date",
+      "validationDate": "Validation Date",
+      "filename": "Filename",
+      "customerCode": "Customer Code",
+      "serviceCode": "Service Code",
+      "accountNumber": "Account Number",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "active": "Active"
+    }
+  }
+}

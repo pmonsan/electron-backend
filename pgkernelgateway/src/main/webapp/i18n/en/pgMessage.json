@@ -1,0 +1,28 @@
+{
+  "pgkernelgatewayApp": {
+    "pgMessage": {
+      "home": {
+        "title": "Pg Messages",
+        "createLabel": "Create a new Pg Message",
+        "createOrEditLabel": "Create or edit a Pg Message",
+        "notFound": "No Pg Message found"
+      },
+      "created": "A new Pg Message is created with identifier {{ param }}",
+      "updated": "A Pg Message is updated with identifier {{ param }}",
+      "deleted": "A Pg Message is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pg Message {{ id }}?"
+      },
+      "detail": {
+        "title": "Pg Message"
+      },
+      "code": "Code",
+      "label": "Label",
+      "messageDate": "Message Date",
+      "comment": "Comment",
+      "active": "Active",
+      "pgMessageModel": "Pg Message Model",
+      "pgMessageStatus": "Pg Message Status"
+    }
+  }
+}

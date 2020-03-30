@@ -1,0 +1,11 @@
+id;customer_blacklist_status;insertion_date;modification_date;comment;active
+1;CANCELLED;2020-03-29T16:16:42;2020-03-30T06:38:44;Shirt Awesome;true
+2;BLACKLIST;2020-03-30T09:07:06;2020-03-29T22:44:19;Product 1080p Pre-emptive;true
+3;CANCELLED;2020-03-30T04:57:38;2020-03-29T20:19:49;bypass;true
+4;BLACKLIST;2020-03-30T04:03:46;2020-03-29T23:42:23;Rubber Borders Legacy;true
+5;BLACKLIST;2020-03-29T20:43:33;2020-03-30T05:41:58;seize;false
+6;CANCELLED;2020-03-29T12:27:24;2020-03-30T04:31:10;Research;true
+7;CANCELLED;2020-03-30T10:47:07;2020-03-29T19:35:28;multi-tasking copying SCSI;true
+8;CANCELLED;2020-03-30T05:02:12;2020-03-29T19:49:29;turquoise Facilitator input;true
+9;BLACKLIST;2020-03-30T04:37:35;2020-03-29T12:35:36;Handmade Wooden Computer Metal;true
+10;INITIATED;2020-03-30T05:57:58;2020-03-29T23:22:08;Pizza bricks-and-clicks;false

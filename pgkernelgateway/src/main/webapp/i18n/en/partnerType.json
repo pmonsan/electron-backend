@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "partnerType": {
+      "home": {
+        "title": "Partner Types",
+        "createLabel": "Create a new Partner Type",
+        "createOrEditLabel": "Create or edit a Partner Type",
+        "notFound": "No Partner Type found"
+      },
+      "created": "A new Partner Type is created with identifier {{ param }}",
+      "updated": "A Partner Type is updated with identifier {{ param }}",
+      "deleted": "A Partner Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Partner Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Partner Type"
+      },
+      "code": "Code",
+      "label": "Label",
+      "description": "Description",
+      "active": "Active"
+    }
+  }
+}

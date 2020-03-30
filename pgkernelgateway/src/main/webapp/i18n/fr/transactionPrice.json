@@ -1,0 +1,33 @@
+{
+  "pgkernelgatewayApp": {
+    "transactionPrice": {
+      "home": {
+        "title": "TransactionPrices",
+        "createLabel": "Créer un nouveau Transaction Price",
+        "createOrEditLabel": "Créer ou éditer un Transaction Price",
+        "notFound": "Aucun Transaction Price trouvé"
+      },
+      "created": "Un nouveau Transaction Price a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Transaction Price avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Transaction Price avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Transaction Price {{ id }} ?"
+      },
+      "detail": {
+        "title": "Transaction Price"
+      },
+      "code": "Code",
+      "label": "Label",
+      "amount": "Amount",
+      "percent": "Percent",
+      "amountInPercent": "Amount In Percent",
+      "amountTransactionMax": "Amount Transaction Max",
+      "amountTransactionMin": "Amount Transaction Min",
+      "priceCode": "Price Code",
+      "serviceCode": "Service Code",
+      "description": "Description",
+      "modificationDate": "Modification Date",
+      "transaction": "Transaction"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgResponseCode">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pgResponseCode.detail.title">Pg Response Code</span> {{pgResponseCode.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgResponseCode.code">Code</span></dt>
+                <dd>
+                    <span>{{pgResponseCode.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgResponseCode.label">Label</span></dt>
+                <dd>
+                    <span>{{pgResponseCode.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgResponseCode.description">Description</span></dt>
+                <dd>
+                    <span>{{pgResponseCode.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgResponseCode.active">Active</span></dt>
+                <dd>
+                    <span>{{pgResponseCode.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-response-code', pgResponseCode.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

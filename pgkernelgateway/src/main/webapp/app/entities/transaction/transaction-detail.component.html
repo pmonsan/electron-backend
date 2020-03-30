@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transaction">
+            <h2><span jhiTranslate="pgkernelgatewayApp.transaction.detail.title">Transaction</span> {{transaction.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.transactionNumber">Transaction Number</span></dt>
+                <dd>
+                    <span>{{transaction.transactionNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.label">Label</span></dt>
+                <dd>
+                    <span>{{transaction.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.transactionAmount">Transaction Amount</span></dt>
+                <dd>
+                    <span>{{transaction.transactionAmount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.transactionDate">Transaction Date</span></dt>
+                <dd>
+                    <span>{{transaction.transactionDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.feesSupported">Fees Supported</span></dt>
+                <dd>
+                    <span>{{transaction.feesSupported}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.transactionFees">Transaction Fees</span></dt>
+                <dd>
+                    <span>{{transaction.transactionFees}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.priceCode">Price Code</span></dt>
+                <dd>
+                    <span>{{transaction.priceCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.fromPartnerCode">From Partner Code</span></dt>
+                <dd>
+                    <span>{{transaction.fromPartnerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.toPartnerCode">To Partner Code</span></dt>
+                <dd>
+                    <span>{{transaction.toPartnerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.transactionStatusCode">Transaction Status Code</span></dt>
+                <dd>
+                    <span>{{transaction.transactionStatusCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.transactionTypeCode">Transaction Type Code</span></dt>
+                <dd>
+                    <span>{{transaction.transactionTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.serviceCode">Service Code</span></dt>
+                <dd>
+                    <span>{{transaction.serviceCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.comment">Comment</span></dt>
+                <dd>
+                    <span>{{transaction.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transaction.active">Active</span></dt>
+                <dd>
+                    <span>{{transaction.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction', transaction.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

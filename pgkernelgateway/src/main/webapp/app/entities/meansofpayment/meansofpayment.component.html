@@ -1,0 +1,87 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.meansofpayment.home.title">Meansofpayments</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-meansofpayment" [routerLink]="['/meansofpayment/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.meansofpayment.home.createLabel">
+            Create new Meansofpayment
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="meansofpayments?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.meansofpayment.home.notFound">No meansofpayments found</span>
+    </div>
+    <div class="table-responsive" *ngIf="meansofpayments?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.number">Number</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.aliasAccount">Alias Account</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.baccBankCode">Bacc Bank Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.baccBranchCode">Bacc Branch Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.baccAccountNumber">Bacc Account Number</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.baccRibKey">Bacc Rib Key</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.cardCvv2">Card Cvv 2</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.cardPan">Card Pan</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.cardValidityDate">Card Validity Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.momoAccount">Momo Account</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.meansofpaymentTypeCode">Meansofpayment Type Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.issuerCode">Issuer Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.active">Active</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.meansofpayment.customer">Customer</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let meansofpayment of meansofpayments ;trackBy: trackId">
+                <td><a [routerLink]="['/meansofpayment', meansofpayment.id, 'view' ]">{{meansofpayment.id}}</a></td>
+                <td>{{meansofpayment.number}}</td>
+                <td>{{meansofpayment.aliasAccount}}</td>
+                <td>{{meansofpayment.baccBankCode}}</td>
+                <td>{{meansofpayment.baccBranchCode}}</td>
+                <td>{{meansofpayment.baccAccountNumber}}</td>
+                <td>{{meansofpayment.baccRibKey}}</td>
+                <td>{{meansofpayment.cardCvv2}}</td>
+                <td>{{meansofpayment.cardPan}}</td>
+                <td>{{meansofpayment.cardValidityDate}}</td>
+                <td>{{meansofpayment.momoAccount}}</td>
+                <td>{{meansofpayment.meansofpaymentTypeCode}}</td>
+                <td>{{meansofpayment.issuerCode}}</td>
+                <td>{{meansofpayment.active}}</td>
+                <td>
+                    <div *ngIf="meansofpayment.customerId">
+                        <a [routerLink]="['../customer', meansofpayment.customerId , 'view' ]" >{{meansofpayment.customerId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/meansofpayment', meansofpayment.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/meansofpayment', meansofpayment.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'meansofpayment', { outlets: { popup: meansofpayment.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

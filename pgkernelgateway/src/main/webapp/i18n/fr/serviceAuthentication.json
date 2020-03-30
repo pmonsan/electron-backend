@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "serviceAuthentication": {
+      "home": {
+        "title": "ServiceAuthentications",
+        "createLabel": "Créer un nouveau Service Authentication",
+        "createOrEditLabel": "Créer ou éditer un Service Authentication",
+        "notFound": "Aucun Service Authentication trouvé"
+      },
+      "created": "Un nouveau Service Authentication a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Service Authentication avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Service Authentication avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Service Authentication {{ id }} ?"
+      },
+      "detail": {
+        "title": "Service Authentication"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

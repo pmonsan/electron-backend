@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "transactionInfo": {
+      "home": {
+        "title": "Transaction Infos",
+        "createLabel": "Create a new Transaction Info",
+        "createOrEditLabel": "Create or edit a Transaction Info",
+        "notFound": "No Transaction Info found"
+      },
+      "created": "A new Transaction Info is created with identifier {{ param }}",
+      "updated": "A Transaction Info is updated with identifier {{ param }}",
+      "deleted": "A Transaction Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Transaction Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Transaction Info"
+      },
+      "transactionPropertyCode": "Transaction Property Code",
+      "value": "Value",
+      "active": "Active",
+      "transaction": "Transaction"
+    }
+  }
+}

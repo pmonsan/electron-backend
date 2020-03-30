@@ -1,0 +1,28 @@
+{
+  "pgkernelgatewayApp": {
+    "customerLimit": {
+      "home": {
+        "title": "CustomerLimits",
+        "createLabel": "Créer un nouveau Customer Limit",
+        "createOrEditLabel": "Créer ou éditer un Customer Limit",
+        "notFound": "Aucun Customer Limit trouvé"
+      },
+      "created": "Un nouveau Customer Limit a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Customer Limit avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Customer Limit avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Customer Limit {{ id }} ?"
+      },
+      "detail": {
+        "title": "Customer Limit"
+      },
+      "limitTypeCode": "Limit Type Code",
+      "accountTypeCode": "Account Type Code",
+      "customerTypeCode": "Customer Type Code",
+      "value": "Value",
+      "comment": "Comment",
+      "active": "Active",
+      "customer": "Customer"
+    }
+  }
+}

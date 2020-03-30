@@ -1,0 +1,27 @@
+{
+  "pgkernelgatewayApp": {
+    "customerBlacklist": {
+      "home": {
+        "title": "CustomerBlacklists",
+        "createLabel": "Créer un nouveau Customer Blacklist",
+        "createOrEditLabel": "Créer ou éditer un Customer Blacklist",
+        "notFound": "Aucun Customer Blacklist trouvé"
+      },
+      "created": "Un nouveau Customer Blacklist a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Customer Blacklist avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Customer Blacklist avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Customer Blacklist {{ id }} ?"
+      },
+      "detail": {
+        "title": "Customer Blacklist"
+      },
+      "customerBlacklistStatus": "Customer Blacklist Status",
+      "insertionDate": "Insertion Date",
+      "modificationDate": "Modification Date",
+      "comment": "Comment",
+      "active": "Active",
+      "customer": "Customer"
+    }
+  }
+}

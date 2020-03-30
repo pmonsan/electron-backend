@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "personType": {
+      "home": {
+        "title": "Person Types",
+        "createLabel": "Create a new Person Type",
+        "createOrEditLabel": "Create or edit a Person Type",
+        "notFound": "No Person Type found"
+      },
+      "created": "A new Person Type is created with identifier {{ param }}",
+      "updated": "A Person Type is updated with identifier {{ param }}",
+      "deleted": "A Person Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Person Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Person Type"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

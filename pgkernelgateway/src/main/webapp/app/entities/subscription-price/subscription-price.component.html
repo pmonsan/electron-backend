@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.home.title">Subscription Prices</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-subscription-price" [routerLink]="['/subscription-price/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.subscriptionPrice.home.createLabel">
+            Create new Subscription Price
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="subscriptionPrices?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.home.notFound">No subscriptionPrices found</span>
+    </div>
+    <div class="table-responsive" *ngIf="subscriptionPrices?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.amount">Amount</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.description">Description</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.label">Label</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.modificationDate">Modification Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.serviceCode">Service Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.accountTypeCode">Account Type Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.currencyCode">Currency Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.active">Active</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.subscriptionPrice.pricePlan">Price Plan</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let subscriptionPrice of subscriptionPrices ;trackBy: trackId">
+                <td><a [routerLink]="['/subscription-price', subscriptionPrice.id, 'view' ]">{{subscriptionPrice.id}}</a></td>
+                <td>{{subscriptionPrice.amount}}</td>
+                <td>{{subscriptionPrice.description}}</td>
+                <td>{{subscriptionPrice.label}}</td>
+                <td>{{subscriptionPrice.modificationDate | date:'medium'}}</td>
+                <td>{{subscriptionPrice.serviceCode}}</td>
+                <td>{{subscriptionPrice.accountTypeCode}}</td>
+                <td>{{subscriptionPrice.currencyCode}}</td>
+                <td>{{subscriptionPrice.active}}</td>
+                <td>
+                    <div *ngIf="subscriptionPrice.pricePlanId">
+                        <a [routerLink]="['../price-plan', subscriptionPrice.pricePlanId , 'view' ]" >{{subscriptionPrice.pricePlanId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/subscription-price', subscriptionPrice.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/subscription-price', subscriptionPrice.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'subscription-price', { outlets: { popup: subscriptionPrice.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

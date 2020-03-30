@@ -1,0 +1,32 @@
+{
+  "pgkernelgatewayApp": {
+    "transactionType": {
+      "home": {
+        "title": "Transaction Types",
+        "createLabel": "Create a new Transaction Type",
+        "createOrEditLabel": "Create or edit a Transaction Type",
+        "notFound": "No Transaction Type found"
+      },
+      "created": "A new Transaction Type is created with identifier {{ param }}",
+      "updated": "A Transaction Type is updated with identifier {{ param }}",
+      "deleted": "A Transaction Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Transaction Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Transaction Type"
+      },
+      "code": "Code",
+      "label": "Label",
+      "useTransactionGroup": "Use Transaction Group",
+      "checkSubscription": "Check Subscription",
+      "ignoreFees": "Ignore Fees",
+      "ignoreLimit": "Ignore Limit",
+      "ignoreCommission": "Ignore Commission",
+      "checkOtp": "Check Otp",
+      "pgMessageModelCode": "Pg Message Model Code",
+      "transactionGroupCode": "Transaction Group Code",
+      "active": "Active"
+    }
+  }
+}

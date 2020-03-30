@@ -1,0 +1,23 @@
+{
+  "pgkernelgatewayApp": {
+    "internalConnectorStatus": {
+      "home": {
+        "title": "Internal Connector Statuses",
+        "createLabel": "Create a new Internal Connector Status",
+        "createOrEditLabel": "Create or edit a Internal Connector Status",
+        "notFound": "No Internal Connector Status found"
+      },
+      "created": "A new Internal Connector Status is created with identifier {{ param }}",
+      "updated": "A Internal Connector Status is updated with identifier {{ param }}",
+      "deleted": "A Internal Connector Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Internal Connector Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Internal Connector Status"
+      },
+      "status": "Status",
+      "defaultReason": "Default Reason"
+    }
+  }
+}

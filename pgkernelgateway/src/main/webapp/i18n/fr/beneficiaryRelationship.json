@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "beneficiaryRelationship": {
+      "home": {
+        "title": "BeneficiaryRelationships",
+        "createLabel": "Créer un nouveau Beneficiary Relationship",
+        "createOrEditLabel": "Créer ou éditer un Beneficiary Relationship",
+        "notFound": "Aucun Beneficiary Relationship trouvé"
+      },
+      "created": "Un nouveau Beneficiary Relationship a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Beneficiary Relationship avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Beneficiary Relationship avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Beneficiary Relationship {{ id }} ?"
+      },
+      "detail": {
+        "title": "Beneficiary Relationship"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

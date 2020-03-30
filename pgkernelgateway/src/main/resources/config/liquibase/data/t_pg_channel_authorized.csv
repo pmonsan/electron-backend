@@ -1,0 +1,11 @@
+id;transaction_type_code;registration_date;active
+1;Auto ;2020-03-30T00:07:59;true
+2;maroo;2020-03-29T13:40:07;true
+3;proje;2020-03-30T02:32:19;false
+4;Gorge;2020-03-29T15:27:27;false
+5;abili;2020-03-29T23:27:14;false
+6;Concr;2020-03-30T03:19:59;false
+7;Oklah;2020-03-30T09:31:56;true
+8;Funct;2020-03-30T05:02:49;true
+9;card ;2020-03-29T11:08:39;false
+10;Perso;2020-03-29T23:01:32;false

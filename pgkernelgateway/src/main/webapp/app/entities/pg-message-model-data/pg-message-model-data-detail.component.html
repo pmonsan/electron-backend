@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgMessageModelData">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pgMessageModelData.detail.title">Pg Message Model Data</span> {{pgMessageModelData.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessageModelData.mandatory">Mandatory</span></dt>
+                <dd>
+                    <span>{{pgMessageModelData.mandatory}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessageModelData.hidden">Hidden</span></dt>
+                <dd>
+                    <span>{{pgMessageModelData.hidden}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessageModelData.active">Active</span></dt>
+                <dd>
+                    <span>{{pgMessageModelData.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessageModelData.pgData">Pg Data</span></dt>
+                <dd>
+                    <div *ngIf="pgMessageModelData.pgDataId">
+                        <a [routerLink]="['/pg-data', pgMessageModelData.pgDataId, 'view']">{{pgMessageModelData.pgDataId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgMessageModelData.pgMessageModel">Pg Message Model</span></dt>
+                <dd>
+                    <div *ngIf="pgMessageModelData.pgMessageModelId">
+                        <a [routerLink]="['/pg-message-model', pgMessageModelData.pgMessageModelId, 'view']">{{pgMessageModelData.pgMessageModelId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-message-model-data', pgMessageModelData.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

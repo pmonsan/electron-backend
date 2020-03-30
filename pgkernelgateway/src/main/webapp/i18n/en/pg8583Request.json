@@ -1,0 +1,33 @@
+{
+  "pgkernelgatewayApp": {
+    "pg8583Request": {
+      "home": {
+        "title": "Pg 8583 Requests",
+        "createLabel": "Create a new Pg 8583 Request",
+        "createOrEditLabel": "Create or edit a Pg 8583 Request",
+        "notFound": "No Pg 8583 Request found"
+      },
+      "created": "A new Pg 8583 Request is created with identifier {{ param }}",
+      "updated": "A Pg 8583 Request is updated with identifier {{ param }}",
+      "deleted": "A Pg 8583 Request is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pg 8583 Request {{ id }}?"
+      },
+      "detail": {
+        "title": "Pg 8583 Request"
+      },
+      "number": "Number",
+      "apiKey": "Api Key",
+      "encryptedData": "Encrypted Data",
+      "decryptedData": "Decrypted Data",
+      "registrationDate": "Registration Date",
+      "responseDate": "Response Date",
+      "requestResponse": "Request Response",
+      "status": "Status",
+      "reason": "Reason",
+      "pgapsMessage": "Pgaps Message",
+      "pgapsTransactionNumber": "Pgaps Transaction Number",
+      "active": "Active"
+    }
+  }
+}

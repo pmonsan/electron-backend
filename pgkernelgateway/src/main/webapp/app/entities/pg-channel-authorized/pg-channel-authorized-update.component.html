@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pg-channel-authorized-heading" jhiTranslate="pgkernelgatewayApp.pgChannelAuthorized.home.createOrEditLabel">Create or edit a Pg Channel Authorized</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgChannelAuthorized.transactionTypeCode" for="field_transactionTypeCode">Transaction Type Code</label>
+                    <input type="text" class="form-control" name="transactionTypeCode" id="field_transactionTypeCode"
+                           formControlName="transactionTypeCode"/>
+                    <div *ngIf="editForm.get('transactionTypeCode').invalid && (editForm.get('transactionTypeCode').dirty || editForm.get('transactionTypeCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionTypeCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionTypeCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgChannelAuthorized.registrationDate" for="field_registrationDate">Registration Date</label>
+                    <div class="d-flex">
+                        <input id="field_registrationDate" type="datetime-local" class="form-control" name="registrationDate" formControlName="registrationDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('registrationDate').invalid && (editForm.get('registrationDate').dirty || editForm.get('registrationDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('registrationDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('registrationDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgChannelAuthorized.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                    <div *ngIf="editForm.get('active').invalid && (editForm.get('active').dirty || editForm.get('active').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('active').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgChannelAuthorized.pgChannel" for="field_pgChannel">Pg Channel</label>
+                    <select class="form-control" id="field_pgChannel" name="pgChannel" formControlName="pgChannelId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pgChannelOption.id" *ngFor="let pgChannelOption of pgchannels; trackBy: trackPgChannelById">{{pgChannelOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

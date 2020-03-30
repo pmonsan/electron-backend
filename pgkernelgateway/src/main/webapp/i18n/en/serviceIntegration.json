@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "serviceIntegration": {
+      "home": {
+        "title": "Service Integrations",
+        "createLabel": "Create a new Service Integration",
+        "createOrEditLabel": "Create or edit a Service Integration",
+        "notFound": "No Service Integration found"
+      },
+      "created": "A new Service Integration is created with identifier {{ param }}",
+      "updated": "A Service Integration is updated with identifier {{ param }}",
+      "deleted": "A Service Integration is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Service Integration {{ id }}?"
+      },
+      "detail": {
+        "title": "Service Integration"
+      },
+      "customerRef": "Customer Ref",
+      "serviceCode": "Service Code",
+      "active": "Active",
+      "partner": "Partner"
+    }
+  }
+}

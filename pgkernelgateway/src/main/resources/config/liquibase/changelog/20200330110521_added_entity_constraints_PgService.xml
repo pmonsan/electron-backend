@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity PgService.
+    -->
+    <changeSet id="20200330110521-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="source_connector_id"
+                                 baseTableName="t_service"
+                                 constraintName="fk_t_service_source_connector_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_connector"/>
+
+        <addForeignKeyConstraint baseColumnNames="destination_connector_id"
+                                 baseTableName="t_service"
+                                 constraintName="fk_t_service_destination_connector_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_connector"/>
+
+    </changeSet>
+</databaseChangeLog>

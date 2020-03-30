@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "pgChannelAuthorized": {
+      "home": {
+        "title": "Pg Channel Authorizeds",
+        "createLabel": "Create a new Pg Channel Authorized",
+        "createOrEditLabel": "Create or edit a Pg Channel Authorized",
+        "notFound": "No Pg Channel Authorized found"
+      },
+      "created": "A new Pg Channel Authorized is created with identifier {{ param }}",
+      "updated": "A Pg Channel Authorized is updated with identifier {{ param }}",
+      "deleted": "A Pg Channel Authorized is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pg Channel Authorized {{ id }}?"
+      },
+      "detail": {
+        "title": "Pg Channel Authorized"
+      },
+      "transactionTypeCode": "Transaction Type Code",
+      "registrationDate": "Registration Date",
+      "active": "Active",
+      "pgChannel": "Pg Channel"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "userProfileData": {
+      "home": {
+        "title": "User Profile Data",
+        "createLabel": "Create a new User Profile Data",
+        "createOrEditLabel": "Create or edit a User Profile Data",
+        "notFound": "No User Profile Data found"
+      },
+      "created": "A new User Profile Data is created with identifier {{ param }}",
+      "updated": "A User Profile Data is updated with identifier {{ param }}",
+      "deleted": "A User Profile Data is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete User Profile Data {{ id }}?"
+      },
+      "detail": {
+        "title": "User Profile Data"
+      },
+      "active": "Active",
+      "pgDataCode": "Pg Data Code",
+      "userProfile": "User Profile"
+    }
+  }
+}

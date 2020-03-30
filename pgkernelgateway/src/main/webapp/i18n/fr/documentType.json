@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "documentType": {
+      "home": {
+        "title": "DocumentTypes",
+        "createLabel": "Créer un nouveau Document Type",
+        "createOrEditLabel": "Créer ou éditer un Document Type",
+        "notFound": "Aucun Document Type trouvé"
+      },
+      "created": "Un nouveau Document Type a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Document Type avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Document Type avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Document Type {{ id }} ?"
+      },
+      "detail": {
+        "title": "Document Type"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

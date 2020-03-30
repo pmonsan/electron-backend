@@ -1,0 +1,26 @@
+{
+  "pgkernelgatewayApp": {
+    "pgData": {
+      "home": {
+        "title": "PgData",
+        "createLabel": "Créer un nouveau Pg Data",
+        "createOrEditLabel": "Créer ou éditer un Pg Data",
+        "notFound": "Aucun Pg Data trouvé"
+      },
+      "created": "Un nouveau Pg Data a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg Data avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg Data avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg Data {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg Data"
+      },
+      "code": "Code",
+      "longLabel": "Long Label",
+      "shortLabel": "Short Label",
+      "comment": "Comment",
+      "active": "Active"
+    }
+  }
+}

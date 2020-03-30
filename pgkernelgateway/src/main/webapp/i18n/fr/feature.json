@@ -1,0 +1,26 @@
+{
+  "pgkernelgatewayApp": {
+    "feature": {
+      "home": {
+        "title": "Features",
+        "createLabel": "Créer un nouveau Feature",
+        "createOrEditLabel": "Créer ou éditer un Feature",
+        "notFound": "Aucun Feature trouvé"
+      },
+      "created": "Un nouveau Feature a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Feature avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Feature avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Feature {{ id }} ?"
+      },
+      "detail": {
+        "title": "Feature"
+      },
+      "code": "Code",
+      "comment": "Comment",
+      "longLabel": "Long Label",
+      "shortLabel": "Short Label",
+      "active": "Active"
+    }
+  }
+}

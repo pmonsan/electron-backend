@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "pgModule": {
+      "home": {
+        "title": "Pg Modules",
+        "createLabel": "Create a new Pg Module",
+        "createOrEditLabel": "Create or edit a Pg Module",
+        "notFound": "No Pg Module found"
+      },
+      "created": "A new Pg Module is created with identifier {{ param }}",
+      "updated": "A Pg Module is updated with identifier {{ param }}",
+      "deleted": "A Pg Module is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pg Module {{ id }}?"
+      },
+      "detail": {
+        "title": "Pg Module"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

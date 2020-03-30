@@ -1,0 +1,132 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-contract-heading" jhiTranslate="pgkernelgatewayApp.contract.home.createOrEditLabel">Create or edit a Contract</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contract.number" for="field_number">Number</label>
+                    <input type="text" class="form-control" name="number" id="field_number"
+                           formControlName="number"/>
+                    <div *ngIf="editForm.get('number').invalid && (editForm.get('number').dirty || editForm.get('number').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('number').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 25 }">
+                        This field cannot be longer than 25 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contract.creationDate" for="field_creationDate">Creation Date</label>
+                    <div class="d-flex">
+                        <input id="field_creationDate" type="datetime-local" class="form-control" name="creationDate" formControlName="creationDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('creationDate').invalid && (editForm.get('creationDate').dirty || editForm.get('creationDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('creationDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('creationDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contract.isMerchantContract" for="field_isMerchantContract">Is Merchant Contract</label>
+                    <input type="checkbox" class="form-control" name="isMerchantContract" id="field_isMerchantContract"
+                           formControlName="isMerchantContract"/>
+                    <div *ngIf="editForm.get('isMerchantContract').invalid && (editForm.get('isMerchantContract').dirty || editForm.get('isMerchantContract').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isMerchantContract').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contract.modificationDate" for="field_modificationDate">Modification Date</label>
+                    <div class="d-flex">
+                        <input id="field_modificationDate" type="datetime-local" class="form-control" name="modificationDate" formControlName="modificationDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('modificationDate').invalid && (editForm.get('modificationDate').dirty || editForm.get('modificationDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('modificationDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('modificationDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contract.validationDate" for="field_validationDate">Validation Date</label>
+                    <div class="d-flex">
+                        <input id="field_validationDate" type="datetime-local" class="form-control" name="validationDate" formControlName="validationDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contract.filename" for="field_filename">Filename</label>
+                    <input type="text" class="form-control" name="filename" id="field_filename"
+                           formControlName="filename"/>
+                    <div *ngIf="editForm.get('filename').invalid && (editForm.get('filename').dirty || editForm.get('filename').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('filename').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('filename').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contract.customerCode" for="field_customerCode">Customer Code</label>
+                    <input type="text" class="form-control" name="customerCode" id="field_customerCode"
+                           formControlName="customerCode"/>
+                    <div *ngIf="editForm.get('customerCode').invalid && (editForm.get('customerCode').dirty || editForm.get('customerCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('customerCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('customerCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contract.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                    <div *ngIf="editForm.get('active').invalid && (editForm.get('active').dirty || editForm.get('active').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('active').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contract.account" for="field_account">Account</label>
+                    <select class="form-control" id="field_account" name="account" formControlName="accountId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pgAccountOption.id" *ngFor="let pgAccountOption of pgaccounts; trackBy: trackPgAccountById">{{pgAccountOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

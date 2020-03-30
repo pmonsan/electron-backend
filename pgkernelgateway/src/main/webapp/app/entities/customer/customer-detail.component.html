@@ -1,0 +1,115 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customer">
+            <h2><span jhiTranslate="pgkernelgatewayApp.customer.detail.title">Customer</span> {{customer.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.number">Number</span></dt>
+                <dd>
+                    <span>{{customer.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.corporateName">Corporate Name</span></dt>
+                <dd>
+                    <span>{{customer.corporateName}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.firstname">Firstname</span></dt>
+                <dd>
+                    <span>{{customer.firstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.lastname">Lastname</span></dt>
+                <dd>
+                    <span>{{customer.lastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.gpsLatitude">Gps Latitude</span></dt>
+                <dd>
+                    <span>{{customer.gpsLatitude}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.gpsLongitude">Gps Longitude</span></dt>
+                <dd>
+                    <span>{{customer.gpsLongitude}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.homePhone">Home Phone</span></dt>
+                <dd>
+                    <span>{{customer.homePhone}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.mobilePhone">Mobile Phone</span></dt>
+                <dd>
+                    <span>{{customer.mobilePhone}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.workPhone">Work Phone</span></dt>
+                <dd>
+                    <span>{{customer.workPhone}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.otherQuestion">Other Question</span></dt>
+                <dd>
+                    <span>{{customer.otherQuestion}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.responseOfQuestion">Response Of Question</span></dt>
+                <dd>
+                    <span>{{customer.responseOfQuestion}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.tradeRegister">Trade Register</span></dt>
+                <dd>
+                    <span>{{customer.tradeRegister}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.address">Address</span></dt>
+                <dd>
+                    <span>{{customer.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{customer.postalCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.city">City</span></dt>
+                <dd>
+                    <span>{{customer.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.email">Email</span></dt>
+                <dd>
+                    <span>{{customer.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.countryCode">Country Code</span></dt>
+                <dd>
+                    <span>{{customer.countryCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.partnerCode">Partner Code</span></dt>
+                <dd>
+                    <span>{{customer.partnerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.activityAreaCode">Activity Area Code</span></dt>
+                <dd>
+                    <span>{{customer.activityAreaCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.customerTypeCode">Customer Type Code</span></dt>
+                <dd>
+                    <span>{{customer.customerTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.questionCode">Question Code</span></dt>
+                <dd>
+                    <span>{{customer.questionCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.username">Username</span></dt>
+                <dd>
+                    <span>{{customer.username}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customer.active">Active</span></dt>
+                <dd>
+                    <span>{{customer.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customer', customer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

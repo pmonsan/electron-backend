@@ -1,0 +1,11 @@
+id;code;label;check_subscription;ignore_fees;ignore_limit;ignore_commission;check_otp;active
+1;Perso;Granite generate;true;false;true;true;true;true
+2;Concr;Viaduct value-added array;true;false;true;true;false;false
+3;Respo;navigate users;true;false;true;false;true;false
+4;Cambr;bluetooth;false;true;false;true;false;true
+5;Custo;Engineer infrastructures French Polynesia;true;true;false;true;true;true
+6;Aweso;Alabama Practical Soft Car;false;true;true;false;false;false
+7;Credi;Tuna index Assistant;true;true;false;false;true;true
+8;solut;Bacon;false;true;false;true;true;false
+9;Inves;Associate;true;true;true;false;true;false
+10;gold;synergies projection bypass;false;false;false;false;false;false

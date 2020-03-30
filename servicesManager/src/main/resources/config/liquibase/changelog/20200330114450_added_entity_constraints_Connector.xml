@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Connector.
+    -->
+    <changeSet id="20200330114450-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="connector_type_id"
+                                 baseTableName="t_connector"
+                                 constraintName="fk_t_connector_connector_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_connector_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="pg_module_id"
+                                 baseTableName="t_connector"
+                                 constraintName="fk_t_connector_pg_module_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_module"/>
+
+    </changeSet>
+</databaseChangeLog>

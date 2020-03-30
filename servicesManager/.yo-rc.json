@@ -1,0 +1,47 @@
+{
+  "generator-jhipster": {
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "enableHibernateCache": true,
+    "enableSwaggerCodegen": true,
+    "enableTranslation": true,
+    "jhiPrefix": "jhi",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "messageBroker": "kafka",
+    "nativeLanguage": "fr",
+    "packageName": "com.electron.mfs.pg.services",
+    "packageFolder": "com/electron/mfs/pg/services",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "websocket": false,
+    "baseName": "servicesManager",
+    "applicationType": "microservice",
+    "authenticationType": "uaa",
+    "uaaBaseName": "pgkerneluaa",
+    "cacheProvider": "hazelcast",
+    "buildTool": "maven",
+    "serverPort": "21010",
+    "jhipsterVersion": "6.1.2",
+    "skipUserManagement": true,
+    "clientPackageManager": "npm",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "entities": [
+    "PgService",
+    "ServiceChannel",
+    "ServiceLimit",
+    "PgModule",
+    "Connector",
+    "ConnectorType"
+  ]
+}

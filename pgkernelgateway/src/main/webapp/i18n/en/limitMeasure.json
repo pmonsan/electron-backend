@@ -1,0 +1,23 @@
+{
+  "pgkernelgatewayApp": {
+    "limitMeasure": {
+      "home": {
+        "title": "Limit Measures",
+        "createLabel": "Create a new Limit Measure",
+        "createOrEditLabel": "Create or edit a Limit Measure",
+        "notFound": "No Limit Measure found"
+      },
+      "created": "A new Limit Measure is created with identifier {{ param }}",
+      "updated": "A Limit Measure is updated with identifier {{ param }}",
+      "deleted": "A Limit Measure is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Limit Measure {{ id }}?"
+      },
+      "detail": {
+        "title": "Limit Measure"
+      },
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

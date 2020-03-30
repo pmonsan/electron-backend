@@ -1,0 +1,30 @@
+{
+  "pgkernelgatewayApp": {
+    "subscriptionPrice": {
+      "home": {
+        "title": "SubscriptionPrices",
+        "createLabel": "Créer un nouveau Subscription Price",
+        "createOrEditLabel": "Créer ou éditer un Subscription Price",
+        "notFound": "Aucun Subscription Price trouvé"
+      },
+      "created": "Un nouveau Subscription Price a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Subscription Price avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Subscription Price avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Subscription Price {{ id }} ?"
+      },
+      "detail": {
+        "title": "Subscription Price"
+      },
+      "amount": "Amount",
+      "description": "Description",
+      "label": "Label",
+      "modificationDate": "Modification Date",
+      "serviceCode": "Service Code",
+      "accountTypeCode": "Account Type Code",
+      "currencyCode": "Currency Code",
+      "active": "Active",
+      "pricePlan": "Price Plan"
+    }
+  }
+}

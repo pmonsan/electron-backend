@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity PgDetailMessage.
+    -->
+    <changeSet id="20200330110453-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="pg_data_id"
+                                 baseTableName="t_pg_message_detail"
+                                 constraintName="fk_t_pg_message_detail_pg_data_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_data"/>
+
+        <addForeignKeyConstraint baseColumnNames="pg_message_id"
+                                 baseTableName="t_pg_message_detail"
+                                 constraintName="fk_t_pg_message_detail_pg_message_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_pg_message"/>
+
+    </changeSet>
+</databaseChangeLog>

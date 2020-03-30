@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity PgApplicationService.
+    -->
+    <changeSet id="20200330110446-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="pg_application_id"
+                                 baseTableName="t_pg_application_service"
+                                 constraintName="fk_t_pg_application_service_pg_application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_pg_application"/>
+
+    </changeSet>
+</databaseChangeLog>

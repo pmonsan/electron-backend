@@ -1,0 +1,37 @@
+{
+  "pgkernelgatewayApp": {
+    "agent": {
+      "home": {
+        "title": "Agents",
+        "createLabel": "Create a new Agent",
+        "createOrEditLabel": "Create or edit a Agent",
+        "notFound": "No Agent found"
+      },
+      "created": "A new Agent is created with identifier {{ param }}",
+      "updated": "A Agent is updated with identifier {{ param }}",
+      "deleted": "A Agent is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Agent {{ id }}?"
+      },
+      "detail": {
+        "title": "Agent"
+      },
+      "matricule": "Matricule",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "birthdate": "Birthdate",
+      "email": "Email",
+      "mobilePhone": "Mobile Phone",
+      "businessEmail": "Business Email",
+      "businessPhone": "Business Phone",
+      "address": "Address",
+      "postalCode": "Postal Code",
+      "city": "City",
+      "countryCode": "Country Code",
+      "partnerCode": "Partner Code",
+      "username": "Username",
+      "active": "Active",
+      "agentType": "Agent Type"
+    }
+  }
+}

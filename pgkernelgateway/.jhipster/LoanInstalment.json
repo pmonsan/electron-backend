@@ -1,0 +1,77 @@
+{
+    "name": "LoanInstalment",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "expectedPaymentDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "realPaymentDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "amountToPay",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "penalityFee",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "statusDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "loanInstalmentStatusCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 5
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "transaction",
+            "otherEntityRelationshipName": "loanInstalment",
+            "relationshipName": "loan",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200330110530",
+    "entityTableName": "t_loan_instalment",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "pgkernelgateway",
+        "transactionManager"
+    ]
+}

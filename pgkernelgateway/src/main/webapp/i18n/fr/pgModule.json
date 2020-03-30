@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "pgModule": {
+      "home": {
+        "title": "PgModules",
+        "createLabel": "Créer un nouveau Pg Module",
+        "createOrEditLabel": "Créer ou éditer un Pg Module",
+        "notFound": "Aucun Pg Module trouvé"
+      },
+      "created": "Un nouveau Pg Module a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg Module avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg Module avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg Module {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg Module"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

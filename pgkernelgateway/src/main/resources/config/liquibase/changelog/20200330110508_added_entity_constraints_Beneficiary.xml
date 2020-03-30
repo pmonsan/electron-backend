@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Beneficiary.
+    -->
+    <changeSet id="20200330110508-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="t_beneficiary"
+                                 constraintName="fk_t_beneficiary_customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="t_customer"/>
+
+    </changeSet>
+</databaseChangeLog>

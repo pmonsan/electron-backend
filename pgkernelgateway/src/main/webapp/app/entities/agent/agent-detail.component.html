@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="agent">
+            <h2><span jhiTranslate="pgkernelgatewayApp.agent.detail.title">Agent</span> {{agent.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.matricule">Matricule</span></dt>
+                <dd>
+                    <span>{{agent.matricule}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.firstname">Firstname</span></dt>
+                <dd>
+                    <span>{{agent.firstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.lastname">Lastname</span></dt>
+                <dd>
+                    <span>{{agent.lastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.birthdate">Birthdate</span></dt>
+                <dd>
+                    <span>{{agent.birthdate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.email">Email</span></dt>
+                <dd>
+                    <span>{{agent.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.mobilePhone">Mobile Phone</span></dt>
+                <dd>
+                    <span>{{agent.mobilePhone}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.businessEmail">Business Email</span></dt>
+                <dd>
+                    <span>{{agent.businessEmail}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.businessPhone">Business Phone</span></dt>
+                <dd>
+                    <span>{{agent.businessPhone}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.address">Address</span></dt>
+                <dd>
+                    <span>{{agent.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{agent.postalCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.city">City</span></dt>
+                <dd>
+                    <span>{{agent.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.countryCode">Country Code</span></dt>
+                <dd>
+                    <span>{{agent.countryCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.partnerCode">Partner Code</span></dt>
+                <dd>
+                    <span>{{agent.partnerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.username">Username</span></dt>
+                <dd>
+                    <span>{{agent.username}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.active">Active</span></dt>
+                <dd>
+                    <span>{{agent.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.agent.agentType">Agent Type</span></dt>
+                <dd>
+                    <div *ngIf="agent.agentTypeId">
+                        <a [routerLink]="['/agent-type', agent.agentTypeId, 'view']">{{agent.agentTypeId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/agent', agent.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

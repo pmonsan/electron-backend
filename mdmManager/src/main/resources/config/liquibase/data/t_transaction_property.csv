@@ -1,0 +1,11 @@
+id;code;label;property_type;active
+1;navig;Savings Account Landing Delaware;BOOLEAN;true
+2;Field;deposit;TIMESTAMP;false
+3;payme;Rubber;STRING;true
+4;Indus;array Virginia;INTEGER;false
+5;invoi;maroon framework;TIME;true
+6;conve;Handcrafted Soft Car Profit-focused Ethiopia;DATETIME;false
+7;olive;Coordinator;DATE;false
+8;proac;Usability;STRING;true
+9;Hat;Practical Stravenue;DATE;false
+10;enhan;Producer;DATETIME;false

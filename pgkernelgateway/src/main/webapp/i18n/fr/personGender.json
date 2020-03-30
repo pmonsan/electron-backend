@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "personGender": {
+      "home": {
+        "title": "PersonGenders",
+        "createLabel": "Créer un nouveau Person Gender",
+        "createOrEditLabel": "Créer ou éditer un Person Gender",
+        "notFound": "Aucun Person Gender trouvé"
+      },
+      "created": "Un nouveau Person Gender a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Person Gender avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Person Gender avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Person Gender {{ id }} ?"
+      },
+      "detail": {
+        "title": "Person Gender"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

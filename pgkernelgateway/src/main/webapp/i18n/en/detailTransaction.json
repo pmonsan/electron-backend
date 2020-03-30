@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "detailTransaction": {
+      "home": {
+        "title": "Detail Transactions",
+        "createLabel": "Create a new Detail Transaction",
+        "createOrEditLabel": "Create or edit a Detail Transaction",
+        "notFound": "No Detail Transaction found"
+      },
+      "created": "A new Detail Transaction is created with identifier {{ param }}",
+      "updated": "A Detail Transaction is updated with identifier {{ param }}",
+      "deleted": "A Detail Transaction is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Detail Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Detail Transaction"
+      },
+      "pgDataCode": "Pg Data Code",
+      "dataValue": "Data Value",
+      "active": "Active",
+      "transaction": "Transaction"
+    }
+  }
+}

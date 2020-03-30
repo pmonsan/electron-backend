@@ -1,0 +1,30 @@
+{
+  "pgkernelgatewayApp": {
+    "connector": {
+      "home": {
+        "title": "Connectors",
+        "createLabel": "Créer un nouveau Connector",
+        "createOrEditLabel": "Créer ou éditer un Connector",
+        "notFound": "Aucun Connector trouvé"
+      },
+      "created": "Un nouveau Connector a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Connector avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Connector avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Connector {{ id }} ?"
+      },
+      "detail": {
+        "title": "Connector"
+      },
+      "code": "Code",
+      "label": "Label",
+      "logic": "Logic",
+      "comment": "Comment",
+      "partnerCode": "Partner Code",
+      "meansofpaymentTypeCode": "Meansofpayment Type Code",
+      "active": "Active",
+      "connectorType": "Connector Type",
+      "pgModule": "Pg Module"
+    }
+  }
+}

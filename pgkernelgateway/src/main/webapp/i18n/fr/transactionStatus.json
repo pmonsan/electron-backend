@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "transactionStatus": {
+      "home": {
+        "title": "TransactionStatuses",
+        "createLabel": "Créer un nouveau Transaction Status",
+        "createOrEditLabel": "Créer ou éditer un Transaction Status",
+        "notFound": "Aucun Transaction Status trouvé"
+      },
+      "created": "Un nouveau Transaction Status a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Transaction Status avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Transaction Status avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Transaction Status {{ id }} ?"
+      },
+      "detail": {
+        "title": "Transaction Status"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

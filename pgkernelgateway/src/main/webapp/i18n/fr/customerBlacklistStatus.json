@@ -1,0 +1,10 @@
+{
+  "pgkernelgatewayApp": {
+    "CustomerBlacklistStatus": {
+      "null": "",
+      "INITIATED": "INITIATED",
+      "BLACKLIST": "BLACKLIST",
+      "CANCELLED": "CANCELLED"
+    }
+  }
+}

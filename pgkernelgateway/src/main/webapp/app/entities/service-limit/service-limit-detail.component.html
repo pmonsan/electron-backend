@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceLimit">
+            <h2><span jhiTranslate="pgkernelgatewayApp.serviceLimit.detail.title">Service Limit</span> {{serviceLimit.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.serviceLimit.limitTypeCode">Limit Type Code</span></dt>
+                <dd>
+                    <span>{{serviceLimit.limitTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.serviceLimit.value">Value</span></dt>
+                <dd>
+                    <span>{{serviceLimit.value}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.serviceLimit.comment">Comment</span></dt>
+                <dd>
+                    <span>{{serviceLimit.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.serviceLimit.active">Active</span></dt>
+                <dd>
+                    <span>{{serviceLimit.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.serviceLimit.pgService">Pg Service</span></dt>
+                <dd>
+                    <div *ngIf="serviceLimit.pgServiceId">
+                        <a [routerLink]="['/pg-service', serviceLimit.pgServiceId, 'view']">{{serviceLimit.pgServiceId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-limit', serviceLimit.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "transactionChannel": {
+      "home": {
+        "title": "TransactionChannels",
+        "createLabel": "Créer un nouveau Transaction Channel",
+        "createOrEditLabel": "Créer ou éditer un Transaction Channel",
+        "notFound": "Aucun Transaction Channel trouvé"
+      },
+      "created": "Un nouveau Transaction Channel a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Transaction Channel avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Transaction Channel avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Transaction Channel {{ id }} ?"
+      },
+      "detail": {
+        "title": "Transaction Channel"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

@@ -1,0 +1,103 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="internalConnectorRequest">
+            <h2><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.detail.title">Internal Connector Request</span> {{internalConnectorRequest.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.number">Number</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.module">Module</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.module}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.connector">Connector</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.connector}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.connectorType">Connector Type</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.connectorType}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.requestData">Request Data</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.requestData}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.registrationDate">Registration Date</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.registrationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.pgapsTransactionNumber">Pgaps Transaction Number</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.pgapsTransactionNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.serviceId">Service Id</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.serviceId}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.accountNumber">Account Number</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.accountNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.amount">Amount</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.balance">Balance</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.balance}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.accountValidation">Account Validation</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.accountValidation}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.numberOfTransactions">Number Of Transactions</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.numberOfTransactions}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.lastTransactions">Last Transactions</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.lastTransactions}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.action">Action</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.action}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.responseDate">Response Date</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.responseDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.status">Status</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.reason">Reason</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.reason}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.partnerTransactionNumber">Partner Transaction Number</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.partnerTransactionNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.internalConnectorRequest.active">Active</span></dt>
+                <dd>
+                    <span>{{internalConnectorRequest.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/internal-connector-request', internalConnectorRequest.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

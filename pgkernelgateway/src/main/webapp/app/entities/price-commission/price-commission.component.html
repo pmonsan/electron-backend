@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.priceCommission.home.title">Price Commissions</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-price-commission" [routerLink]="['/price-commission/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.priceCommission.home.createLabel">
+            Create new Price Commission
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="priceCommissions?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.priceCommission.home.notFound">No priceCommissions found</span>
+    </div>
+    <div class="table-responsive" *ngIf="priceCommissions?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.priceCommission.code">Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.priceCommission.label">Label</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.priceCommission.amount">Amount</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.priceCommission.amountInPercent">Amount In Percent</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.priceCommission.dateCreation">Date Creation</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.priceCommission.percent">Percent</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.priceCommission.currencyCode">Currency Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.priceCommission.partnerCode">Partner Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.priceCommission.serviceCode">Service Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.priceCommission.description">Description</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.priceCommission.active">Active</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let priceCommission of priceCommissions ;trackBy: trackId">
+                <td><a [routerLink]="['/price-commission', priceCommission.id, 'view' ]">{{priceCommission.id}}</a></td>
+                <td>{{priceCommission.code}}</td>
+                <td>{{priceCommission.label}}</td>
+                <td>{{priceCommission.amount}}</td>
+                <td>{{priceCommission.amountInPercent}}</td>
+                <td>{{priceCommission.dateCreation | date:'medium'}}</td>
+                <td>{{priceCommission.percent}}</td>
+                <td>{{priceCommission.currencyCode}}</td>
+                <td>{{priceCommission.partnerCode}}</td>
+                <td>{{priceCommission.serviceCode}}</td>
+                <td>{{priceCommission.description}}</td>
+                <td>{{priceCommission.active}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/price-commission', priceCommission.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/price-commission', priceCommission.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'price-commission', { outlets: { popup: priceCommission.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

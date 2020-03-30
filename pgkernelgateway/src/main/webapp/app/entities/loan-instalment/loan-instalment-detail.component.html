@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="loanInstalment">
+            <h2><span jhiTranslate="pgkernelgatewayApp.loanInstalment.detail.title">Loan Instalment</span> {{loanInstalment.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.loanInstalment.code">Code</span></dt>
+                <dd>
+                    <span>{{loanInstalment.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.loanInstalment.expectedPaymentDate">Expected Payment Date</span></dt>
+                <dd>
+                    <span>{{loanInstalment.expectedPaymentDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.loanInstalment.realPaymentDate">Real Payment Date</span></dt>
+                <dd>
+                    <span>{{loanInstalment.realPaymentDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.loanInstalment.amountToPay">Amount To Pay</span></dt>
+                <dd>
+                    <span>{{loanInstalment.amountToPay}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.loanInstalment.penalityFee">Penality Fee</span></dt>
+                <dd>
+                    <span>{{loanInstalment.penalityFee}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.loanInstalment.statusDate">Status Date</span></dt>
+                <dd>
+                    <span>{{loanInstalment.statusDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.loanInstalment.loanInstalmentStatusCode">Loan Instalment Status Code</span></dt>
+                <dd>
+                    <span>{{loanInstalment.loanInstalmentStatusCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.loanInstalment.active">Active</span></dt>
+                <dd>
+                    <span>{{loanInstalment.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.loanInstalment.loan">Loan</span></dt>
+                <dd>
+                    <div *ngIf="loanInstalment.loanId">
+                        <a [routerLink]="['/transaction', loanInstalment.loanId, 'view']">{{loanInstalment.loanId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/loan-instalment', loanInstalment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

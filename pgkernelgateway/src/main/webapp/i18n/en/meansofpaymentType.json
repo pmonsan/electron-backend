@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "meansofpaymentType": {
+      "home": {
+        "title": "Meansofpayment Types",
+        "createLabel": "Create a new Meansofpayment Type",
+        "createOrEditLabel": "Create or edit a Meansofpayment Type",
+        "notFound": "No Meansofpayment Type found"
+      },
+      "created": "A new Meansofpayment Type is created with identifier {{ param }}",
+      "updated": "A Meansofpayment Type is updated with identifier {{ param }}",
+      "deleted": "A Meansofpayment Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Meansofpayment Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Meansofpayment Type"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

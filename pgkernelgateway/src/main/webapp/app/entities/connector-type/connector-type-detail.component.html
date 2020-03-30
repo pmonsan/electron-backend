@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="connectorType">
+            <h2><span jhiTranslate="pgkernelgatewayApp.connectorType.detail.title">Connector Type</span> {{connectorType.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.connectorType.label">Label</span></dt>
+                <dd>
+                    <span>{{connectorType.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.connectorType.description">Description</span></dt>
+                <dd>
+                    <span>{{connectorType.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.connectorType.active">Active</span></dt>
+                <dd>
+                    <span>{{connectorType.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/connector-type', connectorType.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

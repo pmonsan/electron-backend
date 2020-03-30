@@ -1,0 +1,61 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.beneficiaryRelationship.home.title">Beneficiary Relationships</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-beneficiary-relationship" [routerLink]="['/beneficiary-relationship/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.beneficiaryRelationship.home.createLabel">
+            Create new Beneficiary Relationship
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="beneficiaryRelationships?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.beneficiaryRelationship.home.notFound">No beneficiaryRelationships found</span>
+    </div>
+    <div class="table-responsive" *ngIf="beneficiaryRelationships?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.beneficiaryRelationship.code">Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.beneficiaryRelationship.label">Label</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.beneficiaryRelationship.active">Active</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let beneficiaryRelationship of beneficiaryRelationships ;trackBy: trackId">
+                <td><a [routerLink]="['/beneficiary-relationship', beneficiaryRelationship.id, 'view' ]">{{beneficiaryRelationship.id}}</a></td>
+                <td>{{beneficiaryRelationship.code}}</td>
+                <td>{{beneficiaryRelationship.label}}</td>
+                <td>{{beneficiaryRelationship.active}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/beneficiary-relationship', beneficiaryRelationship.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/beneficiary-relationship', beneficiaryRelationship.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'beneficiary-relationship', { outlets: { popup: beneficiaryRelationship.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

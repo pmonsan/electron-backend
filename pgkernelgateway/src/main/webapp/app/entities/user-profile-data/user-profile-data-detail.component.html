@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="userProfileData">
+            <h2><span jhiTranslate="pgkernelgatewayApp.userProfileData.detail.title">User Profile Data</span> {{userProfileData.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.userProfileData.active">Active</span></dt>
+                <dd>
+                    <span>{{userProfileData.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.userProfileData.pgDataCode">Pg Data Code</span></dt>
+                <dd>
+                    <span>{{userProfileData.pgDataCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.userProfileData.userProfile">User Profile</span></dt>
+                <dd>
+                    <div *ngIf="userProfileData.userProfileId">
+                        <a [routerLink]="['/user-profile', userProfileData.userProfileId, 'view']">{{userProfileData.userProfileId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/user-profile-data', userProfileData.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

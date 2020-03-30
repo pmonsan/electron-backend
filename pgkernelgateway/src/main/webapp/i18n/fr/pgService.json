@@ -1,0 +1,45 @@
+{
+  "pgkernelgatewayApp": {
+    "pgService": {
+      "home": {
+        "title": "PgServices",
+        "createLabel": "Créer un nouveau Pg Service",
+        "createOrEditLabel": "Créer ou éditer un Pg Service",
+        "notFound": "Aucun Pg Service trouvé"
+      },
+      "created": "Un nouveau Pg Service a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg Service avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg Service avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg Service {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg Service"
+      },
+      "code": "Code",
+      "name": "Name",
+      "isNative": "Is Native",
+      "isSourceInternal": "Is Source Internal",
+      "isDestinationInternal": "Is Destination Internal",
+      "needSubscription": "Need Subscription",
+      "currencyCode": "Currency Code",
+      "useTransactionType": "Use Transaction Type",
+      "checkSubscription": "Check Subscription",
+      "ignoreFees": "Ignore Fees",
+      "ignoreLimit": "Ignore Limit",
+      "ignoreCommission": "Ignore Commission",
+      "checkOtp": "Check Otp",
+      "pgTransactionType1Code": "Pg Transaction Type 1 Code",
+      "pgTransactionType2Code": "Pg Transaction Type 2 Code",
+      "partnerOwnerCode": "Partner Owner Code",
+      "transactionTypeCode": "Transaction Type Code",
+      "serviceAuthenticationCode": "Service Authentication Code",
+      "contractPath": "Contract Path",
+      "description": "Description",
+      "logic": "Logic",
+      "active": "Active",
+      "sourceConnector": "Source Connector",
+      "destinationConnector": "Destination Connector"
+    }
+  }
+}

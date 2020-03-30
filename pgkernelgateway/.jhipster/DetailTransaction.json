@@ -1,0 +1,46 @@
+{
+    "name": "DetailTransaction",
+    "fields": [
+        {
+            "fieldName": "pgDataCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 5
+        },
+        {
+            "fieldName": "dataValue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "transaction",
+            "otherEntityRelationshipName": "detailTransaction",
+            "relationshipName": "transaction",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200330110528",
+    "entityTableName": "t_transaction_detail",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": [
+        "pgkernelgateway",
+        "transactionManager"
+    ]
+}

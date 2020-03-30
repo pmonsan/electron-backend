@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "loanInstalmentStatus": {
+      "home": {
+        "title": "LoanInstalmentStatuses",
+        "createLabel": "Créer un nouveau Loan Instalment Status",
+        "createOrEditLabel": "Créer ou éditer un Loan Instalment Status",
+        "notFound": "Aucun Loan Instalment Status trouvé"
+      },
+      "created": "Un nouveau Loan Instalment Status a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Loan Instalment Status avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Loan Instalment Status avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Loan Instalment Status {{ id }} ?"
+      },
+      "detail": {
+        "title": "Loan Instalment Status"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

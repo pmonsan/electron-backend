@@ -1,0 +1,27 @@
+{
+  "pgkernelgatewayApp": {
+    "personDocument": {
+      "home": {
+        "title": "PersonDocuments",
+        "createLabel": "Créer un nouveau Person Document",
+        "createOrEditLabel": "Créer ou éditer un Person Document",
+        "notFound": "Aucun Person Document trouvé"
+      },
+      "created": "Un nouveau Person Document a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Person Document avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Person Document avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Person Document {{ id }} ?"
+      },
+      "detail": {
+        "title": "Person Document"
+      },
+      "documentNumber": "Document Number",
+      "expirationDate": "Expiration Date",
+      "isValid": "Is Valid",
+      "documentTypeCode": "Document Type Code",
+      "active": "Active",
+      "customer": "Customer"
+    }
+  }
+}

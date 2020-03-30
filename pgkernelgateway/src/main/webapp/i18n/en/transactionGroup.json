@@ -1,0 +1,29 @@
+{
+  "pgkernelgatewayApp": {
+    "transactionGroup": {
+      "home": {
+        "title": "Transaction Groups",
+        "createLabel": "Create a new Transaction Group",
+        "createOrEditLabel": "Create or edit a Transaction Group",
+        "notFound": "No Transaction Group found"
+      },
+      "created": "A new Transaction Group is created with identifier {{ param }}",
+      "updated": "A Transaction Group is updated with identifier {{ param }}",
+      "deleted": "A Transaction Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Transaction Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Transaction Group"
+      },
+      "code": "Code",
+      "label": "Label",
+      "checkSubscription": "Check Subscription",
+      "ignoreFees": "Ignore Fees",
+      "ignoreLimit": "Ignore Limit",
+      "ignoreCommission": "Ignore Commission",
+      "checkOtp": "Check Otp",
+      "active": "Active"
+    }
+  }
+}

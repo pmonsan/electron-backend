@@ -1,0 +1,168 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pg-8583-request-heading" jhiTranslate="pgkernelgatewayApp.pg8583Request.home.createOrEditLabel">Create or edit a Pg 8583 Request</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.number" for="field_number">Number</label>
+                    <input type="text" class="form-control" name="number" id="field_number"
+                           formControlName="number"/>
+                    <div *ngIf="editForm.get('number').invalid && (editForm.get('number').dirty || editForm.get('number').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('number').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('number').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.apiKey" for="field_apiKey">Api Key</label>
+                    <input type="text" class="form-control" name="apiKey" id="field_apiKey"
+                           formControlName="apiKey"/>
+                    <div *ngIf="editForm.get('apiKey').invalid && (editForm.get('apiKey').dirty || editForm.get('apiKey').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('apiKey').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('apiKey').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.encryptedData" for="field_encryptedData">Encrypted Data</label>
+                    <input type="text" class="form-control" name="encryptedData" id="field_encryptedData"
+                           formControlName="encryptedData"/>
+                    <div *ngIf="editForm.get('encryptedData').invalid && (editForm.get('encryptedData').dirty || editForm.get('encryptedData').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('encryptedData').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('encryptedData').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.decryptedData" for="field_decryptedData">Decrypted Data</label>
+                    <input type="text" class="form-control" name="decryptedData" id="field_decryptedData"
+                           formControlName="decryptedData"/>
+                    <div *ngIf="editForm.get('decryptedData').invalid && (editForm.get('decryptedData').dirty || editForm.get('decryptedData').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('decryptedData').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.registrationDate" for="field_registrationDate">Registration Date</label>
+                    <div class="d-flex">
+                        <input id="field_registrationDate" type="datetime-local" class="form-control" name="registrationDate" formControlName="registrationDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('registrationDate').invalid && (editForm.get('registrationDate').dirty || editForm.get('registrationDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('registrationDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('registrationDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.responseDate" for="field_responseDate">Response Date</label>
+                    <div class="d-flex">
+                        <input id="field_responseDate" type="datetime-local" class="form-control" name="responseDate" formControlName="responseDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.requestResponse" for="field_requestResponse">Request Response</label>
+                    <input type="text" class="form-control" name="requestResponse" id="field_requestResponse"
+                           formControlName="requestResponse"/>
+                    <div *ngIf="editForm.get('requestResponse').invalid && (editForm.get('requestResponse').dirty || editForm.get('requestResponse').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('requestResponse').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                    <div *ngIf="editForm.get('status').invalid && (editForm.get('status').dirty || editForm.get('status').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('status').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.reason" for="field_reason">Reason</label>
+                    <input type="text" class="form-control" name="reason" id="field_reason"
+                           formControlName="reason"/>
+                    <div *ngIf="editForm.get('reason').invalid && (editForm.get('reason').dirty || editForm.get('reason').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reason').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.pgapsMessage" for="field_pgapsMessage">Pgaps Message</label>
+                    <input type="text" class="form-control" name="pgapsMessage" id="field_pgapsMessage"
+                           formControlName="pgapsMessage"/>
+                    <div *ngIf="editForm.get('pgapsMessage').invalid && (editForm.get('pgapsMessage').dirty || editForm.get('pgapsMessage').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pgapsMessage').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.pgapsTransactionNumber" for="field_pgapsTransactionNumber">Pgaps Transaction Number</label>
+                    <input type="text" class="form-control" name="pgapsTransactionNumber" id="field_pgapsTransactionNumber"
+                           formControlName="pgapsTransactionNumber"/>
+                    <div *ngIf="editForm.get('pgapsTransactionNumber').invalid && (editForm.get('pgapsTransactionNumber').dirty || editForm.get('pgapsTransactionNumber').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pgapsTransactionNumber').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pg8583Request.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                    <div *ngIf="editForm.get('active').invalid && (editForm.get('active').dirty || editForm.get('active').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('active').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

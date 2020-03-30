@@ -1,0 +1,35 @@
+{
+  "pgkernelgatewayApp": {
+    "meansofpayment": {
+      "home": {
+        "title": "Meansofpayments",
+        "createLabel": "Create a new Meansofpayment",
+        "createOrEditLabel": "Create or edit a Meansofpayment",
+        "notFound": "No Meansofpayment found"
+      },
+      "created": "A new Meansofpayment is created with identifier {{ param }}",
+      "updated": "A Meansofpayment is updated with identifier {{ param }}",
+      "deleted": "A Meansofpayment is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Meansofpayment {{ id }}?"
+      },
+      "detail": {
+        "title": "Meansofpayment"
+      },
+      "number": "Number",
+      "aliasAccount": "Alias Account",
+      "baccBankCode": "Bacc Bank Code",
+      "baccBranchCode": "Bacc Branch Code",
+      "baccAccountNumber": "Bacc Account Number",
+      "baccRibKey": "Bacc Rib Key",
+      "cardCvv2": "Card Cvv 2",
+      "cardPan": "Card Pan",
+      "cardValidityDate": "Card Validity Date",
+      "momoAccount": "Momo Account",
+      "meansofpaymentTypeCode": "Meansofpayment Type Code",
+      "issuerCode": "Issuer Code",
+      "active": "Active",
+      "customer": "Customer"
+    }
+  }
+}

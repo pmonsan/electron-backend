@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgApplicationService">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pgApplicationService.detail.title">Pg Application Service</span> {{pgApplicationService.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgApplicationService.serviceCode">Service Code</span></dt>
+                <dd>
+                    <span>{{pgApplicationService.serviceCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgApplicationService.active">Active</span></dt>
+                <dd>
+                    <span>{{pgApplicationService.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgApplicationService.pgApplication">Pg Application</span></dt>
+                <dd>
+                    <div *ngIf="pgApplicationService.pgApplicationId">
+                        <a [routerLink]="['/pg-application', pgApplicationService.pgApplicationId, 'view']">{{pgApplicationService.pgApplicationId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-application-service', pgApplicationService.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

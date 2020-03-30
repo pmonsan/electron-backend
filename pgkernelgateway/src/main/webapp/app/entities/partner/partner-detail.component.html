@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="partner">
+            <h2><span jhiTranslate="pgkernelgatewayApp.partner.detail.title">Partner</span> {{partner.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.code">Code</span></dt>
+                <dd>
+                    <span>{{partner.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.name">Name</span></dt>
+                <dd>
+                    <span>{{partner.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.apiKey">Api Key</span></dt>
+                <dd>
+                    <span>{{partner.apiKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.address">Address</span></dt>
+                <dd>
+                    <span>{{partner.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.city">City</span></dt>
+                <dd>
+                    <span>{{partner.city}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{partner.postalCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.countryCode">Country Code</span></dt>
+                <dd>
+                    <span>{{partner.countryCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.rsaPublicKeyPath">Rsa Public Key Path</span></dt>
+                <dd>
+                    <span>{{partner.rsaPublicKeyPath}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.contactFirstname">Contact Firstname</span></dt>
+                <dd>
+                    <span>{{partner.contactFirstname}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.contactLastname">Contact Lastname</span></dt>
+                <dd>
+                    <span>{{partner.contactLastname}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.businessEmail">Business Email</span></dt>
+                <dd>
+                    <span>{{partner.businessEmail}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.businessPhone">Business Phone</span></dt>
+                <dd>
+                    <span>{{partner.businessPhone}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.partnerTypeCode">Partner Type Code</span></dt>
+                <dd>
+                    <span>{{partner.partnerTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.active">Active</span></dt>
+                <dd>
+                    <span>{{partner.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.partner.partnerSecurity">Partner Security</span></dt>
+                <dd>
+                    <div *ngIf="partner.partnerSecurityId">
+                        <a [routerLink]="['/partner-security', partner.partnerSecurityId, 'view']">{{partner.partnerSecurityId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/partner', partner.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

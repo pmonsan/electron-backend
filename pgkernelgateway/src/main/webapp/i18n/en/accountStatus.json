@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "accountStatus": {
+      "home": {
+        "title": "Account Statuses",
+        "createLabel": "Create a new Account Status",
+        "createOrEditLabel": "Create or edit a Account Status",
+        "notFound": "No Account Status found"
+      },
+      "created": "A new Account Status is created with identifier {{ param }}",
+      "updated": "A Account Status is updated with identifier {{ param }}",
+      "deleted": "A Account Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Account Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Account Status"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

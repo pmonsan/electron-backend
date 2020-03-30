@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "transactionProperty": {
+      "home": {
+        "title": "TransactionProperties",
+        "createLabel": "Créer un nouveau Transaction Property",
+        "createOrEditLabel": "Créer ou éditer un Transaction Property",
+        "notFound": "Aucun Transaction Property trouvé"
+      },
+      "created": "Un nouveau Transaction Property a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Transaction Property avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Transaction Property avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Transaction Property {{ id }} ?"
+      },
+      "detail": {
+        "title": "Transaction Property"
+      },
+      "code": "Code",
+      "label": "Label",
+      "propertyType": "Property Type",
+      "active": "Active"
+    }
+  }
+}

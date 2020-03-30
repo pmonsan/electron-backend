@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "operationStatus": {
+      "home": {
+        "title": "OperationStatuses",
+        "createLabel": "Créer un nouveau Operation Status",
+        "createOrEditLabel": "Créer ou éditer un Operation Status",
+        "notFound": "Aucun Operation Status trouvé"
+      },
+      "created": "Un nouveau Operation Status a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Operation Status avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Operation Status avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Operation Status {{ id }} ?"
+      },
+      "detail": {
+        "title": "Operation Status"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

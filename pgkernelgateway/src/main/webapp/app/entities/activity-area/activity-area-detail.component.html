@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="activityArea">
+            <h2><span jhiTranslate="pgkernelgatewayApp.activityArea.detail.title">Activity Area</span> {{activityArea.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.activityArea.code">Code</span></dt>
+                <dd>
+                    <span>{{activityArea.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.activityArea.label">Label</span></dt>
+                <dd>
+                    <span>{{activityArea.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.activityArea.active">Active</span></dt>
+                <dd>
+                    <span>{{activityArea.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/activity-area', activityArea.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "pgChannel": {
+      "home": {
+        "title": "Pg Channels",
+        "createLabel": "Create a new Pg Channel",
+        "createOrEditLabel": "Create or edit a Pg Channel",
+        "notFound": "No Pg Channel found"
+      },
+      "created": "A new Pg Channel is created with identifier {{ param }}",
+      "updated": "A Pg Channel is updated with identifier {{ param }}",
+      "deleted": "A Pg Channel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pg Channel {{ id }}?"
+      },
+      "detail": {
+        "title": "Pg Channel"
+      },
+      "code": "Code",
+      "longLabel": "Long Label",
+      "shortLabel": "Short Label",
+      "active": "Active"
+    }
+  }
+}

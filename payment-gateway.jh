@@ -1,0 +1,1332 @@
+application {
+  config {
+    baseName pgkerneluaa
+    applicationType uaa
+	packageName com.electron.mfs.pg.uaa
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+    buildTool maven
+	nativeLanguage fr
+	serverPort 21002
+  }
+}
+
+application {
+  config {
+    baseName pgkernelgateway
+    applicationType gateway
+	packageName com.electron.mfs.pg.gateway
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+	serverPort 21003
+  }
+  entities *
+}
+
+application {
+  config {
+    baseName pg8583Manager
+    applicationType microservice
+	packageName com.electron.mfs.pg.pg8583
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+	serverPort 21004
+  }
+  entities PgApplication, PgApplicationService, PgChannelAuthorized, PgChannel, PgData, PgMessageModel, PgMessageStatus, PgMessage, PgDetailMessage, PgMessageModelData, PgResponseCode, PgTransactionType1, PgTransactionType2
+}
+
+application {
+  config {
+    baseName accountManager
+    applicationType microservice
+	packageName com.electron.mfs.pg.account
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+    serverPort 21005
+  }
+  entities PgAccount, Contract, DetailContract, ContractOpposition, AccountBalance, AccountFeature
+}
+
+application {
+  config {
+    baseName customerManager
+    applicationType microservice
+	packageName com.electron.mfs.pg.customer
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+	serverPort 21006
+  }
+  entities Customer, CustomerBlacklist, PersonDocument, Meansofpayment, Beneficiary, CustomerLimit
+}
+
+application {
+  config {
+    baseName subscriptionManager
+    applicationType microservice
+	packageName com.electron.mfs.pg.subscription
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+    serverPort 21007
+  }
+  entities PartnerSecurity, Partner, ServiceIntegration, CustomerSubscription
+}
+
+application {
+  config {
+    baseName limitsManager
+    applicationType microservice
+	packageName com.electron.mfs.pg.limits
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+    serverPort 21008
+  }
+  entities Periodicity, LimitMeasure, LimitType
+}
+
+application {
+  config {
+    baseName feesCommissionManager
+    applicationType microservice
+	packageName com.electron.mfs.pg.feescommission
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+    serverPort 21009
+  }
+  entities PricePlan, Price, SubscriptionPrice, PriceCommission
+}
+
+application {
+  config {
+    baseName servicesManager
+    applicationType microservice
+	packageName com.electron.mfs.pg.services
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+    serverPort 21010
+  }
+  entities PgService, ServiceChannel, ServiceLimit, PgModule, Connector, ConnectorType
+}
+
+application {
+  config {
+    baseName transactionManager
+    applicationType microservice
+	packageName com.electron.mfs.pg.transactions
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+    serverPort 21011
+  }
+  entities Transaction, DetailTransaction, TransactionInfo, LoanInstalment, TransactionPrice, TransactionCommission, Operation, InternalConnectorRequest, InternalConnectorStatus
+}
+
+application {
+  config {
+    baseName mdmManager
+    applicationType microservice
+	packageName com.electron.mfs.pg.mdm
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+    serverPort 21012
+  }
+  entities ActivityArea, AccountType, BeneficiaryType, BeneficiaryRelationship, DocumentType, MeansofpaymentType, CustomerType, Forex, Currency, Feature, OperationType, PartnerType, Country, PersonType, ServiceAuthentication, AccountStatus, OperationStatus, TransactionStatus, TransactionGroup, TransactionType, TransactionChannel, PgData, PgBatch, TransactionProperty, LoanInstalmentStatus, PersonGender, Question
+}
+
+application {
+  config {
+    baseName agentManager
+    applicationType microservice
+	packageName com.electron.mfs.pg.agent
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+	serverPort 21013
+  }
+  entities AgentType, Agent
+}
+
+application {
+  config {
+    baseName iamManager
+    applicationType microservice
+	packageName com.electron.mfs.pg.iam
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+	serverPort 21014
+  }
+  entities PgUser, UserProfile, UserConnection, UserProfileData
+}
+
+application {
+  config {
+    baseName settlmentReconciliationManager
+    applicationType microservice
+	packageName com.electron.mfs.pg.settlement
+    serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+    serverPort 21015
+  }
+}
+
+application {
+  config {
+    baseName pg8583client
+    applicationType microservice
+	packageName com.electron.mfs.pg.pg8583client
+	serviceDiscoveryType eureka
+	authenticationType uaa
+	uaaBaseName "pgkerneluaa" 
+	databaseType sql
+	prodDatabaseType mysql
+	devDatabaseType mysql
+    cacheProvider hazelcast
+	messageBroker kafka
+    buildTool maven
+    clientFramework angularX
+	enableSwaggerCodegen true
+    useSass true
+    testFrameworks [cucumber]
+	nativeLanguage fr
+	serverPort 21016
+  }
+  entities Pg8583Request, Pg8583Status, Pg8583Callback
+}
+
+entity PgApplication(t_pg_application) {
+	code String required maxlength(5),
+	label String required maxlength(50),
+	partnerCode String maxlength(5),
+	active Boolean required
+}
+
+entity PgApplicationService(t_pg_application_service) {
+	serviceCode String required maxlength(5),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	PgApplicationService{pgApplication} to PgApplication
+}
+
+entity PgChannelAuthorized(t_pg_channel_authorized) {
+	TransactionTypeCode String required maxlength(5),
+	registrationDate Instant required,
+	active Boolean required
+}
+
+relationship ManyToOne {
+	PgChannelAuthorized{pgChannel} to PgChannel
+}
+
+entity PgChannel(t_pg_channel) {
+	code String required maxlength(5),
+	longLabel String required maxlength(50),
+	shortLabel String required maxlength(25),
+	active Boolean required
+}
+
+entity PgData(t_pg_data) {
+	field String required maxlength(5),
+	meaning String,
+	type String,
+	active Boolean required
+}
+
+entity PgMessageModel(t_pg_message_model) {
+	code String required maxlength(5),
+	label String required maxlength(50),
+	comment String,
+	active Boolean required
+}
+
+entity PgMessageStatus(t_pg_message_status) {
+	label String required maxlength(5),
+	active Boolean required
+}
+
+entity PgMessage(t_pg_message) {
+	code String required maxlength(15),
+	label String required maxlength(50),
+	messageDate Instant required,
+	comment String,
+	active Boolean required
+}
+
+relationship ManyToOne {
+	PgMessage{pgMessageModel} to  PgMessageModel,
+	PgMessage{pgMessageStatus} to  PgMessageStatus
+}
+
+entity PgDetailMessage(t_pg_message_detail) {
+	dataValue String required,
+	active Boolean required
+}
+
+relationship ManyToOne {
+	PgDetailMessage{pgData} to  PgData,
+	PgDetailMessage{pgMessage} to  PgMessage
+}
+
+entity PgMessageModelData(t_pg_message_model_data) {
+	mandatory Boolean required,
+	hidden Boolean required,
+	active Boolean required
+}
+
+relationship ManyToOne {
+	PgMessageModelData{pgData} to  PgData,
+	PgMessageModelData{pgMessageModel} to  PgMessageModel
+}
+
+entity PgResponseCode(t_pg_response_code) {
+	code String required maxlength(5),
+	label String required maxlength(50),
+	description String,
+	active Boolean required
+}
+
+entity PgTransactionType1(t_pg_transaction_type1) {
+	code String required maxlength(5),
+	label String,
+	description String,
+	active Boolean required
+}
+
+entity PgTransactionType2(t_pg_transaction_type2) {
+	code String required maxlength(5),
+	label String required maxlength(50),
+	description String required maxlength(50),
+	active Boolean required
+}
+
+
+entity PgAccount(t_account) {
+	number String  required maxlength(50),
+	openingDate Instant required,
+	temporary Boolean required,
+	closingDate Instant,
+	imsi String maxlength(20),
+	transactionCode String required pattern(/^[A-Za-z0-9]{4}$/),
+	validationDate Instant,
+	accountStatusCode String required maxlength(5),
+	accountTypeCode String required maxlength(5),
+	customerCode String required maxlength(5),
+	currencyCode String required maxlength(5),
+	comment String maxlength(255),
+	active Boolean required
+}
+
+
+entity Contract(t_contract) {
+	number String  maxlength(25),
+	creationDate Instant required,
+	isMerchantContract Boolean required,
+	modificationDate Instant required,
+	validationDate Instant,
+	filename String  required maxlength(100),
+	customerCode String required maxlength(5),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	Contract{account} to PgAccount
+}
+
+entity DetailContract(t_contract_detail) {
+	comment String maxlength(255),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	DetailContract{contract} to Contract
+}
+
+entity ContractOpposition(t_contract_opposition) {
+	number String  maxlength(25),
+	isCustomerInitiative Boolean required,
+	oppositionDate Instant required,
+	oppositionReason String maxlength(255),
+	comment String maxlength(255),
+	active Boolean required,
+}
+
+relationship ManyToOne {
+	ContractOpposition{contract} to Contract
+}
+
+entity AccountBalance(t_account_balance) {
+	situationDate Instant required,
+	balance Double min(0),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	AccountBalance{account} to PgAccount
+}
+
+entity AccountFeature(t_account_feature) {
+	activationDate Instant required,
+	featureCode String required maxlength(5),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	AccountFeature{account} to PgAccount
+}
+
+
+entity Customer(t_customer) {
+	number String  maxlength(25),
+	corporateName String maxlength(50),
+	firstname String maxlength(50),
+	lastname String maxlength(50),
+	gpsLatitude Double min(0),
+	gpsLongitude Double min(0),
+	homePhone String maxlength(20),
+	mobilePhone String maxlength(20),
+	workPhone String maxlength(20),
+	
+	otherQuestion String maxlength(150),
+	responseOfQuestion String maxlength(150),
+	tradeRegister String maxlength(50),
+
+	address String maxlength(255),
+	postalCode String maxlength(10),
+	city String maxlength(50),
+	email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+	countryCode String required maxlength(5),	
+	partnerCode String required maxlength(10),
+	activityAreaCode String required maxlength(5),	
+	customerTypeCode String required maxlength(5),	
+	questionCode String required maxlength(5),
+	username String  maxlength(50),
+	active Boolean required
+}
+
+enum CustomerBlacklistStatus {
+	INITIATED,
+	BLACKLIST,
+	CANCELLED
+}
+
+entity CustomerBlacklist(t_customer_blacklist) {
+	customerBlacklistStatus CustomerBlacklistStatus required,
+	insertionDate Instant required,
+	modificationDate Instant,
+	comment String maxlength(255),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	CustomerBlacklist{customer} to  Customer
+}
+
+entity PersonDocument(t_person_document) {
+	documentNumber String maxlength(50),
+	expirationDate String maxlength(10),
+	isValid Boolean required,
+	documentTypeCode String required maxlength(5),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	PersonDocument{customer} to  Customer
+}
+
+entity Meansofpayment(t_meansofpayment) {
+	number String required maxlength(10),
+	aliasAccount String maxlength(50),
+	
+	baccBankCode String maxlength(10),
+	baccBranchCode String maxlength(10),
+	baccAccountNumber String maxlength(50),
+	baccRibKey String maxlength(5),
+	
+	cardCvv2 String maxlength(5),
+	cardPan String maxlength(20),
+	cardValidityDate String maxlength(8),
+	
+	momoAccount String,
+	
+	meansofpaymentTypeCode String required maxlength(5),
+	issuerCode String required maxlength(5),
+	
+	active Boolean required
+}
+
+relationship ManyToOne {
+	Meansofpayment{customer } to Customer
+}
+
+entity Beneficiary(t_beneficiary) {
+	number String required maxlength(10),
+	isCompany Boolean required,
+	firstname String maxlength(50),
+	name String maxlength(50),
+	aliasAccount String required maxlength(50),
+	
+	baccBankCode String maxlength(10),
+	baccBranchCode String maxlength(10),
+	baccAccountNumber String maxlength(50),
+	baccRibKey String maxlength(5),
+	
+	cardCvv2 String maxlength(5),
+	cardPan String maxlength(20),
+	cardValidityDate String maxlength(8),
+	
+	isDmAccount Boolean required,
+	
+	momoAccountNumber String maxlength(20),
+		
+	beneficiaryRelationshipCode String required maxlength(5),
+	beneficiaryTypeCode String required maxlength(5),
+	
+	active Boolean required
+}
+
+relationship ManyToOne {
+	Beneficiary{customer} to Customer
+}
+
+entity CustomerLimit(t_plafond_user) {
+	limitTypeCode String required maxlength(5),
+	accountTypeCode String required maxlength(5),
+	customerTypeCode String required maxlength(5),
+	value Double,
+	comment String maxlength(255),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	CustomerLimit{customer} to Customer
+}
+
+
+entity PartnerSecurity(t_partner_security) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity Partner(t_partner) {
+	code String  required maxlength(5),
+	name String  required maxlength(50),
+	apiKey String  required maxlength(100),
+	address String maxlength(255),
+	city String maxlength(100),
+	postalCode String maxlength(10),
+	countryCode String maxlength(5),
+	rsaPublicKeyPath String maxlength(255),
+	
+	contactFirstname String required maxlength(50),
+	contactLastname String required maxlength(50),
+	businessEmail String required maxlength(100) pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+	businessPhone String required maxlength(20),
+	
+	partnerTypeCode String maxlength(5),
+	
+	active Boolean required
+}
+
+relationship ManyToOne {
+	Partner{partnerSecurity} to PartnerSecurity
+}
+
+entity ServiceIntegration(t_service_integration) {
+	customerRef String required maxlength(30),
+	serviceCode String maxlength(5),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	ServiceIntegration{partner} to Partner
+}
+
+entity CustomerSubscription(t_customer_subscription) {
+	number String  maxlength(25),
+	creationDate Instant required,
+	isMerchantSubscription Boolean required,
+	modificationDate Instant required,
+	validationDate Instant,
+	filename String  required maxlength(100),
+	customerCode String required maxlength(5),
+	serviceCode String required maxlength(5),
+	accountNumber String maxlength(50),
+	startDate Instant required,
+	endDate Instant required,
+	active Boolean required
+}
+
+
+entity Periodicity(t_periodicity) {
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity LimitMeasure(t_limit_measure) {
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+enum LimitValueType{
+	STRING, INTEGER, DOUBLE, DATE
+}
+
+entity LimitType(t_limit_type) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	limitValueType LimitValueType required,
+	active Boolean required
+}
+
+relationship ManyToOne {
+	LimitType{periodicity} to Periodicity,
+	LimitType{limitMeasure} to LimitMeasure
+}
+
+
+entity PricePlan(t_price_plan) {
+	label String required maxlength(100),
+	startDate Instant required,
+	endDate Instant required,
+	active Boolean required
+}
+
+entity Price(t_price) {
+	code String required maxlength(5),
+	label String required maxlength(100),
+	amount Double min(0),
+	percent Double min(0),
+	amountInPercent Boolean required,
+	amountTransactionMax Double min(0),
+	amountTransactionMin Double min(0),
+	currencyCode String required maxlength(5),
+	serviceCode String required maxlength(5),
+	description String maxlength(255),
+	modificationDate Instant,
+	active Boolean required
+}
+
+relationship ManyToOne {
+	Price{pricePlan} to PricePlan
+}
+
+entity SubscriptionPrice(t_subscription_price) {
+	amount Double min(0),
+	description String maxlength(255),
+	label String maxlength(100),
+	modificationDate Instant,
+	serviceCode String required maxlength(10),
+	accountTypeCode String required maxlength(5),
+	currencyCode String required maxlength(5),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	SubscriptionPrice{pricePlan} to PricePlan
+}
+
+entity PriceCommission(t_price_commission) {
+	code String required maxlength(10),
+	label String required maxlength(100),
+	amount Double min(0),
+	amountInPercent Boolean required,
+	dateCreation Instant required,
+	percent Double min(0),
+	currencyCode String required maxlength(10),
+	partnerCode String required maxlength(10),
+	serviceCode String required maxlength(10),
+	description String maxlength(255),
+	active Boolean required
+}
+
+
+entity PgService(t_service) {
+	code String  required maxlength(5),
+	name String  required maxlength(100),
+	
+	isNative Boolean required,
+	isSourceInternal Boolean required,
+	isDestinationInternal Boolean required,
+	needSubscription Boolean required,
+	
+	currencyCode String required maxlength(5),
+	
+	useTransactionType Boolean required,
+	checkSubscription Boolean required,
+	ignoreFees Boolean required,
+	ignoreLimit Boolean required,
+	ignoreCommission Boolean required,
+	checkOtp Boolean required,
+	
+	pgTransactionType1Code String  required maxlength(5),
+	pgTransactionType2Code String  required maxlength(5),
+	
+	partnerOwnerCode String maxlength(5),
+	transactionTypeCode String  required maxlength(5),
+	serviceAuthenticationCode String required maxlength(5),
+	
+	contractPath String maxlength(255),
+	description String maxlength(255),
+	logic String,	
+	active Boolean required
+}
+
+relationship ManyToOne {
+	PgService{sourceConnector} to Connector,
+	PgService{destinationConnector} to Connector
+}
+
+entity PgModule(t_module) {
+	code String  required maxlength(10),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity ConnectorType(t_connector_type) {
+	label String  required maxlength(100),
+	description String maxlength(255),
+	active Boolean required
+}
+
+entity Connector(t_connector) {
+	code String required maxlength(10),
+	label String required maxlength(50),
+	logic String,
+	comment String,
+	partnerCode String maxlength(5),
+	meansofpaymentTypeCode String required maxlength(5),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	Connector{connectorType} to ConnectorType,
+	Connector{pgModule} to PgModule
+}
+
+entity ServiceChannel(t_service_channel) {
+	channelCode String required maxlength(5),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	ServiceChannel{pgService} to PgService
+}
+
+entity ServiceLimit(t_service_limit) {
+	limitTypeCode String required maxlength(5),
+	value String required,
+	comment String maxlength(255),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	ServiceLimit{pgService} to PgService
+}
+
+
+entity Transaction(t_transaction) {
+	transactionNumber String required maxlength(50),
+	label String required maxlength(100),
+	transactionAmount Double min(0) required,
+	transactionDate Instant required,
+	feesSupported Boolean required,
+	transactionFees Double min(0),
+	priceCode String required maxlength(10),
+	fromPartnerCode String required maxlength(5),
+	toPartnerCode String required maxlength(5),
+	transactionStatusCode String required maxlength(5),
+	transactionTypeCode String required maxlength(5),
+	serviceCode String required maxlength(5),
+	comment String maxlength(255),
+	active Boolean required
+}
+
+entity DetailTransaction(t_transaction_detail) {
+	pgDataCode String required maxlength(5),
+	dataValue String,
+	active Boolean required    
+}
+
+relationship ManyToOne {
+	DetailTransaction{transaction} to Transaction
+}
+
+entity TransactionInfo(t_transaction_info) {
+	transactionPropertyCode String required maxlength(5),
+	value String  required maxlength(100),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	TransactionInfo{transaction} to Transaction
+}
+
+entity LoanInstalment(t_loan_instalment) {	
+	code String required maxlength(10),
+	expectedPaymentDate Instant required,
+	realPaymentDate Instant,
+	amountToPay Double required,
+	penalityFee Double,
+	statusDate Instant,
+	loanInstalmentStatusCode String required maxlength(5),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	LoanInstalment{loan} to Transaction
+}
+
+entity TransactionPrice(t_transaction_price) {
+	code String required maxlength(10),
+	label String required maxlength(100),
+	amount Double min(0),
+	percent Double min(0),
+	amountInPercent Boolean required,
+	amountTransactionMax Double min(0),
+	amountTransactionMin Double min(0),
+	priceCode String required maxlength(5),
+	serviceCode String required maxlength(5),
+	description String maxlength(255),
+	modificationDate Instant
+}
+
+relationship ManyToOne {
+	TransactionPrice{transaction} to Transaction
+}
+
+entity TransactionCommission(t_transaction_commission) {
+	code String required maxlength(10),
+	label String required maxlength(100),
+	amount Double min(0),
+	amountInPercent Boolean required,
+	dateCreation Instant required,
+	percent Double min(0),
+	currencyCode String required maxlength(5),
+	partnerCode String required maxlength(5),
+	serviceCode String required maxlength(5),
+	description String maxlength(255),
+	commission Double min(0)
+}
+
+relationship ManyToOne {
+	TransactionCommission{transaction} to Transaction
+}
+
+entity Operation(t_operation) {
+	number String required maxlength(10),
+	amount Double,
+	direction String required maxlength(1),
+	operationDate Instant required,
+	
+	accountNumber String required maxlength(50),
+	operationStatusCode String required maxlength(5),
+	operationTypeCode String required maxlength(5),
+	currencyCode String required maxlength(5),
+	userCode String required maxlength(5),
+	
+	description String required maxlength(255),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	Operation{transaction} to Transaction
+}
+
+
+entity InternalConnectorRequest(t_internal_connector_request) {
+	number String required maxlength(50),
+	module String required maxlength(10),
+	connector String required maxlength(20),
+	connectorType String required maxlength(20),
+	requestData String maxlength(255),
+	registrationDate Instant required,
+	
+	pgapsTransactionNumber String maxlength(50),
+	serviceId String maxlength(50),
+	accountNumber String maxlength(50),
+	amount Double min(0),
+	balance Double min(0),
+	accountValidation Boolean,
+	numberOfTransactions Integer,
+	lastTransactions String,
+	action String maxlength(50),
+	
+	responseDate Instant,
+	status String maxlength(100),
+	reason String maxlength(100),
+	partnerTransactionNumber String maxlength(50),
+	active Boolean required
+}
+
+entity InternalConnectorStatus(t_internal_connector_status) {
+	status String required maxlength(100),
+	defaultReason String maxlength(100)
+}
+
+
+entity ActivityArea(t_activity_area) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity AccountType(t_account_type) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity BeneficiaryType(t_beneficiary_type) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity BeneficiaryRelationship(t_beneficiary_relationship) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity DocumentType(t_document_type) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity MeansofpaymentType(t_meansofpayment_type) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity CustomerType(t_customer_type) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity Forex(t_forex) {
+	code String  required maxlength(5),
+	rate Double,
+	creationDate Instant,
+	active Boolean required
+}
+
+relationship ManyToOne {
+	Forex{fromCurrency} to Currency,
+	Forex{toCurrency} to Currency
+}
+
+entity Currency(t_currency) {
+	code String  required maxlength(5),
+	longLabel String  required maxlength(50),
+	shortLabel String maxlength(25),
+	active Boolean required
+}
+
+entity Feature(t_feature) {
+	code String  required maxlength(5),
+	comment String maxlength(255),
+	longLabel String  required maxlength(100),
+	shortLabel String  maxlength(50),
+	active Boolean required
+}
+
+entity OperationType(t_operation_type) {
+	code String  required maxlength(5),
+	active Boolean required,
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity PartnerType(t_partner_type) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	description String maxlength(255),
+	active Boolean required
+}
+
+entity Country(t_country) {
+	code String  required maxlength(5),
+	longLabel String  required maxlength(50),
+	shortLabel String maxlength(20),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	Country{currency} to Currency
+}
+
+entity PersonType(t_person_type) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity ServiceAuthentication(t_service_authentication) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity AccountStatus(t_account_status) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity OperationStatus(t_operation_status) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity TransactionStatus(t_transaction_status) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity TransactionGroup(t_transaction_group) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	checkSubscription Boolean required,
+	ignoreFees Boolean required,
+	ignoreLimit Boolean required,
+	ignoreCommission Boolean required,
+	checkOtp Boolean required,
+	active Boolean required
+}
+
+entity TransactionType(t_transaction_type) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	useTransactionGroup Boolean required,
+	checkSubscription Boolean required,
+	ignoreFees Boolean required,
+	ignoreLimit Boolean required,
+	ignoreCommission Boolean required,
+	checkOtp Boolean required,
+	pgMessageModelCode String required maxlength(5),
+	transactionGroupCode String required maxlength(5),
+	active Boolean required
+}
+
+entity TransactionChannel(t_transaction_channel) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity PgData(t_data) {
+	code String  required maxlength(5),
+	longLabel String maxlength(100),
+	shortLabel String maxlength(50),
+	comment String maxlength(255),
+	active Boolean required,
+}
+
+entity PgBatch(t_batch) {
+	code String  required maxlength(5),
+	label String maxlength(100),
+	expectedEndDate Instant required,
+	batchDate Instant required,
+	active Boolean required
+}
+
+enum PropertyType {
+	STRING,
+	INTEGER,
+	DOUBLE,
+	TIME,
+	DATE,
+	DATETIME,
+	TIMESTAMP,
+	BOOLEAN
+}
+
+entity TransactionProperty(t_transaction_property) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	propertyType PropertyType required,
+	active Boolean required
+}
+
+entity LoanInstalmentStatus(t_loan_instalment_status) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity PersonGender(t_person_gender) {
+	code String  required maxlength(5),
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity Question(t_question) {
+	code String  required maxlength(5),
+	label String  required maxlength(150),
+	active Boolean required
+}
+
+
+entity AgentType(t_agent_type) {
+	label String  required maxlength(100),
+	active Boolean required
+}
+
+entity Agent(t_agent) {
+	matricule String  maxlength(20),
+	firstname String maxlength(50),
+	lastname String maxlength(50),
+	birthdate String maxlength(10),
+	email String pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+	mobilePhone String maxlength(20),
+	businessEmail String required maxlength(100) pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+	businessPhone String required maxlength(20),
+	
+	address String maxlength(255),
+	postalCode String maxlength(10),
+	city String maxlength(50),
+	countryCode String required maxlength(5),	
+	partnerCode String required maxlength(5),
+	username String  maxlength(50),
+	active Boolean required
+}
+
+relationship ManyToOne {
+	Agent{agentType} to AgentType
+}
+
+
+entity PgUser(t_user) {
+	username String required maxlength(50),
+	email String  required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+	firstname String maxlength(50),
+	name String maxlength(50),
+	msisdn String maxlength(20),
+	creationDate Instant required,
+	updateDate Instant
+}
+
+relationship ManyToOne {
+	PgUser{userProfile} to UserProfile
+}
+
+entity UserProfile(t_user_profile) {
+	code String  required maxlength(5),
+	name String maxlength(100),
+	creationDate Instant required,
+	description String maxlength(255),
+	updateDate Instant
+}
+
+entity UserConnection(t_user_connection) {
+	loginDate Instant required,
+	logoutDate Instant    
+}
+
+relationship ManyToOne {
+	UserConnection{user} to PgUser
+}
+
+entity UserProfileData(t_user_profile_data) {
+	active Boolean required,
+	PgDataCode String maxlength(5),
+}
+
+relationship ManyToOne {
+	UserProfileData{userProfile} to UserProfile
+}
+
+entity Pg8583Request(t_pg8583_request) {
+	number String required maxlength(50),
+	apiKey String required maxlength(100),
+	encryptedData String required maxlength(255),
+	decryptedData String maxlength(255),
+	registrationDate Instant required,
+	responseDate Instant,
+	requestResponse String maxlength(255),
+	status String maxlength(100),
+	reason String maxlength(100),
+	pgapsMessage String maxlength(255),
+	pgapsTransactionNumber String maxlength(50),
+	active Boolean required
+}
+
+entity Pg8583Status(t_pg8583_status) {
+	status String required maxlength(100),
+	defaultReason String maxlength(100)
+}
+
+entity Pg8583Callback(t_pg8583_callback) {
+	partnerCode String maxlength(5),
+	callbackUri String required maxlength(255),
+	httpMethod String required maxlength(10),
+	managerClass String required maxlength(255),
+	active Boolean required
+}
+
+dto * with mapstruct
+service * with serviceImpl

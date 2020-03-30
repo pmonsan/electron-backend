@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="connector">
+            <h2><span jhiTranslate="pgkernelgatewayApp.connector.detail.title">Connector</span> {{connector.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.connector.code">Code</span></dt>
+                <dd>
+                    <span>{{connector.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.connector.label">Label</span></dt>
+                <dd>
+                    <span>{{connector.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.connector.logic">Logic</span></dt>
+                <dd>
+                    <span>{{connector.logic}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.connector.comment">Comment</span></dt>
+                <dd>
+                    <span>{{connector.comment}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.connector.partnerCode">Partner Code</span></dt>
+                <dd>
+                    <span>{{connector.partnerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.connector.meansofpaymentTypeCode">Meansofpayment Type Code</span></dt>
+                <dd>
+                    <span>{{connector.meansofpaymentTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.connector.active">Active</span></dt>
+                <dd>
+                    <span>{{connector.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.connector.connectorType">Connector Type</span></dt>
+                <dd>
+                    <div *ngIf="connector.connectorTypeId">
+                        <a [routerLink]="['/connector-type', connector.connectorTypeId, 'view']">{{connector.connectorTypeId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.connector.pgModule">Pg Module</span></dt>
+                <dd>
+                    <div *ngIf="connector.pgModuleId">
+                        <a [routerLink]="['/pg-module', connector.pgModuleId, 'view']">{{connector.pgModuleId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/connector', connector.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

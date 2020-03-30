@@ -1,0 +1,28 @@
+{
+  "pgkernelgatewayApp": {
+    "contractOpposition": {
+      "home": {
+        "title": "ContractOppositions",
+        "createLabel": "Créer un nouveau Contract Opposition",
+        "createOrEditLabel": "Créer ou éditer un Contract Opposition",
+        "notFound": "Aucun Contract Opposition trouvé"
+      },
+      "created": "Un nouveau Contract Opposition a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Contract Opposition avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Contract Opposition avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Contract Opposition {{ id }} ?"
+      },
+      "detail": {
+        "title": "Contract Opposition"
+      },
+      "number": "Number",
+      "isCustomerInitiative": "Is Customer Initiative",
+      "oppositionDate": "Opposition Date",
+      "oppositionReason": "Opposition Reason",
+      "comment": "Comment",
+      "active": "Active",
+      "contract": "Contract"
+    }
+  }
+}

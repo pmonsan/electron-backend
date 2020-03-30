@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgTransactionType1">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pgTransactionType1.detail.title">Pg Transaction Type 1</span> {{pgTransactionType1.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgTransactionType1.code">Code</span></dt>
+                <dd>
+                    <span>{{pgTransactionType1.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgTransactionType1.label">Label</span></dt>
+                <dd>
+                    <span>{{pgTransactionType1.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgTransactionType1.description">Description</span></dt>
+                <dd>
+                    <span>{{pgTransactionType1.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgTransactionType1.active">Active</span></dt>
+                <dd>
+                    <span>{{pgTransactionType1.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-transaction-type-1', pgTransactionType1.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

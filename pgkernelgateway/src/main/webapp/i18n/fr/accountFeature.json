@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "accountFeature": {
+      "home": {
+        "title": "AccountFeatures",
+        "createLabel": "Créer un nouveau Account Feature",
+        "createOrEditLabel": "Créer ou éditer un Account Feature",
+        "notFound": "Aucun Account Feature trouvé"
+      },
+      "created": "Un nouveau Account Feature a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Account Feature avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Account Feature avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Account Feature {{ id }} ?"
+      },
+      "detail": {
+        "title": "Account Feature"
+      },
+      "activationDate": "Activation Date",
+      "featureCode": "Feature Code",
+      "active": "Active",
+      "account": "Account"
+    }
+  }
+}

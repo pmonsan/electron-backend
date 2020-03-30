@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "partnerSecurity": {
+      "home": {
+        "title": "PartnerSecurities",
+        "createLabel": "Créer un nouveau Partner Security",
+        "createOrEditLabel": "Créer ou éditer un Partner Security",
+        "notFound": "Aucun Partner Security trouvé"
+      },
+      "created": "Un nouveau Partner Security a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Partner Security avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Partner Security avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Partner Security {{ id }} ?"
+      },
+      "detail": {
+        "title": "Partner Security"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

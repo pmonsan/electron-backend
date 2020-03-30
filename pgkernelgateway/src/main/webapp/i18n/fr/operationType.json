@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "operationType": {
+      "home": {
+        "title": "OperationTypes",
+        "createLabel": "Créer un nouveau Operation Type",
+        "createOrEditLabel": "Créer ou éditer un Operation Type",
+        "notFound": "Aucun Operation Type trouvé"
+      },
+      "created": "Un nouveau Operation Type a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Operation Type avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Operation Type avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Operation Type {{ id }} ?"
+      },
+      "detail": {
+        "title": "Operation Type"
+      },
+      "code": "Code",
+      "active": "Active",
+      "label": "Label"
+    }
+  }
+}

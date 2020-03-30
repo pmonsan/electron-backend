@@ -1,0 +1,123 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pgService">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pgService.detail.title">Pg Service</span> {{pgService.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.code">Code</span></dt>
+                <dd>
+                    <span>{{pgService.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.name">Name</span></dt>
+                <dd>
+                    <span>{{pgService.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.isNative">Is Native</span></dt>
+                <dd>
+                    <span>{{pgService.isNative}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.isSourceInternal">Is Source Internal</span></dt>
+                <dd>
+                    <span>{{pgService.isSourceInternal}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.isDestinationInternal">Is Destination Internal</span></dt>
+                <dd>
+                    <span>{{pgService.isDestinationInternal}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.needSubscription">Need Subscription</span></dt>
+                <dd>
+                    <span>{{pgService.needSubscription}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{pgService.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.useTransactionType">Use Transaction Type</span></dt>
+                <dd>
+                    <span>{{pgService.useTransactionType}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.checkSubscription">Check Subscription</span></dt>
+                <dd>
+                    <span>{{pgService.checkSubscription}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.ignoreFees">Ignore Fees</span></dt>
+                <dd>
+                    <span>{{pgService.ignoreFees}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.ignoreLimit">Ignore Limit</span></dt>
+                <dd>
+                    <span>{{pgService.ignoreLimit}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.ignoreCommission">Ignore Commission</span></dt>
+                <dd>
+                    <span>{{pgService.ignoreCommission}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.checkOtp">Check Otp</span></dt>
+                <dd>
+                    <span>{{pgService.checkOtp}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.pgTransactionType1Code">Pg Transaction Type 1 Code</span></dt>
+                <dd>
+                    <span>{{pgService.pgTransactionType1Code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.pgTransactionType2Code">Pg Transaction Type 2 Code</span></dt>
+                <dd>
+                    <span>{{pgService.pgTransactionType2Code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.partnerOwnerCode">Partner Owner Code</span></dt>
+                <dd>
+                    <span>{{pgService.partnerOwnerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.transactionTypeCode">Transaction Type Code</span></dt>
+                <dd>
+                    <span>{{pgService.transactionTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.serviceAuthenticationCode">Service Authentication Code</span></dt>
+                <dd>
+                    <span>{{pgService.serviceAuthenticationCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.contractPath">Contract Path</span></dt>
+                <dd>
+                    <span>{{pgService.contractPath}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.description">Description</span></dt>
+                <dd>
+                    <span>{{pgService.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.logic">Logic</span></dt>
+                <dd>
+                    <span>{{pgService.logic}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.active">Active</span></dt>
+                <dd>
+                    <span>{{pgService.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.sourceConnector">Source Connector</span></dt>
+                <dd>
+                    <div *ngIf="pgService.sourceConnectorId">
+                        <a [routerLink]="['/connector', pgService.sourceConnectorId, 'view']">{{pgService.sourceConnectorId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pgService.destinationConnector">Destination Connector</span></dt>
+                <dd>
+                    <div *ngIf="pgService.destinationConnectorId">
+                        <a [routerLink]="['/connector', pgService.destinationConnectorId, 'view']">{{pgService.destinationConnectorId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-service', pgService.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

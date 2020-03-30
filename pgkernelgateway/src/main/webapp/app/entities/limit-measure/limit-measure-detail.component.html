@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="limitMeasure">
+            <h2><span jhiTranslate="pgkernelgatewayApp.limitMeasure.detail.title">Limit Measure</span> {{limitMeasure.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.limitMeasure.label">Label</span></dt>
+                <dd>
+                    <span>{{limitMeasure.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.limitMeasure.active">Active</span></dt>
+                <dd>
+                    <span>{{limitMeasure.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/limit-measure', limitMeasure.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

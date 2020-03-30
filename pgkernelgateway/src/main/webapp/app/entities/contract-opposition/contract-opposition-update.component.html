@@ -1,0 +1,102 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-contract-opposition-heading" jhiTranslate="pgkernelgatewayApp.contractOpposition.home.createOrEditLabel">Create or edit a Contract Opposition</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contractOpposition.number" for="field_number">Number</label>
+                    <input type="text" class="form-control" name="number" id="field_number"
+                           formControlName="number"/>
+                    <div *ngIf="editForm.get('number').invalid && (editForm.get('number').dirty || editForm.get('number').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('number').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 25 }">
+                        This field cannot be longer than 25 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contractOpposition.isCustomerInitiative" for="field_isCustomerInitiative">Is Customer Initiative</label>
+                    <input type="checkbox" class="form-control" name="isCustomerInitiative" id="field_isCustomerInitiative"
+                           formControlName="isCustomerInitiative"/>
+                    <div *ngIf="editForm.get('isCustomerInitiative').invalid && (editForm.get('isCustomerInitiative').dirty || editForm.get('isCustomerInitiative').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isCustomerInitiative').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contractOpposition.oppositionDate" for="field_oppositionDate">Opposition Date</label>
+                    <div class="d-flex">
+                        <input id="field_oppositionDate" type="datetime-local" class="form-control" name="oppositionDate" formControlName="oppositionDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('oppositionDate').invalid && (editForm.get('oppositionDate').dirty || editForm.get('oppositionDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('oppositionDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('oppositionDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contractOpposition.oppositionReason" for="field_oppositionReason">Opposition Reason</label>
+                    <input type="text" class="form-control" name="oppositionReason" id="field_oppositionReason"
+                           formControlName="oppositionReason"/>
+                    <div *ngIf="editForm.get('oppositionReason').invalid && (editForm.get('oppositionReason').dirty || editForm.get('oppositionReason').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('oppositionReason').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contractOpposition.comment" for="field_comment">Comment</label>
+                    <input type="text" class="form-control" name="comment" id="field_comment"
+                           formControlName="comment"/>
+                    <div *ngIf="editForm.get('comment').invalid && (editForm.get('comment').dirty || editForm.get('comment').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('comment').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contractOpposition.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                    <div *ngIf="editForm.get('active').invalid && (editForm.get('active').dirty || editForm.get('active').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('active').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.contractOpposition.contract" for="field_contract">Contract</label>
+                    <select class="form-control" id="field_contract" name="contract" formControlName="contractId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="contractOption.id" *ngFor="let contractOption of contracts; trackBy: trackContractById">{{contractOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

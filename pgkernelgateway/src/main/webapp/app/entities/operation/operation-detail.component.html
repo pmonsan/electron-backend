@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="operation">
+            <h2><span jhiTranslate="pgkernelgatewayApp.operation.detail.title">Operation</span> {{operation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.number">Number</span></dt>
+                <dd>
+                    <span>{{operation.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.amount">Amount</span></dt>
+                <dd>
+                    <span>{{operation.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.direction">Direction</span></dt>
+                <dd>
+                    <span>{{operation.direction}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.operationDate">Operation Date</span></dt>
+                <dd>
+                    <span>{{operation.operationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.accountNumber">Account Number</span></dt>
+                <dd>
+                    <span>{{operation.accountNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.operationStatusCode">Operation Status Code</span></dt>
+                <dd>
+                    <span>{{operation.operationStatusCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.operationTypeCode">Operation Type Code</span></dt>
+                <dd>
+                    <span>{{operation.operationTypeCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{operation.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.userCode">User Code</span></dt>
+                <dd>
+                    <span>{{operation.userCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.description">Description</span></dt>
+                <dd>
+                    <span>{{operation.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.active">Active</span></dt>
+                <dd>
+                    <span>{{operation.active}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.operation.transaction">Transaction</span></dt>
+                <dd>
+                    <div *ngIf="operation.transactionId">
+                        <a [routerLink]="['/transaction', operation.transactionId, 'view']">{{operation.transactionId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/operation', operation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

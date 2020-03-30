@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pg8583Request">
+            <h2><span jhiTranslate="pgkernelgatewayApp.pg8583Request.detail.title">Pg 8583 Request</span> {{pg8583Request.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.number">Number</span></dt>
+                <dd>
+                    <span>{{pg8583Request.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.apiKey">Api Key</span></dt>
+                <dd>
+                    <span>{{pg8583Request.apiKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.encryptedData">Encrypted Data</span></dt>
+                <dd>
+                    <span>{{pg8583Request.encryptedData}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.decryptedData">Decrypted Data</span></dt>
+                <dd>
+                    <span>{{pg8583Request.decryptedData}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.registrationDate">Registration Date</span></dt>
+                <dd>
+                    <span>{{pg8583Request.registrationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.responseDate">Response Date</span></dt>
+                <dd>
+                    <span>{{pg8583Request.responseDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.requestResponse">Request Response</span></dt>
+                <dd>
+                    <span>{{pg8583Request.requestResponse}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.status">Status</span></dt>
+                <dd>
+                    <span>{{pg8583Request.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.reason">Reason</span></dt>
+                <dd>
+                    <span>{{pg8583Request.reason}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.pgapsMessage">Pgaps Message</span></dt>
+                <dd>
+                    <span>{{pg8583Request.pgapsMessage}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.pgapsTransactionNumber">Pgaps Transaction Number</span></dt>
+                <dd>
+                    <span>{{pg8583Request.pgapsTransactionNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.pg8583Request.active">Active</span></dt>
+                <dd>
+                    <span>{{pg8583Request.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pg-8583-request', pg8583Request.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

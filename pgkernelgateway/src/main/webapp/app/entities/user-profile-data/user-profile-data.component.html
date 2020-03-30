@@ -1,0 +1,65 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.userProfileData.home.title">User Profile Data</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-user-profile-data" [routerLink]="['/user-profile-data/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.userProfileData.home.createLabel">
+            Create new User Profile Data
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="userProfileData?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.userProfileData.home.notFound">No userProfileData found</span>
+    </div>
+    <div class="table-responsive" *ngIf="userProfileData?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.userProfileData.active">Active</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.userProfileData.pgDataCode">Pg Data Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.userProfileData.userProfile">User Profile</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let userProfileData of userProfileData ;trackBy: trackId">
+                <td><a [routerLink]="['/user-profile-data', userProfileData.id, 'view' ]">{{userProfileData.id}}</a></td>
+                <td>{{userProfileData.active}}</td>
+                <td>{{userProfileData.pgDataCode}}</td>
+                <td>
+                    <div *ngIf="userProfileData.userProfileId">
+                        <a [routerLink]="['../user-profile', userProfileData.userProfileId , 'view' ]" >{{userProfileData.userProfileId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/user-profile-data', userProfileData.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/user-profile-data', userProfileData.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'user-profile-data', { outlets: { popup: userProfileData.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "pgkernelgatewayApp": {
+    "userProfile": {
+      "home": {
+        "title": "UserProfiles",
+        "createLabel": "Créer un nouveau User Profile",
+        "createOrEditLabel": "Créer ou éditer un User Profile",
+        "notFound": "Aucun User Profile trouvé"
+      },
+      "created": "Un nouveau User Profile a été créé avec l'identifiant {{ param }}",
+      "updated": "Le User Profile avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le User Profile avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le User Profile {{ id }} ?"
+      },
+      "detail": {
+        "title": "User Profile"
+      },
+      "code": "Code",
+      "name": "Name",
+      "creationDate": "Creation Date",
+      "description": "Description",
+      "updateDate": "Update Date"
+    }
+  }
+}

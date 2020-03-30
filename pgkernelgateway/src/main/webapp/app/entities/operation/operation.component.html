@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.operation.home.title">Operations</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-operation" [routerLink]="['/operation/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.operation.home.createLabel">
+            Create new Operation
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="operations?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.operation.home.notFound">No operations found</span>
+    </div>
+    <div class="table-responsive" *ngIf="operations?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.number">Number</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.amount">Amount</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.direction">Direction</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.operationDate">Operation Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.accountNumber">Account Number</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.operationStatusCode">Operation Status Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.operationTypeCode">Operation Type Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.currencyCode">Currency Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.userCode">User Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.description">Description</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.active">Active</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.operation.transaction">Transaction</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let operation of operations ;trackBy: trackId">
+                <td><a [routerLink]="['/operation', operation.id, 'view' ]">{{operation.id}}</a></td>
+                <td>{{operation.number}}</td>
+                <td>{{operation.amount}}</td>
+                <td>{{operation.direction}}</td>
+                <td>{{operation.operationDate | date:'medium'}}</td>
+                <td>{{operation.accountNumber}}</td>
+                <td>{{operation.operationStatusCode}}</td>
+                <td>{{operation.operationTypeCode}}</td>
+                <td>{{operation.currencyCode}}</td>
+                <td>{{operation.userCode}}</td>
+                <td>{{operation.description}}</td>
+                <td>{{operation.active}}</td>
+                <td>
+                    <div *ngIf="operation.transactionId">
+                        <a [routerLink]="['../transaction', operation.transactionId , 'view' ]" >{{operation.transactionId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/operation', operation.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/operation', operation.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'operation', { outlets: { popup: operation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

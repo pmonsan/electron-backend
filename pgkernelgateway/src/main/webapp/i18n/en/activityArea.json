@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "activityArea": {
+      "home": {
+        "title": "Activity Areas",
+        "createLabel": "Create a new Activity Area",
+        "createOrEditLabel": "Create or edit a Activity Area",
+        "notFound": "No Activity Area found"
+      },
+      "created": "A new Activity Area is created with identifier {{ param }}",
+      "updated": "A Activity Area is updated with identifier {{ param }}",
+      "deleted": "A Activity Area is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Activity Area {{ id }}?"
+      },
+      "detail": {
+        "title": "Activity Area"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

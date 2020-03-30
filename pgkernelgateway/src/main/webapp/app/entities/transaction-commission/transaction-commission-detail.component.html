@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transactionCommission">
+            <h2><span jhiTranslate="pgkernelgatewayApp.transactionCommission.detail.title">Transaction Commission</span> {{transactionCommission.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.code">Code</span></dt>
+                <dd>
+                    <span>{{transactionCommission.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.label">Label</span></dt>
+                <dd>
+                    <span>{{transactionCommission.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.amount">Amount</span></dt>
+                <dd>
+                    <span>{{transactionCommission.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.amountInPercent">Amount In Percent</span></dt>
+                <dd>
+                    <span>{{transactionCommission.amountInPercent}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.dateCreation">Date Creation</span></dt>
+                <dd>
+                    <span>{{transactionCommission.dateCreation}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.percent">Percent</span></dt>
+                <dd>
+                    <span>{{transactionCommission.percent}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{transactionCommission.currencyCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.partnerCode">Partner Code</span></dt>
+                <dd>
+                    <span>{{transactionCommission.partnerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.serviceCode">Service Code</span></dt>
+                <dd>
+                    <span>{{transactionCommission.serviceCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.description">Description</span></dt>
+                <dd>
+                    <span>{{transactionCommission.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.commission">Commission</span></dt>
+                <dd>
+                    <span>{{transactionCommission.commission}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionCommission.transaction">Transaction</span></dt>
+                <dd>
+                    <div *ngIf="transactionCommission.transactionId">
+                        <a [routerLink]="['/transaction', transactionCommission.transactionId, 'view']">{{transactionCommission.transactionId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction-commission', transactionCommission.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

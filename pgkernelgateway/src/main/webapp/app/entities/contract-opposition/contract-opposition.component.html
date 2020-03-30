@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.contractOpposition.home.title">Contract Oppositions</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-contract-opposition" [routerLink]="['/contract-opposition/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.contractOpposition.home.createLabel">
+            Create new Contract Opposition
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="contractOppositions?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.contractOpposition.home.notFound">No contractOppositions found</span>
+    </div>
+    <div class="table-responsive" *ngIf="contractOppositions?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.contractOpposition.number">Number</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.contractOpposition.isCustomerInitiative">Is Customer Initiative</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.contractOpposition.oppositionDate">Opposition Date</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.contractOpposition.oppositionReason">Opposition Reason</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.contractOpposition.comment">Comment</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.contractOpposition.active">Active</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.contractOpposition.contract">Contract</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let contractOpposition of contractOppositions ;trackBy: trackId">
+                <td><a [routerLink]="['/contract-opposition', contractOpposition.id, 'view' ]">{{contractOpposition.id}}</a></td>
+                <td>{{contractOpposition.number}}</td>
+                <td>{{contractOpposition.isCustomerInitiative}}</td>
+                <td>{{contractOpposition.oppositionDate | date:'medium'}}</td>
+                <td>{{contractOpposition.oppositionReason}}</td>
+                <td>{{contractOpposition.comment}}</td>
+                <td>{{contractOpposition.active}}</td>
+                <td>
+                    <div *ngIf="contractOpposition.contractId">
+                        <a [routerLink]="['../contract', contractOpposition.contractId , 'view' ]" >{{contractOpposition.contractId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/contract-opposition', contractOpposition.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/contract-opposition', contractOpposition.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'contract-opposition', { outlets: { popup: contractOpposition.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

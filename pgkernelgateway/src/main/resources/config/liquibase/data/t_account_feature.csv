@@ -1,0 +1,11 @@
+id;activation_date;feature_code;active
+1;2020-03-30T07:54:18;Hawai;false
+2;2020-03-30T10:06:07;Brune;true
+3;2020-03-29T19:48:58;circu;false
+4;2020-03-29T20:48:57;Check;true
+5;2020-03-29T14:11:14;alarm;true
+6;2020-03-29T23:27:53;invoi;true
+7;2020-03-29T21:56:53;synth;true
+8;2020-03-30T10:06:44;Fish ;true
+9;2020-03-30T09:38:30;Profo;true
+10;2020-03-29T20:18:45;utili;false

@@ -1,0 +1,61 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.partnerSecurity.home.title">Partner Securities</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-partner-security" [routerLink]="['/partner-security/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.partnerSecurity.home.createLabel">
+            Create new Partner Security
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="partnerSecurities?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.partnerSecurity.home.notFound">No partnerSecurities found</span>
+    </div>
+    <div class="table-responsive" *ngIf="partnerSecurities?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partnerSecurity.code">Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partnerSecurity.label">Label</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partnerSecurity.active">Active</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let partnerSecurity of partnerSecurities ;trackBy: trackId">
+                <td><a [routerLink]="['/partner-security', partnerSecurity.id, 'view' ]">{{partnerSecurity.id}}</a></td>
+                <td>{{partnerSecurity.code}}</td>
+                <td>{{partnerSecurity.label}}</td>
+                <td>{{partnerSecurity.active}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/partner-security', partnerSecurity.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/partner-security', partnerSecurity.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'partner-security', { outlets: { popup: partnerSecurity.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

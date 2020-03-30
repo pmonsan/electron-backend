@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "detailContract": {
+      "home": {
+        "title": "DetailContracts",
+        "createLabel": "Créer un nouveau Detail Contract",
+        "createOrEditLabel": "Créer ou éditer un Detail Contract",
+        "notFound": "Aucun Detail Contract trouvé"
+      },
+      "created": "Un nouveau Detail Contract a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Detail Contract avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Detail Contract avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Detail Contract {{ id }} ?"
+      },
+      "detail": {
+        "title": "Detail Contract"
+      },
+      "comment": "Comment",
+      "active": "Active",
+      "contract": "Contract"
+    }
+  }
+}

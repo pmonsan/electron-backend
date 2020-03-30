@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.partner.home.title">Partners</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-partner" [routerLink]="['/partner/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.partner.home.createLabel">
+            Create new Partner
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="partners?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.partner.home.notFound">No partners found</span>
+    </div>
+    <div class="table-responsive" *ngIf="partners?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.code">Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.name">Name</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.apiKey">Api Key</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.address">Address</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.city">City</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.postalCode">Postal Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.countryCode">Country Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.rsaPublicKeyPath">Rsa Public Key Path</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.contactFirstname">Contact Firstname</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.contactLastname">Contact Lastname</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.businessEmail">Business Email</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.businessPhone">Business Phone</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.partnerTypeCode">Partner Type Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.active">Active</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.partner.partnerSecurity">Partner Security</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let partner of partners ;trackBy: trackId">
+                <td><a [routerLink]="['/partner', partner.id, 'view' ]">{{partner.id}}</a></td>
+                <td>{{partner.code}}</td>
+                <td>{{partner.name}}</td>
+                <td>{{partner.apiKey}}</td>
+                <td>{{partner.address}}</td>
+                <td>{{partner.city}}</td>
+                <td>{{partner.postalCode}}</td>
+                <td>{{partner.countryCode}}</td>
+                <td>{{partner.rsaPublicKeyPath}}</td>
+                <td>{{partner.contactFirstname}}</td>
+                <td>{{partner.contactLastname}}</td>
+                <td>{{partner.businessEmail}}</td>
+                <td>{{partner.businessPhone}}</td>
+                <td>{{partner.partnerTypeCode}}</td>
+                <td>{{partner.active}}</td>
+                <td>
+                    <div *ngIf="partner.partnerSecurityId">
+                        <a [routerLink]="['../partner-security', partner.partnerSecurityId , 'view' ]" >{{partner.partnerSecurityId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/partner', partner.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/partner', partner.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'partner', { outlets: { popup: partner.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

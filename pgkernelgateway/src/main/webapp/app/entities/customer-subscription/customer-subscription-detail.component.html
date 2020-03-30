@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="customerSubscription">
+            <h2><span jhiTranslate="pgkernelgatewayApp.customerSubscription.detail.title">Customer Subscription</span> {{customerSubscription.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.number">Number</span></dt>
+                <dd>
+                    <span>{{customerSubscription.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.creationDate">Creation Date</span></dt>
+                <dd>
+                    <span>{{customerSubscription.creationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.isMerchantSubscription">Is Merchant Subscription</span></dt>
+                <dd>
+                    <span>{{customerSubscription.isMerchantSubscription}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.modificationDate">Modification Date</span></dt>
+                <dd>
+                    <span>{{customerSubscription.modificationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.validationDate">Validation Date</span></dt>
+                <dd>
+                    <span>{{customerSubscription.validationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.filename">Filename</span></dt>
+                <dd>
+                    <span>{{customerSubscription.filename}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.customerCode">Customer Code</span></dt>
+                <dd>
+                    <span>{{customerSubscription.customerCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.serviceCode">Service Code</span></dt>
+                <dd>
+                    <span>{{customerSubscription.serviceCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.accountNumber">Account Number</span></dt>
+                <dd>
+                    <span>{{customerSubscription.accountNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{customerSubscription.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{customerSubscription.endDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.customerSubscription.active">Active</span></dt>
+                <dd>
+                    <span>{{customerSubscription.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/customer-subscription', customerSubscription.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

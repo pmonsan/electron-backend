@@ -1,0 +1,39 @@
+{
+  "pgkernelgatewayApp": {
+    "beneficiary": {
+      "home": {
+        "title": "Beneficiaries",
+        "createLabel": "Create a new Beneficiary",
+        "createOrEditLabel": "Create or edit a Beneficiary",
+        "notFound": "No Beneficiary found"
+      },
+      "created": "A new Beneficiary is created with identifier {{ param }}",
+      "updated": "A Beneficiary is updated with identifier {{ param }}",
+      "deleted": "A Beneficiary is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Beneficiary {{ id }}?"
+      },
+      "detail": {
+        "title": "Beneficiary"
+      },
+      "number": "Number",
+      "isCompany": "Is Company",
+      "firstname": "Firstname",
+      "name": "Name",
+      "aliasAccount": "Alias Account",
+      "baccBankCode": "Bacc Bank Code",
+      "baccBranchCode": "Bacc Branch Code",
+      "baccAccountNumber": "Bacc Account Number",
+      "baccRibKey": "Bacc Rib Key",
+      "cardCvv2": "Card Cvv 2",
+      "cardPan": "Card Pan",
+      "cardValidityDate": "Card Validity Date",
+      "isDmAccount": "Is Dm Account",
+      "momoAccountNumber": "Momo Account Number",
+      "beneficiaryRelationshipCode": "Beneficiary Relationship Code",
+      "beneficiaryTypeCode": "Beneficiary Type Code",
+      "active": "Active",
+      "customer": "Customer"
+    }
+  }
+}

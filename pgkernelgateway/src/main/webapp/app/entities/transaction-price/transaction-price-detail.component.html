@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transactionPrice">
+            <h2><span jhiTranslate="pgkernelgatewayApp.transactionPrice.detail.title">Transaction Price</span> {{transactionPrice.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.code">Code</span></dt>
+                <dd>
+                    <span>{{transactionPrice.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.label">Label</span></dt>
+                <dd>
+                    <span>{{transactionPrice.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.amount">Amount</span></dt>
+                <dd>
+                    <span>{{transactionPrice.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.percent">Percent</span></dt>
+                <dd>
+                    <span>{{transactionPrice.percent}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.amountInPercent">Amount In Percent</span></dt>
+                <dd>
+                    <span>{{transactionPrice.amountInPercent}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.amountTransactionMax">Amount Transaction Max</span></dt>
+                <dd>
+                    <span>{{transactionPrice.amountTransactionMax}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.amountTransactionMin">Amount Transaction Min</span></dt>
+                <dd>
+                    <span>{{transactionPrice.amountTransactionMin}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.priceCode">Price Code</span></dt>
+                <dd>
+                    <span>{{transactionPrice.priceCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.serviceCode">Service Code</span></dt>
+                <dd>
+                    <span>{{transactionPrice.serviceCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.description">Description</span></dt>
+                <dd>
+                    <span>{{transactionPrice.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.modificationDate">Modification Date</span></dt>
+                <dd>
+                    <span>{{transactionPrice.modificationDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionPrice.transaction">Transaction</span></dt>
+                <dd>
+                    <div *ngIf="transactionPrice.transactionId">
+                        <a [routerLink]="['/transaction', transactionPrice.transactionId, 'view']">{{transactionPrice.transactionId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction-price', transactionPrice.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

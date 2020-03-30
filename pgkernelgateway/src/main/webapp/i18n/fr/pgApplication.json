@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "pgApplication": {
+      "home": {
+        "title": "PgApplications",
+        "createLabel": "Créer un nouveau Pg Application",
+        "createOrEditLabel": "Créer ou éditer un Pg Application",
+        "notFound": "Aucun Pg Application trouvé"
+      },
+      "created": "Un nouveau Pg Application a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg Application avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg Application avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg Application {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg Application"
+      },
+      "code": "Code",
+      "label": "Label",
+      "partnerCode": "Partner Code",
+      "active": "Active"
+    }
+  }
+}

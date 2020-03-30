@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="accountStatus">
+            <h2><span jhiTranslate="pgkernelgatewayApp.accountStatus.detail.title">Account Status</span> {{accountStatus.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.accountStatus.code">Code</span></dt>
+                <dd>
+                    <span>{{accountStatus.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.accountStatus.label">Label</span></dt>
+                <dd>
+                    <span>{{accountStatus.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.accountStatus.active">Active</span></dt>
+                <dd>
+                    <span>{{accountStatus.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/account-status', accountStatus.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

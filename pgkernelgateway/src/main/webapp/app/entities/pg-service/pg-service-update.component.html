@@ -1,0 +1,302 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pg-service-heading" jhiTranslate="pgkernelgatewayApp.pgService.home.createOrEditLabel">Create or edit a Pg Service</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                    <div *ngIf="editForm.get('code').invalid && (editForm.get('code').dirty || editForm.get('code').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('code').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('code').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                    <div *ngIf="editForm.get('name').invalid && (editForm.get('name').dirty || editForm.get('name').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.isNative" for="field_isNative">Is Native</label>
+                    <input type="checkbox" class="form-control" name="isNative" id="field_isNative"
+                           formControlName="isNative"/>
+                    <div *ngIf="editForm.get('isNative').invalid && (editForm.get('isNative').dirty || editForm.get('isNative').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isNative').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.isSourceInternal" for="field_isSourceInternal">Is Source Internal</label>
+                    <input type="checkbox" class="form-control" name="isSourceInternal" id="field_isSourceInternal"
+                           formControlName="isSourceInternal"/>
+                    <div *ngIf="editForm.get('isSourceInternal').invalid && (editForm.get('isSourceInternal').dirty || editForm.get('isSourceInternal').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isSourceInternal').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.isDestinationInternal" for="field_isDestinationInternal">Is Destination Internal</label>
+                    <input type="checkbox" class="form-control" name="isDestinationInternal" id="field_isDestinationInternal"
+                           formControlName="isDestinationInternal"/>
+                    <div *ngIf="editForm.get('isDestinationInternal').invalid && (editForm.get('isDestinationInternal').dirty || editForm.get('isDestinationInternal').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('isDestinationInternal').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.needSubscription" for="field_needSubscription">Need Subscription</label>
+                    <input type="checkbox" class="form-control" name="needSubscription" id="field_needSubscription"
+                           formControlName="needSubscription"/>
+                    <div *ngIf="editForm.get('needSubscription').invalid && (editForm.get('needSubscription').dirty || editForm.get('needSubscription').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('needSubscription').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.currencyCode" for="field_currencyCode">Currency Code</label>
+                    <input type="text" class="form-control" name="currencyCode" id="field_currencyCode"
+                           formControlName="currencyCode"/>
+                    <div *ngIf="editForm.get('currencyCode').invalid && (editForm.get('currencyCode').dirty || editForm.get('currencyCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('currencyCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('currencyCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.useTransactionType" for="field_useTransactionType">Use Transaction Type</label>
+                    <input type="checkbox" class="form-control" name="useTransactionType" id="field_useTransactionType"
+                           formControlName="useTransactionType"/>
+                    <div *ngIf="editForm.get('useTransactionType').invalid && (editForm.get('useTransactionType').dirty || editForm.get('useTransactionType').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('useTransactionType').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.checkSubscription" for="field_checkSubscription">Check Subscription</label>
+                    <input type="checkbox" class="form-control" name="checkSubscription" id="field_checkSubscription"
+                           formControlName="checkSubscription"/>
+                    <div *ngIf="editForm.get('checkSubscription').invalid && (editForm.get('checkSubscription').dirty || editForm.get('checkSubscription').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('checkSubscription').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.ignoreFees" for="field_ignoreFees">Ignore Fees</label>
+                    <input type="checkbox" class="form-control" name="ignoreFees" id="field_ignoreFees"
+                           formControlName="ignoreFees"/>
+                    <div *ngIf="editForm.get('ignoreFees').invalid && (editForm.get('ignoreFees').dirty || editForm.get('ignoreFees').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ignoreFees').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.ignoreLimit" for="field_ignoreLimit">Ignore Limit</label>
+                    <input type="checkbox" class="form-control" name="ignoreLimit" id="field_ignoreLimit"
+                           formControlName="ignoreLimit"/>
+                    <div *ngIf="editForm.get('ignoreLimit').invalid && (editForm.get('ignoreLimit').dirty || editForm.get('ignoreLimit').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ignoreLimit').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.ignoreCommission" for="field_ignoreCommission">Ignore Commission</label>
+                    <input type="checkbox" class="form-control" name="ignoreCommission" id="field_ignoreCommission"
+                           formControlName="ignoreCommission"/>
+                    <div *ngIf="editForm.get('ignoreCommission').invalid && (editForm.get('ignoreCommission').dirty || editForm.get('ignoreCommission').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('ignoreCommission').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.checkOtp" for="field_checkOtp">Check Otp</label>
+                    <input type="checkbox" class="form-control" name="checkOtp" id="field_checkOtp"
+                           formControlName="checkOtp"/>
+                    <div *ngIf="editForm.get('checkOtp').invalid && (editForm.get('checkOtp').dirty || editForm.get('checkOtp').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('checkOtp').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.pgTransactionType1Code" for="field_pgTransactionType1Code">Pg Transaction Type 1 Code</label>
+                    <input type="text" class="form-control" name="pgTransactionType1Code" id="field_pgTransactionType1Code"
+                           formControlName="pgTransactionType1Code"/>
+                    <div *ngIf="editForm.get('pgTransactionType1Code').invalid && (editForm.get('pgTransactionType1Code').dirty || editForm.get('pgTransactionType1Code').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pgTransactionType1Code').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pgTransactionType1Code').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.pgTransactionType2Code" for="field_pgTransactionType2Code">Pg Transaction Type 2 Code</label>
+                    <input type="text" class="form-control" name="pgTransactionType2Code" id="field_pgTransactionType2Code"
+                           formControlName="pgTransactionType2Code"/>
+                    <div *ngIf="editForm.get('pgTransactionType2Code').invalid && (editForm.get('pgTransactionType2Code').dirty || editForm.get('pgTransactionType2Code').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pgTransactionType2Code').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pgTransactionType2Code').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.partnerOwnerCode" for="field_partnerOwnerCode">Partner Owner Code</label>
+                    <input type="text" class="form-control" name="partnerOwnerCode" id="field_partnerOwnerCode"
+                           formControlName="partnerOwnerCode"/>
+                    <div *ngIf="editForm.get('partnerOwnerCode').invalid && (editForm.get('partnerOwnerCode').dirty || editForm.get('partnerOwnerCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('partnerOwnerCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.transactionTypeCode" for="field_transactionTypeCode">Transaction Type Code</label>
+                    <input type="text" class="form-control" name="transactionTypeCode" id="field_transactionTypeCode"
+                           formControlName="transactionTypeCode"/>
+                    <div *ngIf="editForm.get('transactionTypeCode').invalid && (editForm.get('transactionTypeCode').dirty || editForm.get('transactionTypeCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionTypeCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionTypeCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.serviceAuthenticationCode" for="field_serviceAuthenticationCode">Service Authentication Code</label>
+                    <input type="text" class="form-control" name="serviceAuthenticationCode" id="field_serviceAuthenticationCode"
+                           formControlName="serviceAuthenticationCode"/>
+                    <div *ngIf="editForm.get('serviceAuthenticationCode').invalid && (editForm.get('serviceAuthenticationCode').dirty || editForm.get('serviceAuthenticationCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('serviceAuthenticationCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('serviceAuthenticationCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.contractPath" for="field_contractPath">Contract Path</label>
+                    <input type="text" class="form-control" name="contractPath" id="field_contractPath"
+                           formControlName="contractPath"/>
+                    <div *ngIf="editForm.get('contractPath').invalid && (editForm.get('contractPath').dirty || editForm.get('contractPath').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('contractPath').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                    <div *ngIf="editForm.get('description').invalid && (editForm.get('description').dirty || editForm.get('description').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('description').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.logic" for="field_logic">Logic</label>
+                    <input type="text" class="form-control" name="logic" id="field_logic"
+                           formControlName="logic"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                    <div *ngIf="editForm.get('active').invalid && (editForm.get('active').dirty || editForm.get('active').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('active').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.sourceConnector" for="field_sourceConnector">Source Connector</label>
+                    <select class="form-control" id="field_sourceConnector" name="sourceConnector" formControlName="sourceConnectorId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="connectorOption.id" *ngFor="let connectorOption of connectors; trackBy: trackConnectorById">{{connectorOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.pgService.destinationConnector" for="field_destinationConnector">Destination Connector</label>
+                    <select class="form-control" id="field_destinationConnector" name="destinationConnector" formControlName="destinationConnectorId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="connectorOption.id" *ngFor="let connectorOption of connectors; trackBy: trackConnectorById">{{connectorOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

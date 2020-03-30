@@ -1,0 +1,227 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-transaction-heading" jhiTranslate="pgkernelgatewayApp.transaction.home.createOrEditLabel">Create or edit a Transaction</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.transactionNumber" for="field_transactionNumber">Transaction Number</label>
+                    <input type="text" class="form-control" name="transactionNumber" id="field_transactionNumber"
+                           formControlName="transactionNumber"/>
+                    <div *ngIf="editForm.get('transactionNumber').invalid && (editForm.get('transactionNumber').dirty || editForm.get('transactionNumber').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionNumber').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionNumber').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.label" for="field_label">Label</label>
+                    <input type="text" class="form-control" name="label" id="field_label"
+                           formControlName="label"/>
+                    <div *ngIf="editForm.get('label').invalid && (editForm.get('label').dirty || editForm.get('label').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('label').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('label').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.transactionAmount" for="field_transactionAmount">Transaction Amount</label>
+                    <input type="number" class="form-control" name="transactionAmount" id="field_transactionAmount"
+                           formControlName="transactionAmount"/>
+                    <div *ngIf="editForm.get('transactionAmount').invalid && (editForm.get('transactionAmount').dirty || editForm.get('transactionAmount').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionAmount').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionAmount').errors.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('transactionAmount')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.transactionDate" for="field_transactionDate">Transaction Date</label>
+                    <div class="d-flex">
+                        <input id="field_transactionDate" type="datetime-local" class="form-control" name="transactionDate" formControlName="transactionDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('transactionDate').invalid && (editForm.get('transactionDate').dirty || editForm.get('transactionDate').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionDate').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('transactionDate').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.feesSupported" for="field_feesSupported">Fees Supported</label>
+                    <input type="checkbox" class="form-control" name="feesSupported" id="field_feesSupported"
+                           formControlName="feesSupported"/>
+                    <div *ngIf="editForm.get('feesSupported').invalid && (editForm.get('feesSupported').dirty || editForm.get('feesSupported').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('feesSupported').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.transactionFees" for="field_transactionFees">Transaction Fees</label>
+                    <input type="number" class="form-control" name="transactionFees" id="field_transactionFees"
+                           formControlName="transactionFees"/>
+                    <div *ngIf="editForm.get('transactionFees').invalid && (editForm.get('transactionFees').dirty || editForm.get('transactionFees').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionFees').errors.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('transactionFees')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.priceCode" for="field_priceCode">Price Code</label>
+                    <input type="text" class="form-control" name="priceCode" id="field_priceCode"
+                           formControlName="priceCode"/>
+                    <div *ngIf="editForm.get('priceCode').invalid && (editForm.get('priceCode').dirty || editForm.get('priceCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('priceCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('priceCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.fromPartnerCode" for="field_fromPartnerCode">From Partner Code</label>
+                    <input type="text" class="form-control" name="fromPartnerCode" id="field_fromPartnerCode"
+                           formControlName="fromPartnerCode"/>
+                    <div *ngIf="editForm.get('fromPartnerCode').invalid && (editForm.get('fromPartnerCode').dirty || editForm.get('fromPartnerCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fromPartnerCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fromPartnerCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.toPartnerCode" for="field_toPartnerCode">To Partner Code</label>
+                    <input type="text" class="form-control" name="toPartnerCode" id="field_toPartnerCode"
+                           formControlName="toPartnerCode"/>
+                    <div *ngIf="editForm.get('toPartnerCode').invalid && (editForm.get('toPartnerCode').dirty || editForm.get('toPartnerCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('toPartnerCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('toPartnerCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.transactionStatusCode" for="field_transactionStatusCode">Transaction Status Code</label>
+                    <input type="text" class="form-control" name="transactionStatusCode" id="field_transactionStatusCode"
+                           formControlName="transactionStatusCode"/>
+                    <div *ngIf="editForm.get('transactionStatusCode').invalid && (editForm.get('transactionStatusCode').dirty || editForm.get('transactionStatusCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionStatusCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionStatusCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.transactionTypeCode" for="field_transactionTypeCode">Transaction Type Code</label>
+                    <input type="text" class="form-control" name="transactionTypeCode" id="field_transactionTypeCode"
+                           formControlName="transactionTypeCode"/>
+                    <div *ngIf="editForm.get('transactionTypeCode').invalid && (editForm.get('transactionTypeCode').dirty || editForm.get('transactionTypeCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionTypeCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('transactionTypeCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.serviceCode" for="field_serviceCode">Service Code</label>
+                    <input type="text" class="form-control" name="serviceCode" id="field_serviceCode"
+                           formControlName="serviceCode"/>
+                    <div *ngIf="editForm.get('serviceCode').invalid && (editForm.get('serviceCode').dirty || editForm.get('serviceCode').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('serviceCode').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('serviceCode').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 5 }">
+                        This field cannot be longer than 5 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.comment" for="field_comment">Comment</label>
+                    <input type="text" class="form-control" name="comment" id="field_comment"
+                           formControlName="comment"/>
+                    <div *ngIf="editForm.get('comment').invalid && (editForm.get('comment').dirty || editForm.get('comment').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('comment').errors.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pgkernelgatewayApp.transaction.active" for="field_active">Active</label>
+                    <input type="checkbox" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                    <div *ngIf="editForm.get('active').invalid && (editForm.get('active').dirty || editForm.get('active').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('active').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

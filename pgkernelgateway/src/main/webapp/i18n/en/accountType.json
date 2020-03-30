@@ -1,0 +1,24 @@
+{
+  "pgkernelgatewayApp": {
+    "accountType": {
+      "home": {
+        "title": "Account Types",
+        "createLabel": "Create a new Account Type",
+        "createOrEditLabel": "Create or edit a Account Type",
+        "notFound": "No Account Type found"
+      },
+      "created": "A new Account Type is created with identifier {{ param }}",
+      "updated": "A Account Type is updated with identifier {{ param }}",
+      "deleted": "A Account Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Account Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Account Type"
+      },
+      "code": "Code",
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

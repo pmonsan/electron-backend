@@ -1,0 +1,23 @@
+{
+  "pgkernelgatewayApp": {
+    "periodicity": {
+      "home": {
+        "title": "Periodicities",
+        "createLabel": "Créer un nouveau Periodicity",
+        "createOrEditLabel": "Créer ou éditer un Periodicity",
+        "notFound": "Aucun Periodicity trouvé"
+      },
+      "created": "Un nouveau Periodicity a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Periodicity avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Periodicity avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Periodicity {{ id }} ?"
+      },
+      "detail": {
+        "title": "Periodicity"
+      },
+      "label": "Label",
+      "active": "Active"
+    }
+  }
+}

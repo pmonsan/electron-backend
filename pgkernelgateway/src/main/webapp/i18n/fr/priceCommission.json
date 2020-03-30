@@ -1,0 +1,32 @@
+{
+  "pgkernelgatewayApp": {
+    "priceCommission": {
+      "home": {
+        "title": "PriceCommissions",
+        "createLabel": "Créer un nouveau Price Commission",
+        "createOrEditLabel": "Créer ou éditer un Price Commission",
+        "notFound": "Aucun Price Commission trouvé"
+      },
+      "created": "Un nouveau Price Commission a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Price Commission avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Price Commission avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Price Commission {{ id }} ?"
+      },
+      "detail": {
+        "title": "Price Commission"
+      },
+      "code": "Code",
+      "label": "Label",
+      "amount": "Amount",
+      "amountInPercent": "Amount In Percent",
+      "dateCreation": "Date Creation",
+      "percent": "Percent",
+      "currencyCode": "Currency Code",
+      "partnerCode": "Partner Code",
+      "serviceCode": "Service Code",
+      "description": "Description",
+      "active": "Active"
+    }
+  }
+}

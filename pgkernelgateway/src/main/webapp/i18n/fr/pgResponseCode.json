@@ -1,0 +1,25 @@
+{
+  "pgkernelgatewayApp": {
+    "pgResponseCode": {
+      "home": {
+        "title": "PgResponseCodes",
+        "createLabel": "Créer un nouveau Pg Response Code",
+        "createOrEditLabel": "Créer ou éditer un Pg Response Code",
+        "notFound": "Aucun Pg Response Code trouvé"
+      },
+      "created": "Un nouveau Pg Response Code a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pg Response Code avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pg Response Code avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pg Response Code {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pg Response Code"
+      },
+      "code": "Code",
+      "label": "Label",
+      "description": "Description",
+      "active": "Active"
+    }
+  }
+}

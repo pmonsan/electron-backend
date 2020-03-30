@@ -1,0 +1,44 @@
+{
+  "pgkernelgatewayApp": {
+    "customer": {
+      "home": {
+        "title": "Customers",
+        "createLabel": "Créer un nouveau Customer",
+        "createOrEditLabel": "Créer ou éditer un Customer",
+        "notFound": "Aucun Customer trouvé"
+      },
+      "created": "Un nouveau Customer a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Customer avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Customer avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Customer {{ id }} ?"
+      },
+      "detail": {
+        "title": "Customer"
+      },
+      "number": "Number",
+      "corporateName": "Corporate Name",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "gpsLatitude": "Gps Latitude",
+      "gpsLongitude": "Gps Longitude",
+      "homePhone": "Home Phone",
+      "mobilePhone": "Mobile Phone",
+      "workPhone": "Work Phone",
+      "otherQuestion": "Other Question",
+      "responseOfQuestion": "Response Of Question",
+      "tradeRegister": "Trade Register",
+      "address": "Address",
+      "postalCode": "Postal Code",
+      "city": "City",
+      "email": "Email",
+      "countryCode": "Country Code",
+      "partnerCode": "Partner Code",
+      "activityAreaCode": "Activity Area Code",
+      "customerTypeCode": "Customer Type Code",
+      "questionCode": "Question Code",
+      "username": "Username",
+      "active": "Active"
+    }
+  }
+}

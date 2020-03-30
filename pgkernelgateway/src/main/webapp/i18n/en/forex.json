@@ -1,0 +1,27 @@
+{
+  "pgkernelgatewayApp": {
+    "forex": {
+      "home": {
+        "title": "Forexes",
+        "createLabel": "Create a new Forex",
+        "createOrEditLabel": "Create or edit a Forex",
+        "notFound": "No Forex found"
+      },
+      "created": "A new Forex is created with identifier {{ param }}",
+      "updated": "A Forex is updated with identifier {{ param }}",
+      "deleted": "A Forex is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Forex {{ id }}?"
+      },
+      "detail": {
+        "title": "Forex"
+      },
+      "code": "Code",
+      "rate": "Rate",
+      "creationDate": "Creation Date",
+      "active": "Active",
+      "fromCurrency": "From Currency",
+      "toCurrency": "To Currency"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "pgkernelgatewayApp": {
+    "loanInstalment": {
+      "home": {
+        "title": "LoanInstalments",
+        "createLabel": "Créer un nouveau Loan Instalment",
+        "createOrEditLabel": "Créer ou éditer un Loan Instalment",
+        "notFound": "Aucun Loan Instalment trouvé"
+      },
+      "created": "Un nouveau Loan Instalment a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Loan Instalment avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Loan Instalment avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Loan Instalment {{ id }} ?"
+      },
+      "detail": {
+        "title": "Loan Instalment"
+      },
+      "code": "Code",
+      "expectedPaymentDate": "Expected Payment Date",
+      "realPaymentDate": "Real Payment Date",
+      "amountToPay": "Amount To Pay",
+      "penalityFee": "Penality Fee",
+      "statusDate": "Status Date",
+      "loanInstalmentStatusCode": "Loan Instalment Status Code",
+      "active": "Active",
+      "loan": "Loan"
+    }
+  }
+}

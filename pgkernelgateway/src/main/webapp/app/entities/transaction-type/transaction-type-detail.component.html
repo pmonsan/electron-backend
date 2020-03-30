@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transactionType">
+            <h2><span jhiTranslate="pgkernelgatewayApp.transactionType.detail.title">Transaction Type</span> {{transactionType.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionType.code">Code</span></dt>
+                <dd>
+                    <span>{{transactionType.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionType.label">Label</span></dt>
+                <dd>
+                    <span>{{transactionType.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionType.useTransactionGroup">Use Transaction Group</span></dt>
+                <dd>
+                    <span>{{transactionType.useTransactionGroup}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionType.checkSubscription">Check Subscription</span></dt>
+                <dd>
+                    <span>{{transactionType.checkSubscription}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionType.ignoreFees">Ignore Fees</span></dt>
+                <dd>
+                    <span>{{transactionType.ignoreFees}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionType.ignoreLimit">Ignore Limit</span></dt>
+                <dd>
+                    <span>{{transactionType.ignoreLimit}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionType.ignoreCommission">Ignore Commission</span></dt>
+                <dd>
+                    <span>{{transactionType.ignoreCommission}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionType.checkOtp">Check Otp</span></dt>
+                <dd>
+                    <span>{{transactionType.checkOtp}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionType.pgMessageModelCode">Pg Message Model Code</span></dt>
+                <dd>
+                    <span>{{transactionType.pgMessageModelCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionType.transactionGroupCode">Transaction Group Code</span></dt>
+                <dd>
+                    <span>{{transactionType.transactionGroupCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="pgkernelgatewayApp.transactionType.active">Active</span></dt>
+                <dd>
+                    <span>{{transactionType.active}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction-type', transactionType.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

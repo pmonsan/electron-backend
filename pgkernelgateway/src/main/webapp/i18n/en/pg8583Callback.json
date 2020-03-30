@@ -1,0 +1,26 @@
+{
+  "pgkernelgatewayApp": {
+    "pg8583Callback": {
+      "home": {
+        "title": "Pg 8583 Callbacks",
+        "createLabel": "Create a new Pg 8583 Callback",
+        "createOrEditLabel": "Create or edit a Pg 8583 Callback",
+        "notFound": "No Pg 8583 Callback found"
+      },
+      "created": "A new Pg 8583 Callback is created with identifier {{ param }}",
+      "updated": "A Pg 8583 Callback is updated with identifier {{ param }}",
+      "deleted": "A Pg 8583 Callback is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pg 8583 Callback {{ id }}?"
+      },
+      "detail": {
+        "title": "Pg 8583 Callback"
+      },
+      "partnerCode": "Partner Code",
+      "callbackUri": "Callback Uri",
+      "httpMethod": "Http Method",
+      "managerClass": "Manager Class",
+      "active": "Active"
+    }
+  }
+}

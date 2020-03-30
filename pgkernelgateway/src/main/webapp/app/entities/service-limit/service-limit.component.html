@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pgkernelgatewayApp.serviceLimit.home.title">Service Limits</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service-limit" [routerLink]="['/service-limit/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pgkernelgatewayApp.serviceLimit.home.createLabel">
+            Create new Service Limit
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="serviceLimits?.length === 0">
+        <span jhiTranslate="pgkernelgatewayApp.serviceLimit.home.notFound">No serviceLimits found</span>
+    </div>
+    <div class="table-responsive" *ngIf="serviceLimits?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.serviceLimit.limitTypeCode">Limit Type Code</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.serviceLimit.value">Value</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.serviceLimit.comment">Comment</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.serviceLimit.active">Active</span></th>
+            <th><span jhiTranslate="pgkernelgatewayApp.serviceLimit.pgService">Pg Service</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let serviceLimit of serviceLimits ;trackBy: trackId">
+                <td><a [routerLink]="['/service-limit', serviceLimit.id, 'view' ]">{{serviceLimit.id}}</a></td>
+                <td>{{serviceLimit.limitTypeCode}}</td>
+                <td>{{serviceLimit.value}}</td>
+                <td>{{serviceLimit.comment}}</td>
+                <td>{{serviceLimit.active}}</td>
+                <td>
+                    <div *ngIf="serviceLimit.pgServiceId">
+                        <a [routerLink]="['../pg-service', serviceLimit.pgServiceId , 'view' ]" >{{serviceLimit.pgServiceId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/service-limit', serviceLimit.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/service-limit', serviceLimit.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'service-limit', { outlets: { popup: serviceLimit.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
