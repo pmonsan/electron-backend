@@ -1303,6 +1303,7 @@ relationship ManyToOne {
 entity Pg8583Request(t_pg8583_request) {
 	number String required maxlength(50),
 	apiKey String required maxlength(100),
+	securityMode String required maxlength(10),
 	encryptedData String required maxlength(255),
 	decryptedData String maxlength(255),
 	registrationDate Instant required,
@@ -1310,8 +1311,8 @@ entity Pg8583Request(t_pg8583_request) {
 	requestResponse String maxlength(255),
 	status String maxlength(100),
 	reason String maxlength(100),
-	pgapsMessage String maxlength(255),
-	pgapsTransactionNumber String maxlength(50),
+	pgMessage String maxlength(255),
+	pgTransactionNumber String maxlength(50),
 	active Boolean required
 }
 

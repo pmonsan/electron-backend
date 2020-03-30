@@ -1,8 +1,8 @@
 package com.electron.mfs.pg.pg8583client.web.rest;
 
-import com.electron.mfs.pg.pg8583client.service.Pg8583RequestService;
+import com.electron.mfs.pg.pg8583client.domain.Pg8583Request;
+import com.electron.mfs.pg.pg8583client.repository.Pg8583RequestRepository;
 import com.electron.mfs.pg.pg8583client.web.rest.errors.BadRequestAlertException;
-import com.electron.mfs.pg.pg8583client.service.dto.Pg8583RequestDTO;
 
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -33,26 +33,26 @@ public class Pg8583RequestResource {
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
 
-    private final Pg8583RequestService pg8583RequestService;
+    private final Pg8583RequestRepository pg8583RequestRepository;
 
-    public Pg8583RequestResource(Pg8583RequestService pg8583RequestService) {
-        this.pg8583RequestService = pg8583RequestService;
+    public Pg8583RequestResource(Pg8583RequestRepository pg8583RequestRepository) {
+        this.pg8583RequestRepository = pg8583RequestRepository;
     }
 
     /**
      * {@code POST  /pg-8583-requests} : Create a new pg8583Request.
      *
-     * @param pg8583RequestDTO the pg8583RequestDTO to create.
-     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new pg8583RequestDTO, or with status {@code 400 (Bad Request)} if the pg8583Request has already an ID.
+     * @param pg8583Request the pg8583Request to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new pg8583Request, or with status {@code 400 (Bad Request)} if the pg8583Request has already an ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PostMapping("/pg-8583-requests")
-    public ResponseEntity<Pg8583RequestDTO> createPg8583Request(@Valid @RequestBody Pg8583RequestDTO pg8583RequestDTO) throws URISyntaxException {
-        log.debug("REST request to save Pg8583Request : {}", pg8583RequestDTO);
-        if (pg8583RequestDTO.getId() != null) {
+    public ResponseEntity<Pg8583Request> createPg8583Request(@Valid @RequestBody Pg8583Request pg8583Request) throws URISyntaxException {
+        log.debug("REST request to save Pg8583Request : {}", pg8583Request);
+        if (pg8583Request.getId() != null) {
             throw new BadRequestAlertException("A new pg8583Request cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        Pg8583RequestDTO result = pg8583RequestService.save(pg8583RequestDTO);
+        Pg8583Request result = pg8583RequestRepository.save(pg8583Request);
         return ResponseEntity.created(new URI("/api/pg-8583-requests/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -61,21 +61,21 @@ public class Pg8583RequestResource {
     /**
      * {@code PUT  /pg-8583-requests} : Updates an existing pg8583Request.
      *
-     * @param pg8583RequestDTO the pg8583RequestDTO to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated pg8583RequestDTO,
-     * or with status {@code 400 (Bad Request)} if the pg8583RequestDTO is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the pg8583RequestDTO couldn't be updated.
+     * @param pg8583Request the pg8583Request to update.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated pg8583Request,
+     * or with status {@code 400 (Bad Request)} if the pg8583Request is not valid,
+     * or with status {@code 500 (Internal Server Error)} if the pg8583Request couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/pg-8583-requests")
-    public ResponseEntity<Pg8583RequestDTO> updatePg8583Request(@Valid @RequestBody Pg8583RequestDTO pg8583RequestDTO) throws URISyntaxException {
-        log.debug("REST request to update Pg8583Request : {}", pg8583RequestDTO);
-        if (pg8583RequestDTO.getId() == null) {
+    public ResponseEntity<Pg8583Request> updatePg8583Request(@Valid @RequestBody Pg8583Request pg8583Request) throws URISyntaxException {
+        log.debug("REST request to update Pg8583Request : {}", pg8583Request);
+        if (pg8583Request.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
-        Pg8583RequestDTO result = pg8583RequestService.save(pg8583RequestDTO);
+        Pg8583Request result = pg8583RequestRepository.save(pg8583Request);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, pg8583RequestDTO.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, pg8583Request.getId().toString()))
             .body(result);
     }
 
@@ -85,34 +85,34 @@ public class Pg8583RequestResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of pg8583Requests in body.
      */
     @GetMapping("/pg-8583-requests")
-    public List<Pg8583RequestDTO> getAllPg8583Requests() {
+    public List<Pg8583Request> getAllPg8583Requests() {
         log.debug("REST request to get all Pg8583Requests");
-        return pg8583RequestService.findAll();
+        return pg8583RequestRepository.findAll();
     }
 
     /**
      * {@code GET  /pg-8583-requests/:id} : get the "id" pg8583Request.
      *
-     * @param id the id of the pg8583RequestDTO to retrieve.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the pg8583RequestDTO, or with status {@code 404 (Not Found)}.
+     * @param id the id of the pg8583Request to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the pg8583Request, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/pg-8583-requests/{id}")
-    public ResponseEntity<Pg8583RequestDTO> getPg8583Request(@PathVariable Long id) {
+    public ResponseEntity<Pg8583Request> getPg8583Request(@PathVariable Long id) {
         log.debug("REST request to get Pg8583Request : {}", id);
-        Optional<Pg8583RequestDTO> pg8583RequestDTO = pg8583RequestService.findOne(id);
-        return ResponseUtil.wrapOrNotFound(pg8583RequestDTO);
+        Optional<Pg8583Request> pg8583Request = pg8583RequestRepository.findById(id);
+        return ResponseUtil.wrapOrNotFound(pg8583Request);
     }
 
     /**
      * {@code DELETE  /pg-8583-requests/:id} : delete the "id" pg8583Request.
      *
-     * @param id the id of the pg8583RequestDTO to delete.
+     * @param id the id of the pg8583Request to delete.
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/pg-8583-requests/{id}")
     public ResponseEntity<Void> deletePg8583Request(@PathVariable Long id) {
         log.debug("REST request to delete Pg8583Request : {}", id);
-        pg8583RequestService.delete(id);
+        pg8583RequestRepository.deleteById(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 }

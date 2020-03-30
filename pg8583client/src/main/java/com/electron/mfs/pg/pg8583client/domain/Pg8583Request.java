@@ -33,6 +33,11 @@ public class Pg8583Request implements Serializable {
     private String apiKey;
 
     @NotNull
+    @Size(max = 10)
+    @Column(name = "security_mode", length = 10, nullable = false)
+    private String securityMode;
+
+    @NotNull
     @Size(max = 255)
     @Column(name = "encrypted_data", length = 255, nullable = false)
     private String encryptedData;
@@ -61,12 +66,12 @@ public class Pg8583Request implements Serializable {
     private String reason;
 
     @Size(max = 255)
-    @Column(name = "pgaps_message", length = 255)
-    private String pgapsMessage;
+    @Column(name = "pg_message", length = 255)
+    private String pgMessage;
 
     @Size(max = 50)
-    @Column(name = "pgaps_transaction_number", length = 50)
-    private String pgapsTransactionNumber;
+    @Column(name = "pg_transaction_number", length = 50)
+    private String pgTransactionNumber;
 
     @NotNull
     @Column(name = "active", nullable = false)
@@ -105,6 +110,19 @@ public class Pg8583Request implements Serializable {
 
     public void setApiKey(String apiKey) {
         this.apiKey = apiKey;
+    }
+
+    public String getSecurityMode() {
+        return securityMode;
+    }
+
+    public Pg8583Request securityMode(String securityMode) {
+        this.securityMode = securityMode;
+        return this;
+    }
+
+    public void setSecurityMode(String securityMode) {
+        this.securityMode = securityMode;
     }
 
     public String getEncryptedData() {
@@ -198,30 +216,30 @@ public class Pg8583Request implements Serializable {
         this.reason = reason;
     }
 
-    public String getPgapsMessage() {
-        return pgapsMessage;
+    public String getPgMessage() {
+        return pgMessage;
     }
 
-    public Pg8583Request pgapsMessage(String pgapsMessage) {
-        this.pgapsMessage = pgapsMessage;
+    public Pg8583Request pgMessage(String pgMessage) {
+        this.pgMessage = pgMessage;
         return this;
     }
 
-    public void setPgapsMessage(String pgapsMessage) {
-        this.pgapsMessage = pgapsMessage;
+    public void setPgMessage(String pgMessage) {
+        this.pgMessage = pgMessage;
     }
 
-    public String getPgapsTransactionNumber() {
-        return pgapsTransactionNumber;
+    public String getPgTransactionNumber() {
+        return pgTransactionNumber;
     }
 
-    public Pg8583Request pgapsTransactionNumber(String pgapsTransactionNumber) {
-        this.pgapsTransactionNumber = pgapsTransactionNumber;
+    public Pg8583Request pgTransactionNumber(String pgTransactionNumber) {
+        this.pgTransactionNumber = pgTransactionNumber;
         return this;
     }
 
-    public void setPgapsTransactionNumber(String pgapsTransactionNumber) {
-        this.pgapsTransactionNumber = pgapsTransactionNumber;
+    public void setPgTransactionNumber(String pgTransactionNumber) {
+        this.pgTransactionNumber = pgTransactionNumber;
     }
 
     public Boolean isActive() {
@@ -260,6 +278,7 @@ public class Pg8583Request implements Serializable {
             "id=" + getId() +
             ", number='" + getNumber() + "'" +
             ", apiKey='" + getApiKey() + "'" +
+            ", securityMode='" + getSecurityMode() + "'" +
             ", encryptedData='" + getEncryptedData() + "'" +
             ", decryptedData='" + getDecryptedData() + "'" +
             ", registrationDate='" + getRegistrationDate() + "'" +
@@ -267,8 +286,8 @@ public class Pg8583Request implements Serializable {
             ", requestResponse='" + getRequestResponse() + "'" +
             ", status='" + getStatus() + "'" +
             ", reason='" + getReason() + "'" +
-            ", pgapsMessage='" + getPgapsMessage() + "'" +
-            ", pgapsTransactionNumber='" + getPgapsTransactionNumber() + "'" +
+            ", pgMessage='" + getPgMessage() + "'" +
+            ", pgTransactionNumber='" + getPgTransactionNumber() + "'" +
             ", active='" + isActive() + "'" +
             "}";
     }

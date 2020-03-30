@@ -4,9 +4,6 @@ import com.electron.mfs.pg.pg8583client.Pg8583ClientApp;
 import com.electron.mfs.pg.pg8583client.config.SecurityBeanOverrideConfiguration;
 import com.electron.mfs.pg.pg8583client.domain.Pg8583Request;
 import com.electron.mfs.pg.pg8583client.repository.Pg8583RequestRepository;
-import com.electron.mfs.pg.pg8583client.service.Pg8583RequestService;
-import com.electron.mfs.pg.pg8583client.service.dto.Pg8583RequestDTO;
-import com.electron.mfs.pg.pg8583client.service.mapper.Pg8583RequestMapper;
 import com.electron.mfs.pg.pg8583client.web.rest.errors.ExceptionTranslator;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -47,6 +44,9 @@ public class Pg8583RequestResourceIT {
     private static final String DEFAULT_API_KEY = "AAAAAAAAAA";
     private static final String UPDATED_API_KEY = "BBBBBBBBBB";
 
+    private static final String DEFAULT_SECURITY_MODE = "AAAAAAAAAA";
+    private static final String UPDATED_SECURITY_MODE = "BBBBBBBBBB";
+
     private static final String DEFAULT_ENCRYPTED_DATA = "AAAAAAAAAA";
     private static final String UPDATED_ENCRYPTED_DATA = "BBBBBBBBBB";
 
@@ -68,23 +68,17 @@ public class Pg8583RequestResourceIT {
     private static final String DEFAULT_REASON = "AAAAAAAAAA";
     private static final String UPDATED_REASON = "BBBBBBBBBB";
 
-    private static final String DEFAULT_PGAPS_MESSAGE = "AAAAAAAAAA";
-    private static final String UPDATED_PGAPS_MESSAGE = "BBBBBBBBBB";
+    private static final String DEFAULT_PG_MESSAGE = "AAAAAAAAAA";
+    private static final String UPDATED_PG_MESSAGE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_PGAPS_TRANSACTION_NUMBER = "AAAAAAAAAA";
-    private static final String UPDATED_PGAPS_TRANSACTION_NUMBER = "BBBBBBBBBB";
+    private static final String DEFAULT_PG_TRANSACTION_NUMBER = "AAAAAAAAAA";
+    private static final String UPDATED_PG_TRANSACTION_NUMBER = "BBBBBBBBBB";
 
     private static final Boolean DEFAULT_ACTIVE = false;
     private static final Boolean UPDATED_ACTIVE = true;
 
     @Autowired
     private Pg8583RequestRepository pg8583RequestRepository;
-
-    @Autowired
-    private Pg8583RequestMapper pg8583RequestMapper;
-
-    @Autowired
-    private Pg8583RequestService pg8583RequestService;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
@@ -108,7 +102,7 @@ public class Pg8583RequestResourceIT {
     @BeforeEach
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        final Pg8583RequestResource pg8583RequestResource = new Pg8583RequestResource(pg8583RequestService);
+        final Pg8583RequestResource pg8583RequestResource = new Pg8583RequestResource(pg8583RequestRepository);
         this.restPg8583RequestMockMvc = MockMvcBuilders.standaloneSetup(pg8583RequestResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
@@ -127,6 +121,7 @@ public class Pg8583RequestResourceIT {
         Pg8583Request pg8583Request = new Pg8583Request()
             .number(DEFAULT_NUMBER)
             .apiKey(DEFAULT_API_KEY)
+            .securityMode(DEFAULT_SECURITY_MODE)
             .encryptedData(DEFAULT_ENCRYPTED_DATA)
             .decryptedData(DEFAULT_DECRYPTED_DATA)
             .registrationDate(DEFAULT_REGISTRATION_DATE)
@@ -134,8 +129,8 @@ public class Pg8583RequestResourceIT {
             .requestResponse(DEFAULT_REQUEST_RESPONSE)
             .status(DEFAULT_STATUS)
             .reason(DEFAULT_REASON)
-            .pgapsMessage(DEFAULT_PGAPS_MESSAGE)
-            .pgapsTransactionNumber(DEFAULT_PGAPS_TRANSACTION_NUMBER)
+            .pgMessage(DEFAULT_PG_MESSAGE)
+            .pgTransactionNumber(DEFAULT_PG_TRANSACTION_NUMBER)
             .active(DEFAULT_ACTIVE);
         return pg8583Request;
     }
@@ -149,6 +144,7 @@ public class Pg8583RequestResourceIT {
         Pg8583Request pg8583Request = new Pg8583Request()
             .number(UPDATED_NUMBER)
             .apiKey(UPDATED_API_KEY)
+            .securityMode(UPDATED_SECURITY_MODE)
             .encryptedData(UPDATED_ENCRYPTED_DATA)
             .decryptedData(UPDATED_DECRYPTED_DATA)
             .registrationDate(UPDATED_REGISTRATION_DATE)
@@ -156,8 +152,8 @@ public class Pg8583RequestResourceIT {
             .requestResponse(UPDATED_REQUEST_RESPONSE)
             .status(UPDATED_STATUS)
             .reason(UPDATED_REASON)
-            .pgapsMessage(UPDATED_PGAPS_MESSAGE)
-            .pgapsTransactionNumber(UPDATED_PGAPS_TRANSACTION_NUMBER)
+            .pgMessage(UPDATED_PG_MESSAGE)
+            .pgTransactionNumber(UPDATED_PG_TRANSACTION_NUMBER)
             .active(UPDATED_ACTIVE);
         return pg8583Request;
     }
@@ -173,10 +169,9 @@ public class Pg8583RequestResourceIT {
         int databaseSizeBeforeCreate = pg8583RequestRepository.findAll().size();
 
         // Create the Pg8583Request
-        Pg8583RequestDTO pg8583RequestDTO = pg8583RequestMapper.toDto(pg8583Request);
         restPg8583RequestMockMvc.perform(post("/api/pg-8583-requests")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(pg8583RequestDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(pg8583Request)))
             .andExpect(status().isCreated());
 
         // Validate the Pg8583Request in the database
@@ -185,6 +180,7 @@ public class Pg8583RequestResourceIT {
         Pg8583Request testPg8583Request = pg8583RequestList.get(pg8583RequestList.size() - 1);
         assertThat(testPg8583Request.getNumber()).isEqualTo(DEFAULT_NUMBER);
         assertThat(testPg8583Request.getApiKey()).isEqualTo(DEFAULT_API_KEY);
+        assertThat(testPg8583Request.getSecurityMode()).isEqualTo(DEFAULT_SECURITY_MODE);
         assertThat(testPg8583Request.getEncryptedData()).isEqualTo(DEFAULT_ENCRYPTED_DATA);
         assertThat(testPg8583Request.getDecryptedData()).isEqualTo(DEFAULT_DECRYPTED_DATA);
         assertThat(testPg8583Request.getRegistrationDate()).isEqualTo(DEFAULT_REGISTRATION_DATE);
@@ -192,8 +188,8 @@ public class Pg8583RequestResourceIT {
         assertThat(testPg8583Request.getRequestResponse()).isEqualTo(DEFAULT_REQUEST_RESPONSE);
         assertThat(testPg8583Request.getStatus()).isEqualTo(DEFAULT_STATUS);
         assertThat(testPg8583Request.getReason()).isEqualTo(DEFAULT_REASON);
-        assertThat(testPg8583Request.getPgapsMessage()).isEqualTo(DEFAULT_PGAPS_MESSAGE);
-        assertThat(testPg8583Request.getPgapsTransactionNumber()).isEqualTo(DEFAULT_PGAPS_TRANSACTION_NUMBER);
+        assertThat(testPg8583Request.getPgMessage()).isEqualTo(DEFAULT_PG_MESSAGE);
+        assertThat(testPg8583Request.getPgTransactionNumber()).isEqualTo(DEFAULT_PG_TRANSACTION_NUMBER);
         assertThat(testPg8583Request.isActive()).isEqualTo(DEFAULT_ACTIVE);
     }
 
@@ -204,12 +200,11 @@ public class Pg8583RequestResourceIT {
 
         // Create the Pg8583Request with an existing ID
         pg8583Request.setId(1L);
-        Pg8583RequestDTO pg8583RequestDTO = pg8583RequestMapper.toDto(pg8583Request);
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restPg8583RequestMockMvc.perform(post("/api/pg-8583-requests")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(pg8583RequestDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(pg8583Request)))
             .andExpect(status().isBadRequest());
 
         // Validate the Pg8583Request in the database
@@ -226,11 +221,10 @@ public class Pg8583RequestResourceIT {
         pg8583Request.setNumber(null);
 
         // Create the Pg8583Request, which fails.
-        Pg8583RequestDTO pg8583RequestDTO = pg8583RequestMapper.toDto(pg8583Request);
 
         restPg8583RequestMockMvc.perform(post("/api/pg-8583-requests")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(pg8583RequestDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(pg8583Request)))
             .andExpect(status().isBadRequest());
 
         List<Pg8583Request> pg8583RequestList = pg8583RequestRepository.findAll();
@@ -245,11 +239,28 @@ public class Pg8583RequestResourceIT {
         pg8583Request.setApiKey(null);
 
         // Create the Pg8583Request, which fails.
-        Pg8583RequestDTO pg8583RequestDTO = pg8583RequestMapper.toDto(pg8583Request);
 
         restPg8583RequestMockMvc.perform(post("/api/pg-8583-requests")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(pg8583RequestDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(pg8583Request)))
+            .andExpect(status().isBadRequest());
+
+        List<Pg8583Request> pg8583RequestList = pg8583RequestRepository.findAll();
+        assertThat(pg8583RequestList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkSecurityModeIsRequired() throws Exception {
+        int databaseSizeBeforeTest = pg8583RequestRepository.findAll().size();
+        // set the field null
+        pg8583Request.setSecurityMode(null);
+
+        // Create the Pg8583Request, which fails.
+
+        restPg8583RequestMockMvc.perform(post("/api/pg-8583-requests")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(pg8583Request)))
             .andExpect(status().isBadRequest());
 
         List<Pg8583Request> pg8583RequestList = pg8583RequestRepository.findAll();
@@ -264,11 +275,10 @@ public class Pg8583RequestResourceIT {
         pg8583Request.setEncryptedData(null);
 
         // Create the Pg8583Request, which fails.
-        Pg8583RequestDTO pg8583RequestDTO = pg8583RequestMapper.toDto(pg8583Request);
 
         restPg8583RequestMockMvc.perform(post("/api/pg-8583-requests")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(pg8583RequestDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(pg8583Request)))
             .andExpect(status().isBadRequest());
 
         List<Pg8583Request> pg8583RequestList = pg8583RequestRepository.findAll();
@@ -283,11 +293,10 @@ public class Pg8583RequestResourceIT {
         pg8583Request.setRegistrationDate(null);
 
         // Create the Pg8583Request, which fails.
-        Pg8583RequestDTO pg8583RequestDTO = pg8583RequestMapper.toDto(pg8583Request);
 
         restPg8583RequestMockMvc.perform(post("/api/pg-8583-requests")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(pg8583RequestDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(pg8583Request)))
             .andExpect(status().isBadRequest());
 
         List<Pg8583Request> pg8583RequestList = pg8583RequestRepository.findAll();
@@ -302,11 +311,10 @@ public class Pg8583RequestResourceIT {
         pg8583Request.setActive(null);
 
         // Create the Pg8583Request, which fails.
-        Pg8583RequestDTO pg8583RequestDTO = pg8583RequestMapper.toDto(pg8583Request);
 
         restPg8583RequestMockMvc.perform(post("/api/pg-8583-requests")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(pg8583RequestDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(pg8583Request)))
             .andExpect(status().isBadRequest());
 
         List<Pg8583Request> pg8583RequestList = pg8583RequestRepository.findAll();
@@ -326,6 +334,7 @@ public class Pg8583RequestResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(pg8583Request.getId().intValue())))
             .andExpect(jsonPath("$.[*].number").value(hasItem(DEFAULT_NUMBER.toString())))
             .andExpect(jsonPath("$.[*].apiKey").value(hasItem(DEFAULT_API_KEY.toString())))
+            .andExpect(jsonPath("$.[*].securityMode").value(hasItem(DEFAULT_SECURITY_MODE.toString())))
             .andExpect(jsonPath("$.[*].encryptedData").value(hasItem(DEFAULT_ENCRYPTED_DATA.toString())))
             .andExpect(jsonPath("$.[*].decryptedData").value(hasItem(DEFAULT_DECRYPTED_DATA.toString())))
             .andExpect(jsonPath("$.[*].registrationDate").value(hasItem(DEFAULT_REGISTRATION_DATE.toString())))
@@ -333,8 +342,8 @@ public class Pg8583RequestResourceIT {
             .andExpect(jsonPath("$.[*].requestResponse").value(hasItem(DEFAULT_REQUEST_RESPONSE.toString())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].reason").value(hasItem(DEFAULT_REASON.toString())))
-            .andExpect(jsonPath("$.[*].pgapsMessage").value(hasItem(DEFAULT_PGAPS_MESSAGE.toString())))
-            .andExpect(jsonPath("$.[*].pgapsTransactionNumber").value(hasItem(DEFAULT_PGAPS_TRANSACTION_NUMBER.toString())))
+            .andExpect(jsonPath("$.[*].pgMessage").value(hasItem(DEFAULT_PG_MESSAGE.toString())))
+            .andExpect(jsonPath("$.[*].pgTransactionNumber").value(hasItem(DEFAULT_PG_TRANSACTION_NUMBER.toString())))
             .andExpect(jsonPath("$.[*].active").value(hasItem(DEFAULT_ACTIVE.booleanValue())));
     }
     
@@ -351,6 +360,7 @@ public class Pg8583RequestResourceIT {
             .andExpect(jsonPath("$.id").value(pg8583Request.getId().intValue()))
             .andExpect(jsonPath("$.number").value(DEFAULT_NUMBER.toString()))
             .andExpect(jsonPath("$.apiKey").value(DEFAULT_API_KEY.toString()))
+            .andExpect(jsonPath("$.securityMode").value(DEFAULT_SECURITY_MODE.toString()))
             .andExpect(jsonPath("$.encryptedData").value(DEFAULT_ENCRYPTED_DATA.toString()))
             .andExpect(jsonPath("$.decryptedData").value(DEFAULT_DECRYPTED_DATA.toString()))
             .andExpect(jsonPath("$.registrationDate").value(DEFAULT_REGISTRATION_DATE.toString()))
@@ -358,8 +368,8 @@ public class Pg8583RequestResourceIT {
             .andExpect(jsonPath("$.requestResponse").value(DEFAULT_REQUEST_RESPONSE.toString()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
             .andExpect(jsonPath("$.reason").value(DEFAULT_REASON.toString()))
-            .andExpect(jsonPath("$.pgapsMessage").value(DEFAULT_PGAPS_MESSAGE.toString()))
-            .andExpect(jsonPath("$.pgapsTransactionNumber").value(DEFAULT_PGAPS_TRANSACTION_NUMBER.toString()))
+            .andExpect(jsonPath("$.pgMessage").value(DEFAULT_PG_MESSAGE.toString()))
+            .andExpect(jsonPath("$.pgTransactionNumber").value(DEFAULT_PG_TRANSACTION_NUMBER.toString()))
             .andExpect(jsonPath("$.active").value(DEFAULT_ACTIVE.booleanValue()));
     }
 
@@ -386,6 +396,7 @@ public class Pg8583RequestResourceIT {
         updatedPg8583Request
             .number(UPDATED_NUMBER)
             .apiKey(UPDATED_API_KEY)
+            .securityMode(UPDATED_SECURITY_MODE)
             .encryptedData(UPDATED_ENCRYPTED_DATA)
             .decryptedData(UPDATED_DECRYPTED_DATA)
             .registrationDate(UPDATED_REGISTRATION_DATE)
@@ -393,14 +404,13 @@ public class Pg8583RequestResourceIT {
             .requestResponse(UPDATED_REQUEST_RESPONSE)
             .status(UPDATED_STATUS)
             .reason(UPDATED_REASON)
-            .pgapsMessage(UPDATED_PGAPS_MESSAGE)
-            .pgapsTransactionNumber(UPDATED_PGAPS_TRANSACTION_NUMBER)
+            .pgMessage(UPDATED_PG_MESSAGE)
+            .pgTransactionNumber(UPDATED_PG_TRANSACTION_NUMBER)
             .active(UPDATED_ACTIVE);
-        Pg8583RequestDTO pg8583RequestDTO = pg8583RequestMapper.toDto(updatedPg8583Request);
 
         restPg8583RequestMockMvc.perform(put("/api/pg-8583-requests")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(pg8583RequestDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(updatedPg8583Request)))
             .andExpect(status().isOk());
 
         // Validate the Pg8583Request in the database
@@ -409,6 +419,7 @@ public class Pg8583RequestResourceIT {
         Pg8583Request testPg8583Request = pg8583RequestList.get(pg8583RequestList.size() - 1);
         assertThat(testPg8583Request.getNumber()).isEqualTo(UPDATED_NUMBER);
         assertThat(testPg8583Request.getApiKey()).isEqualTo(UPDATED_API_KEY);
+        assertThat(testPg8583Request.getSecurityMode()).isEqualTo(UPDATED_SECURITY_MODE);
         assertThat(testPg8583Request.getEncryptedData()).isEqualTo(UPDATED_ENCRYPTED_DATA);
         assertThat(testPg8583Request.getDecryptedData()).isEqualTo(UPDATED_DECRYPTED_DATA);
         assertThat(testPg8583Request.getRegistrationDate()).isEqualTo(UPDATED_REGISTRATION_DATE);
@@ -416,8 +427,8 @@ public class Pg8583RequestResourceIT {
         assertThat(testPg8583Request.getRequestResponse()).isEqualTo(UPDATED_REQUEST_RESPONSE);
         assertThat(testPg8583Request.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testPg8583Request.getReason()).isEqualTo(UPDATED_REASON);
-        assertThat(testPg8583Request.getPgapsMessage()).isEqualTo(UPDATED_PGAPS_MESSAGE);
-        assertThat(testPg8583Request.getPgapsTransactionNumber()).isEqualTo(UPDATED_PGAPS_TRANSACTION_NUMBER);
+        assertThat(testPg8583Request.getPgMessage()).isEqualTo(UPDATED_PG_MESSAGE);
+        assertThat(testPg8583Request.getPgTransactionNumber()).isEqualTo(UPDATED_PG_TRANSACTION_NUMBER);
         assertThat(testPg8583Request.isActive()).isEqualTo(UPDATED_ACTIVE);
     }
 
@@ -427,12 +438,11 @@ public class Pg8583RequestResourceIT {
         int databaseSizeBeforeUpdate = pg8583RequestRepository.findAll().size();
 
         // Create the Pg8583Request
-        Pg8583RequestDTO pg8583RequestDTO = pg8583RequestMapper.toDto(pg8583Request);
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restPg8583RequestMockMvc.perform(put("/api/pg-8583-requests")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(pg8583RequestDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(pg8583Request)))
             .andExpect(status().isBadRequest());
 
         // Validate the Pg8583Request in the database
@@ -471,28 +481,5 @@ public class Pg8583RequestResourceIT {
         assertThat(pg8583Request1).isNotEqualTo(pg8583Request2);
         pg8583Request1.setId(null);
         assertThat(pg8583Request1).isNotEqualTo(pg8583Request2);
-    }
-
-    @Test
-    @Transactional
-    public void dtoEqualsVerifier() throws Exception {
-        TestUtil.equalsVerifier(Pg8583RequestDTO.class);
-        Pg8583RequestDTO pg8583RequestDTO1 = new Pg8583RequestDTO();
-        pg8583RequestDTO1.setId(1L);
-        Pg8583RequestDTO pg8583RequestDTO2 = new Pg8583RequestDTO();
-        assertThat(pg8583RequestDTO1).isNotEqualTo(pg8583RequestDTO2);
-        pg8583RequestDTO2.setId(pg8583RequestDTO1.getId());
-        assertThat(pg8583RequestDTO1).isEqualTo(pg8583RequestDTO2);
-        pg8583RequestDTO2.setId(2L);
-        assertThat(pg8583RequestDTO1).isNotEqualTo(pg8583RequestDTO2);
-        pg8583RequestDTO1.setId(null);
-        assertThat(pg8583RequestDTO1).isNotEqualTo(pg8583RequestDTO2);
-    }
-
-    @Test
-    @Transactional
-    public void testEntityFromId() {
-        assertThat(pg8583RequestMapper.fromId(42L).getId()).isEqualTo(42);
-        assertThat(pg8583RequestMapper.fromId(null)).isNull();
     }
 }

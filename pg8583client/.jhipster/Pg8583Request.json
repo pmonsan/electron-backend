@@ -20,6 +20,15 @@
             "fieldValidateRulesMaxlength": 100
         },
         {
+            "fieldName": "securityMode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
             "fieldName": "encryptedData",
             "fieldType": "String",
             "fieldValidateRules": [
@@ -72,7 +81,7 @@
             "fieldValidateRulesMaxlength": 100
         },
         {
-            "fieldName": "pgapsMessage",
+            "fieldName": "pgMessage",
             "fieldType": "String",
             "fieldValidateRules": [
                 "maxlength"
@@ -80,7 +89,7 @@
             "fieldValidateRulesMaxlength": 255
         },
         {
-            "fieldName": "pgapsTransactionNumber",
+            "fieldName": "pgTransactionNumber",
             "fieldType": "String",
             "fieldValidateRules": [
                 "maxlength"
@@ -96,16 +105,14 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20200330110608",
+    "changelogDate": "20200330161642",
     "entityTableName": "t_pg_8583_request",
-    "dto": "mapstruct",
+    "dto": "no",
     "pagination": "no",
-    "service": "serviceImpl",
+    "service": "no",
     "jpaMetamodelFiltering": false,
     "fluentMethods": true,
-    "clientRootFolder": "",
-    "applications": [
-        "pgkernelgateway",
-        "pg8583client"
-    ]
+    "clientRootFolder": "pg8583client",
+    "applications": "*",
+    "microserviceName": "pg8583client"
 }

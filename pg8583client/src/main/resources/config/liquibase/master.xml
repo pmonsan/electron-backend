@@ -17,6 +17,7 @@
     <include file="config/liquibase/changelog/20200330110608_added_entity_Pg8583Request.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200330110609_added_entity_Pg8583Status.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200330110610_added_entity_Pg8583Callback.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200330161642_added_entity_Pg8583Request.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
